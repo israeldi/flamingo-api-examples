@@ -2,7 +2,7 @@
 
 Add a visible buyer/order stamp to a supported PDF after WooCommerce authorizes its download. The connector returns a separate personalized copy and keeps supported size layers and original page geometry. It requires a subscribed [PatternCopy PDF RapidAPI app](https://rapidapi.com/IsraelDiego/api/patterncopy-pdf); the connector itself is free.
 
-[Download connector 0.1.1](downloads/patterncopy-pdf-0.1.1.zip) · [Browse GPL source](patterncopy-pdf/) · [Layered PDF guide](https://flamingo-api-guides.flatemu1.chatgpt.site/layered-pdf-personalization/) · [Try the Python example](../../patterncopy_stamp.py)
+[Download connector 0.1.1](https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/integrations/patterncopy-woocommerce/downloads/patterncopy-pdf-0.1.1.zip) · [Browse GPL source](patterncopy-pdf/) · [Layered PDF guide](https://flamingo-api-guides.flatemu1.chatgpt.site/layered-pdf-personalization/) · [Try the Python example](../../patterncopy_stamp.py)
 
 ## Check your store's fit
 
@@ -15,7 +15,7 @@ Visible personalization is editable traceability, not DRM. Check your own PDF's 
 
 ## Install and make a staging trial
 
-1. Download the [installable ZIP](downloads/patterncopy-pdf-0.1.1.zip). In WordPress choose **Plugins → Add New → Upload Plugin**, upload it and activate it with WooCommerce active. Upload this ZIP rather than the entire examples repository.
+1. Download the [installable ZIP](https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/integrations/patterncopy-woocommerce/downloads/patterncopy-pdf-0.1.1.zip). In WordPress choose **Plugins → Add New → Upload Plugin**, upload it and activate it with WooCommerce active. Upload this ZIP rather than the entire examples repository.
 2. Subscribe to the API plan appropriate for your trial. In **WooCommerce → PatternCopy PDF**, keep RapidAPI authentication selected and configure:
 
    | Setting | Value |
