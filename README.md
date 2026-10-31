@@ -2,11 +2,13 @@
 
 Runnable Python 3 examples for three focused file-processing APIs. These examples use the standard library, a local input file, and your own subscribed RapidAPI app key.
 
+Read the [Flamingo API guides](https://flamingo-api-guides.flatemu1.chatgpt.site/) for the full workflow and compatibility notes.
+
 | Task | API | Python example |
 | --- | --- | --- |
-| Export MDB/ACCDB local tables to a CSV ZIP or typed JSON | [Access File Extractor](https://rapidapi.com/IsraelDiego/api/access-file-extractor) | [access_extract.py](access_extract.py) |
-| Optimize PNG/JPEG assets inside an HTML5 advertising ZIP | [CreativePack](https://rapidapi.com/IsraelDiego/api/creativepack) | [creativepack_optimize.py](creativepack_optimize.py) |
-| Add a visible buyer stamp while retaining supported PDF size layers | [PatternCopy PDF](https://rapidapi.com/IsraelDiego/api/patterncopy-pdf) | [patterncopy_stamp.py](patterncopy_stamp.py) |
+| Export MDB/ACCDB local tables to a CSV ZIP or typed JSON | [Access File Extractor](https://rapidapi.com/IsraelDiego/api/access-file-extractor) | [Python example](access_extract.py) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/access-to-csv-json/) |
+| Optimize PNG/JPEG assets inside an HTML5 advertising ZIP | [CreativePack](https://rapidapi.com/IsraelDiego/api/creativepack) | [Python example](creativepack_optimize.py) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/html5-ad-zip-optimization/) |
+| Add a visible buyer stamp while retaining supported PDF size layers | [PatternCopy PDF](https://rapidapi.com/IsraelDiego/api/patterncopy-pdf) | [Python example](patterncopy_stamp.py) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/layered-pdf-personalization/) |
 
 The publisher of these APIs maintains this repository. Free plans are available; check current marketplace quotas and terms. Requests have hard monthly caps, and separate platform bandwidth fees may apply. A validation failure or deliberate retry can consume allowance. The examples make one request, refuse redirects, and do not automatically retry.
 
