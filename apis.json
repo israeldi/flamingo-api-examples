@@ -76,6 +76,11 @@
           "description": "Optimize a built HTML5 ZIP, save a verified report and enforce the complete archive byte budget in a build workflow.",
           "type": "GitHubRepository",
           "url": "https://github.com/israeldi/creativepack-optimize-action"
+        },
+        {
+          "name": "GitHub Marketplace Action",
+          "type": "Documentation",
+          "url": "https://github.com/marketplace/actions/creativepack-html5-zip-optimizer"
         }
       ]
     },

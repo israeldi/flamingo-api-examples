@@ -64,7 +64,7 @@ Set the byte target to your actual delivery destination’s limit. `150000` is a
 
 Input limits are 8 MiB compressed, 32 MiB expanded, and 256 members, with additional image limits. The owned `sample-creative.zip` contains original demonstration HTML, CSS, JavaScript, PNG, and JPEG assets.
 
-For a build pipeline, use the [CreativePack GitHub Action](https://github.com/israeldi/creativepack-optimize-action). It makes one processing request, saves a verified ZIP and report, and can fail the build when the complete archive remains over budget. Its setup instructions pin the reviewed runtime commit and show how to supply your subscribed key through a GitHub Actions secret. The source is public; Marketplace publication remains pending.
+For a build pipeline, use the [CreativePack GitHub Action](https://github.com/israeldi/creativepack-optimize-action). It makes one processing request, saves a verified ZIP and report, and can fail the build when the complete archive remains over budget. Its setup instructions pin the reviewed runtime commit and show how to supply your subscribed key through a GitHub Actions secret. Find the Action on [GitHub Marketplace](https://github.com/marketplace/actions/creativepack-html5-zip-optimizer).
 
 ## Personalize a layered sewing-pattern PDF
 
