@@ -1,0 +1,16 @@
+{
+  "examples_commit": "117f529087673c3c1ee2e18771cdc7dd15d58283",
+  "samples_sha256": {
+    "sample-access.accdb": "c90a11f3f3a7763b44bb75a00ec9527d41e6937a3678ae7c600f4100ffa541a6",
+    "sample-creative.zip": "2fa23f52cd2fc2bf44dd7b6b3731b13818846c43e285e35ada1659c316822bcc",
+    "sample-pattern.pdf": "834c183fdcff897f22e85cd7212a0d2e5231cb7b03a49d1cf5c66768f9cec3b9"
+  },
+  "shelfrelay_request_sha256": "685970189a31a81e225fcb0c20b0c38d147ab95bc2e8d613242875b3ba1818ca",
+  "fixtures": {
+    "access-response.json": "Constructed minimum typed-export shape, checked by the published client validator; not a captured API result.",
+    "creative-response.json": "Constructed unchanged-archive response, checked by the published client validator; exercises valid over_budget. No optimizer run inferred.",
+    "pattern-inspect-response.json": "Current OpenAPI illustrative inspection example.",
+    "pattern-response.pdf": "Owned synthetic source PDF used as arbitrary returned-byte fixture for format/digest tests. It is not a newly stamped output.",
+    "shelfrelay-response.json": "Current local released engine normalized the current original fictional request; no HTTP/gateway call."
+  }
+}

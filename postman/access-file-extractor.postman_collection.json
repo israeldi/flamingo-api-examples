@@ -1,0 +1,116 @@
+{
+  "info": {
+    "_postman_id": "b573406d-1c59-5512-9567-9fd248c9e7c7",
+    "name": "Access File Extractor — first processing request",
+    "description": "Export supported local scalar MDB/ACCDB tables to typed JSON.\n\n## Start here\n\nSubscribe to **Access File Extractor** on [RapidAPI](https://rapidapi.com/IsraelDiego/api/access-file-extractor/pricing). Each API has its own subscription and hard limits. Start with its free Basic compatibility check; review current plan, platform charges and service limits before processing. A failed request or retry can consume allowance.\n\nFork or import this collection into your own workspace. In **Variables**, set `rapidapi_key` as a **local value only** for your subscribed application. Leave its shared value blank. [Find your existing application key](https://docs.rapidapi.com/docs/keys-and-key-rotation). Never share a filled environment or export a credential.\n\nOptional Vault setup: change this collection's API Key authorization value from `{{rapidapi_key}}` to your own local `{{vault:rapidapi_key}}` reference. Keep the secret in Postman Local Vault and approve only the local access Postman requires. No real key belongs in a published collection.\n\nDownload the owned [synthetic ACCDB sample](https://raw.githubusercontent.com/israeldi/flamingo-api-examples/117f529087673c3c1ee2e18771cdc7dd15d58283/sample-access.accdb) (360,448 bytes; SHA-256 `c90a11f3f3a7763b44bb75a00ec9527d41e6937a3678ae7c600f4100ffa541a6`). In **Body → binary**, select that downloaded file. No local source path is published. Public Postman workspaces cannot share team-uploaded test files.\n\nThis request selects typed JSON to make the manifest visible. Its supported scope is local scalar MDB/ACCDB tables, up to 40 MiB input and 32 MiB serialized output. Compare exported values with the original database. The [complete client and guide](https://github.com/israeldi/flamingo-api-examples#choose-your-workflow) explain CSV ZIP export and stronger container checks.\n\n## Sending and reviewing\n\nUse **Send** on the chosen request once. These collections contain no pre-request scripts, external package imports, chained requests, monitors, retries or automatic loops. Redirect following is disabled. Do not use a cross-product Run All; start with one product and one deliberate operation. Keep Postman's automatic retries disabled if your runtime offers them.\n\nPost-response tests check the stated transport/container/semantic properties. They do not prove every source value, visual result, platform acceptance or merchant application. Review the actual output before use. Only use files and catalogue records you are authorized to process.\n\n",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-RapidAPI-Key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{rapidapi_key}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "rapidapi_key",
+      "value": "",
+      "type": "string",
+      "description": "Your subscribed consumer application key. Set locally or use a local Vault reference; leave this shared value blank."
+    }
+  ],
+  "protocolProfileBehavior": {
+    "followRedirects": false
+  },
+  "item": [
+    {
+      "name": "Extract selected local ACCDB as typed JSON",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-RapidAPI-Host",
+            "value": "access-file-extractor.p.rapidapi.com",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/octet-stream",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept-Encoding",
+            "value": "identity",
+            "type": "text"
+          }
+        ],
+        "url": "https://access-file-extractor.p.rapidapi.com/v1/extract?format=json",
+        "description": "Choose the downloaded synthetic ACCDB under Body → binary, then Send once. Success returns a complete manifest and ordered table data.",
+        "body": {
+          "mode": "file",
+          "file": {
+            "src": null
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// These checks validate the JSON export container, not every source value.",
+              "function check(condition, message) { if (!condition) throw new Error(message); }",
+              "pm.test('HTTP 200 with JSON', function () {",
+              "  check(pm.response.code === 200, 'Expected a successful extraction; check subscription, limits and diagnostics.');",
+              "  check((pm.response.headers.get('Content-Type') || '').split(';')[0].toLowerCase() === 'application/json', 'Expected application/json.');",
+              "});",
+              "if (pm.response.code === 200) {",
+              "  const body = pm.response.json();",
+              "  pm.test('Complete typed-table export agrees with its manifest', function () {",
+              "    const manifest = body.manifest;",
+              "    check(manifest && manifest.schema_version === '1.0' && manifest.complete === true && manifest.format === 'json', 'Incomplete or unsupported export manifest.');",
+              "    check(Array.isArray(manifest.tables) && Array.isArray(body.tables), 'Expected table lists.');",
+              "    check(manifest.tables.length === body.tables.length && manifest.tables.length <= 100, 'Table counts disagree or exceed the supported limit.');",
+              "    check(Number.isInteger(manifest.total_rows) && manifest.total_rows >= 0 && manifest.total_rows <= 250000, 'Invalid total row count.');",
+              "    let total = 0;",
+              "    manifest.tables.forEach(function (table, i) {",
+              "      const data = body.tables[i];",
+              "      check(Number.isInteger(table.rows) && table.rows >= 0 && Array.isArray(table.columns), 'Invalid table manifest.');",
+              "      check(data && data.id === table.id && data.name === table.name && Array.isArray(data.rows) && data.rows.length === table.rows, 'Table identity or row count differs from manifest.');",
+              "      data.rows.forEach(function (row) { check(Array.isArray(row) && row.length === table.columns.length, 'A row width differs from its column manifest.'); });",
+              "      total += table.rows;",
+              "    });",
+              "    check(total === manifest.total_rows, 'Total row count differs from the table manifests.');",
+              "  });",
+              "}"
+            ]
+          }
+        }
+      ],
+      "response": [],
+      "protocolProfileBehavior": {
+        "followRedirects": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "published_artifact_manifest_version": 1,
+  "prepared_at_utc": "2026-10-31T21:18:00.023266+00:00",
+  "scope": "Downloadable four-API Postman collections and consumer instructions",
+  "artifacts": [
+    {
+      "path": "access-file-extractor.postman_collection.json",
+      "bytes": 7122,
+      "sha256": "669f5bc2bf0563377bae8bb6a06d15117a458f507b22549d63d6a0ce52212ff1",
+      "qualification_source_name": "access-file-extractor.postman_collection.json"
+    },
+    {
+      "path": "creativepack.postman_collection.json",
+      "bytes": 1087910,
+      "sha256": "40855dc0f8b5afb198ff0403a7637dafa169266448ada0b6aaaceb4f1ef968cb",
+      "qualification_source_name": "creativepack.postman_collection.json"
+    },
+    {
+      "path": "patterncopy-pdf.postman_collection.json",
+      "bytes": 9519,
+      "sha256": "7829f80fb2d55250299286c08c27644bfbd218101414206bb0e420ae5b54579e",
+      "qualification_source_name": "patterncopy-pdf.postman_collection.json"
+    },
+    {
+      "path": "shelfrelay-onix.postman_collection.json",
+      "bytes": 9932,
+      "sha256": "a7e1c966e0927012d20bd772fb201e580ecf06fe657029017d7f11a36ab32fb3",
+      "qualification_source_name": "shelfrelay-onix.postman_collection.json"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7803,
+      "sha256": "2dc3458f640f6733e360bc84fff80fd6599938ea4d045731b40367ceebd067b2",
+      "qualification_source_name": "README.public.md"
+    },
+    {
+      "path": "source-binding.json",
+      "bytes": 1194,
+      "sha256": "194000b3f752419cb4bcf4e46c0c69adef1dc5949f5dc57714adbb1b24f9806d",
+      "qualification_source_name": "source-binding.json"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 6553,
+      "sha256": "4678f530d0f0f471a27f398d274862c3296e2641e115953ece9aee817eedb01b",
+      "qualification_source_name": "validation.json"
+    }
+  ],
+  "qualification_receipt": "validation.json",
+  "qualification_receipt_scope": "Original complete qualification source, including build/test helpers and a maintainer README, which are not bundled here. The consumer README.md is copied from README.public.md and has the hash listed in this publication manifest.",
+  "source_examples_commit": "117f529087673c3c1ee2e18771cdc7dd15d58283",
+  "network_publication_verified": false,
+  "live_postman_runtime_verified": false,
+  "authenticated_gateway_execution_for_package": false,
+  "shared_api_keys": "blank",
+  "no_processing_calls_for_publication": true
+}

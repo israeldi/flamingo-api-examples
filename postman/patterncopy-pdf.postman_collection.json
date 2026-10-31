@@ -1,0 +1,176 @@
+{
+  "info": {
+    "_postman_id": "f039cf7e-7fa5-54a3-8679-783b4320af6a",
+    "name": "PatternCopy PDF — first processing request",
+    "description": "Inspect a supported PDF and add a visible buyer-specific stamp while retaining supported page geometry and PDF size layers.\n\n## Start here\n\nSubscribe to **PatternCopy PDF** on [RapidAPI](https://rapidapi.com/IsraelDiego/api/patterncopy-pdf/pricing). Each API has its own subscription and hard limits. Start with its free Basic compatibility check; review current plan, platform charges and service limits before processing. A failed request or retry can consume allowance.\n\nFork or import this collection into your own workspace. In **Variables**, set `rapidapi_key` as a **local value only** for your subscribed application. Leave its shared value blank. [Find your existing application key](https://docs.rapidapi.com/docs/keys-and-key-rotation). Never share a filled environment or export a credential.\n\nOptional Vault setup: change this collection's API Key authorization value from `{{rapidapi_key}}` to your own local `{{vault:rapidapi_key}}` reference. Keep the secret in Postman Local Vault and approve only the local access Postman requires. No real key belongs in a published collection.\n\nDownload the owned [synthetic layered PDF](https://raw.githubusercontent.com/israeldi/flamingo-api-examples/117f529087673c3c1ee2e18771cdc7dd15d58283/sample-pattern.pdf) (5,996 bytes; SHA-256 `834c183fdcff897f22e85cd7212a0d2e5231cb7b03a49d1cf5c66768f9cec3b9`). Select it under **Body → binary** separately for each request you use. No local source path is published; public workspaces cannot share team-uploaded test files.\n\nFirst inspect a source revision for compatibility. Then stamp the same source with the fictional buyer text **Licensed to Alex Example - Order 1042**, 6 pt, 12 pt margin, bottom-left. The `X-PatternCopy-Options` header is base64-encoded JSON, not a credential. [Current options and client](https://github.com/israeldi/flamingo-api-examples/blob/main/patterncopy_stamp.py).\n\nInspect and stamp are **separate processing calls**, each counting the full file resources. Save the stamped PDF as a new file; visually inspect the text, size-layer switching, page geometry and printed scale before delivering a real customer copy. Limits: 20 MiB/100 pages input and 24 MiB output; text 1–160 supported single-line characters, font 6–14 pt and margin 6–72 pt.\n\n## Sending and reviewing\n\nUse **Send** on the chosen request once. These collections contain no pre-request scripts, external package imports, chained requests, monitors, retries or automatic loops. Redirect following is disabled. Do not use a cross-product Run All; start with one product and one deliberate operation. Keep Postman's automatic retries disabled if your runtime offers them.\n\nPost-response tests check the stated transport/container/semantic properties. They do not prove every source value, visual result, platform acceptance or merchant application. Review the actual output before use. Only use files and catalogue records you are authorized to process.\n\n",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-RapidAPI-Key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{rapidapi_key}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "rapidapi_key",
+      "value": "",
+      "type": "string",
+      "description": "Your subscribed consumer application key. Set locally or use a local Vault reference; leave this shared value blank."
+    }
+  ],
+  "protocolProfileBehavior": {
+    "followRedirects": false
+  },
+  "item": [
+    {
+      "name": "1. Inspect a selected source revision",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-RapidAPI-Host",
+            "value": "patterncopy-pdf.p.rapidapi.com",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/pdf",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept-Encoding",
+            "value": "identity",
+            "type": "text"
+          }
+        ],
+        "url": "https://patterncopy-pdf.p.rapidapi.com/v1/inspect",
+        "description": "Select the source PDF under Body → binary. An accepted inspection does not test every expanded buyer name or stamp placement.",
+        "body": {
+          "mode": "file",
+          "file": {
+            "src": null
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "function check(condition, message) { if (!condition) throw new Error(message); }",
+              "pm.test('HTTP 200 with an accepted inspection', function () {",
+              "  check(pm.response.code === 200, 'Inspection did not complete; check compatibility, subscription and limits.');",
+              "  check((pm.response.headers.get('Content-Type') || '').split(';')[0].toLowerCase() === 'application/json', 'Expected application/json.');",
+              "  const value = pm.response.json();",
+              "  check(value.ok === true && value.operation === 'inspect' && value.document, 'Expected a successful inspection envelope.');",
+              "  check(Number.isInteger(value.document.pages) && value.document.pages >= 1 && value.document.pages <= 100, 'Unsupported page count.');",
+              "  check(Number.isInteger(value.document.input_bytes) && value.document.input_bytes >= 8 && value.document.input_bytes <= 20971520, 'Unsupported input size.');",
+              "  check(value.document.encrypted === false, 'Expected an unencrypted supported source.');",
+              "});"
+            ]
+          }
+        }
+      ],
+      "response": [],
+      "protocolProfileBehavior": {
+        "followRedirects": false
+      }
+    },
+    {
+      "name": "2. Stamp the selected PDF with fictional buyer text",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-RapidAPI-Host",
+            "value": "patterncopy-pdf.p.rapidapi.com",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/pdf",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/pdf",
+            "type": "text"
+          },
+          {
+            "key": "Accept-Encoding",
+            "value": "identity",
+            "type": "text"
+          },
+          {
+            "key": "X-PatternCopy-Options",
+            "value": "eyJ0ZXh0IjogIkxpY2Vuc2VkIHRvIEFsZXggRXhhbXBsZSAtIE9yZGVyIDEwNDIiLCAiZm9udF9zaXplIjogNiwgIm1hcmdpbiI6IDEyLCAicG9zaXRpb24iOiAiYm90dG9tLWxlZnQifQ==",
+            "type": "text"
+          }
+        ],
+        "url": "https://patterncopy-pdf.p.rapidapi.com/v1/stamp",
+        "description": "Select the same source PDF under Body → binary. Send once; save the returned PDF as a new file and review it visually.",
+        "body": {
+          "mode": "file",
+          "file": {
+            "src": null
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "function check(condition, message) { if (!condition) throw new Error(message); }",
+              "pm.test('HTTP 200 with PDF bytes and a digest', function () {",
+              "  check(pm.response.code === 200, 'Stamping did not complete; check compatibility, subscription and limits.');",
+              "  check((pm.response.headers.get('Content-Type') || '').split(';')[0].toLowerCase() === 'application/pdf', 'Expected application/pdf.');",
+              "  check(/^[a-f0-9]{64}$/.test(pm.response.headers.get('X-PatternCopy-SHA256') || ''), 'Missing required output digest.');",
+              "});",
+              "if (pm.response.code === 200) {",
+              "  const bytes = pm.response.stream;",
+              "  pm.test('Returned bytes have the PDF prefix and supported size', function () {",
+              "    check(bytes && bytes.length >= 8 && bytes.length <= 25165824, 'Empty/oversized PDF or binary bytes unavailable in this Postman runtime.');",
+              "    check(String.fromCharCode(...bytes.slice(0, 5)) === '%PDF-', 'Missing PDF header.');",
+              "  });",
+              "  if (bytes && bytes.length) {",
+              "    const digest = await crypto.subtle.digest('SHA-256', new Uint8Array(bytes));",
+              "    const actual = Array.from(new Uint8Array(digest), function (v) { return v.toString(16).padStart(2, '0'); }).join('');",
+              "    pm.test('Returned PDF SHA-256 matches its response header', function () {",
+              "      check(actual === pm.response.headers.get('X-PatternCopy-SHA256'), 'Output digest mismatch.');",
+              "    });",
+              "  }",
+              "}"
+            ]
+          }
+        }
+      ],
+      "response": [],
+      "protocolProfileBehavior": {
+        "followRedirects": false
+      }
+    }
+  ]
+}

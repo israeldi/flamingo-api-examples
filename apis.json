@@ -31,6 +31,10 @@
         {
           "type": "Examples",
           "url": "https://github.com/israeldi/flamingo-api-examples/blob/main/access_extract.py"
+        },
+        {
+          "type": "PostmanCollection",
+          "url": "https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/postman/access-file-extractor.postman_collection.json"
         }
       ]
     },
@@ -62,6 +66,10 @@
         {
           "type": "OpenAPI",
           "url": "https://creativepack.flamingoapis.synology.me:8443/openapi.json"
+        },
+        {
+          "type": "PostmanCollection",
+          "url": "https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/postman/creativepack.postman_collection.json"
         }
       ]
     },
@@ -87,6 +95,10 @@
         {
           "type": "Examples",
           "url": "https://github.com/israeldi/flamingo-api-examples/blob/main/patterncopy_stamp.py"
+        },
+        {
+          "type": "PostmanCollection",
+          "url": "https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/postman/patterncopy-pdf.postman_collection.json"
         }
       ]
     },
@@ -113,6 +125,10 @@
         {
           "type": "GitHubRepository",
           "url": "https://github.com/israeldi/flamingo-api-examples/tree/main/integrations/woocommerce"
+        },
+        {
+          "type": "PostmanCollection",
+          "url": "https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/postman/shelfrelay-onix.postman_collection.json"
         }
       ]
     }

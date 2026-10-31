@@ -1,0 +1,114 @@
+{
+  "info": {
+    "_postman_id": "eec2b8be-b86a-5d2b-ac6a-e6cac8f58a52",
+    "name": "ShelfRelay ONIX — first processing request",
+    "description": "Interpret an authorized ONIX book feed and preview explicit product-update decisions.\n\n## Start here\n\nSubscribe to **ShelfRelay ONIX** on [RapidAPI](https://rapidapi.com/IsraelDiego/api/shelfrelay-onix/pricing). Each API has its own subscription and hard limits. Start with its free Basic compatibility check; review current plan, platform charges and service limits before processing. A failed request or retry can consume allowance.\n\nFork or import this collection into your own workspace. In **Variables**, set `rapidapi_key` as a **local value only** for your subscribed application. Leave its shared value blank. [Find your existing application key](https://docs.rapidapi.com/docs/keys-and-key-rotation). Never share a filled environment or export a credential.\n\nOptional Vault setup: change this collection's API Key authorization value from `{{rapidapi_key}}` to your own local `{{vault:rapidapi_key}}` reference. Keep the secret in Postman Local Vault and approve only the local access Postman requires. No real key belongs in a published collection.\n\nThe embedded JSON contains one original fictional paperback, ISBN `9781234567897`, for the **US/USD/01 excluding-tax** policy. Keep **Body → raw → JSON**. Send it once and inspect each record status and diagnostics.\n\nExpected accepted sample: **The Orchard Notebook (sample)**, **18.50 USD**, `instock`, `upsert`, retained `next_xml` and typed `projection.apply_fields`. HTTP 200 alone does not establish an accepted record. This direct API request does not change a WooCommerce store.\n\nFor your own catalogue, provide authorized ONIX 3.0/3.1 physical-book records and an explicit compatible market/currency/price policy. Maximum 100 records / 8 MiB JSON per call; each current/prior XML ≤256 KiB. Each submitted record in a completed batch counts, including rejected records; previews, retries and date refreshes consume allowance. Basic backend caps are 10 completed batches, 500 records and 32 MiB input per UTC calendar month. RapidAPI Requests quotas and renewal cycles are separate.\n\nUse the [WooCommerce connector and setup guide](https://github.com/israeldi/flamingo-api-examples/tree/main/integrations/woocommerce) for reviewed store application and scheduling. A returned projection is a processing result, not a completed merchant import.\n\n## Sending and reviewing\n\nUse **Send** on the chosen request once. These collections contain no pre-request scripts, external package imports, chained requests, monitors, retries or automatic loops. Redirect following is disabled. Do not use a cross-product Run All; start with one product and one deliberate operation. Keep Postman's automatic retries disabled if your runtime offers them.\n\nPost-response tests check the stated transport/container/semantic properties. They do not prove every source value, visual result, platform acceptance or merchant application. Review the actual output before use. Only use files and catalogue records you are authorized to process.\n\n",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-RapidAPI-Key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{rapidapi_key}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "rapidapi_key",
+      "value": "",
+      "type": "string",
+      "description": "Your subscribed consumer application key. Set locally or use a local Vault reference; leave this shared value blank."
+    }
+  ],
+  "protocolProfileBehavior": {
+    "followRedirects": false
+  },
+  "item": [
+    {
+      "name": "Preview the embedded fictional ONIX book",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-RapidAPI-Host",
+            "value": "shelfrelay-onix.p.rapidapi.com",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept-Encoding",
+            "value": "identity",
+            "type": "text"
+          }
+        ],
+        "url": "https://shelfrelay-onix.p.rapidapi.com/v1/normalize",
+        "description": "Send the original fictional JSON envelope once. Tests require the accepted sample title/price/status and retained state; no WooCommerce product is created by this API request.",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"records\": [\n    {\n      \"xml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<ONIXMessage release=\\\"3.1\\\" xmlns=\\\"http://ns.editeur.org/onix/3.1/reference\\\">\\n  <Header><DefaultCurrencyCode>USD</DefaultCurrencyCode><DefaultPriceType>01</DefaultPriceType></Header>\\n  <Product>\\n    <RecordReference>shelfrelay-demo-001</RecordReference><NotificationType>03</NotificationType>\\n    <ProductIdentifier><ProductIDType>15</ProductIDType><IDValue>9781234567897</IDValue></ProductIdentifier>\\n    <DescriptiveDetail><ProductComposition>00</ProductComposition><ProductForm>BC</ProductForm>\\n      <TitleDetail><TitleType>01</TitleType><TitleElement><TitleElementLevel>01</TitleElementLevel><TitleText>The Orchard Notebook (sample)</TitleText></TitleElement></TitleDetail>\\n      <Contributor><SequenceNumber>1</SequenceNumber><ContributorRole>A01</ContributorRole><PersonName>Alex Example</PersonName></Contributor>\\n      <Language><LanguageRole>01</LanguageRole><LanguageCode>eng</LanguageCode></Language>\\n    </DescriptiveDetail>\\n    <CollateralDetail><TextContent><TextType>03</TextType><ContentAudience>00</ContentAudience><Text>A fictional demonstration book. Replace this record with your authorized catalogue.</Text></TextContent>\\n      <SupportingResource><ResourceContentType>01</ResourceContentType><ContentAudience>00</ContentAudience><ResourceMode>03</ResourceMode><ResourceVersion><ResourceForm>02</ResourceForm><ResourceLink>https://shelfrelay.flamingoapis.synology.me:8443/sample-cover.png</ResourceLink></ResourceVersion></SupportingResource>\\n    </CollateralDetail>\\n    <PublishingDetail><Publisher><PublishingRole>01</PublishingRole><PublisherName>Example Press</PublisherName></Publisher><PublishingStatus>04</PublishingStatus></PublishingDetail>\\n    <ProductSupply><Market><Territory><CountriesIncluded>US</CountriesIncluded></Territory></Market><SupplyDetail><Supplier><SupplierRole>01</SupplierRole><SupplierName>Example Distribution</SupplierName></Supplier><ProductAvailability>20</ProductAvailability><Price><PriceType>01</PriceType><PriceAmount>18.50</PriceAmount><CurrencyCode>USD</CurrencyCode></Price></SupplyDetail></ProductSupply>\\n  </Product>\\n</ONIXMessage>\"\n    }\n  ],\n  \"policy\": {\n    \"market_country\": \"US\",\n    \"currency\": \"USD\",\n    \"price_type\": \"01\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "function check(condition, message) { if (!condition) throw new Error(message); }",
+              "pm.test('HTTP 200 with JSON', function () {",
+              "  check(pm.response.code === 200, 'Batch did not complete; check subscription, limits and diagnostics.');",
+              "  check((pm.response.headers.get('Content-Type') || '').split(';')[0].toLowerCase() === 'application/json', 'Expected application/json.');",
+              "});",
+              "if (pm.response.code === 200) {",
+              "  const body = pm.response.json();",
+              "  pm.test('The fictional one-book record is accepted, not merely HTTP 200', function () {",
+              "    check(body.ok === true && Array.isArray(body.results) && body.results.length === 1, 'Expected a processed one-record batch.');",
+              "    check(body.summary && body.summary.total === 1 && body.summary.ok === 1 && body.summary.rejected === 0, 'The sample was not accepted. Inspect record diagnostics.');",
+              "    const record = body.results[0];",
+              "    check(record.index === 0 && record.status === 'ok' && record.operation === 'upsert', 'The sample was rejected or returned an unexpected operation.');",
+              "    check(record.identity && record.identity.isbn13 === '9781234567897', 'Unexpected sample identity.');",
+              "    check(typeof record.next_xml === 'string' && record.next_xml.length > 0 && /^[a-f0-9]{64}$/.test(record.source_hash || ''), 'Missing retained source state/hash.');",
+              "    const projection = record.projection;",
+              "    check(projection && projection.apply_fields && typeof projection.apply_fields === 'object' && !Array.isArray(projection.apply_fields), 'Expected typed field mutations.');",
+              "    check(projection.apply_fields.title === 'The Orchard Notebook (sample)' && projection.apply_fields.regular_price === '18.50' && projection.apply_fields.stock_status === 'instock', 'The sample title, selected price or availability differs.');",
+              "    check(projection.apply_fields.price_includes_tax === false, 'Expected the US/USD/01 excluding-tax sample policy.');",
+              "  });",
+              "}"
+            ]
+          }
+        }
+      ],
+      "response": [],
+      "protocolProfileBehavior": {
+        "followRedirects": false
+      }
+    }
+  ]
+}

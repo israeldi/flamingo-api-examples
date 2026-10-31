@@ -1,0 +1,190 @@
+{
+  "verified_at_utc": "2026-10-31T21:14:39.070899+00:00",
+  "passed": true,
+  "scope": "Offline official-schema/request-contract/source-byte validation and exact embedded post-response scripts under a minimal pm response harness. No authenticated gateway call, live Postman runtime/import/fork or publication.",
+  "python": "3.12.9",
+  "jsonschema": "4.26.0",
+  "node": "v16.14.0",
+  "schema_source": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+  "checks": [
+    "four_official_v2.1_schema_validations",
+    "five_fixed_gateway_requests",
+    "blank_key_api_key_authorization",
+    "binary_no_local_paths",
+    "redirects_disabled_no_retry_or_network_scripts",
+    "explicit_content_types_and_accept",
+    "pattern_options_exact_decoded_contract",
+    "embedded_creative_archive_exact_owned_bytes",
+    "embedded_shelfrelay_request_exact_current_sample",
+    "access_fixture_accepted_by_published_client_validator",
+    "creative_fixture_accepted_by_published_client_validator"
+  ],
+  "script_fixture_cases": [
+    {
+      "name": "Access complete export",
+      "expected_accept": true,
+      "accepted": true,
+      "tests": 2
+    },
+    {
+      "name": "Access missing row rejected",
+      "expected_accept": false,
+      "accepted": false,
+      "tests": 2
+    },
+    {
+      "name": "Access incomplete manifest rejected",
+      "expected_accept": false,
+      "accepted": false,
+      "tests": 2
+    },
+    {
+      "name": "Access wrong row width rejected",
+      "expected_accept": false,
+      "accepted": false,
+      "tests": 2
+    },
+    {
+      "name": "Access unexpected content type rejected",
+      "expected_accept": false,
+      "accepted": false,
+      "tests": 2
+    },
+    {
+      "name": "CreativePack valid over_budget accepted",
+      "expected_accept": true,
+      "accepted": true,
+      "tests": 3
+    },
+    {
+      "name": "CreativePack valid within_budget accepted",
+      "expected_accept": true,
+      "accepted": true,
+      "tests": 3
+    },
+    {
+      "name": "CreativePack misleading budget status rejected",
+      "expected_accept": false,
+      "accepted": false,
+      "tests": 3
+    },
+    {
+      "name": "CreativePack corrupted digest rejected",
+      "expected_accept": false,
+      "accepted": false,
+      "tests": 3
+    },
+    {
+      "name": "CreativePack byte mismatch rejected",
+      "expected_accept": false,
+      "accepted": false,
+      "tests": 3
+    },
+    {
+      "name": "CreativePack invalid base64 rejected",
+      "expected_accept": false,
+      "accepted": false,
+      "tests": 2
+    },
+    {
+      "name": "CreativePack authentication error rejected",
+      "expected_accept": false,
+      "accepted": false,
+      "tests": 1
+    },
+    {
+      "name": "PatternCopy supported inspection",
+      "expected_accept": true,
+      "accepted": true,
+      "tests": 1
+    },
+    {
+      "name": "PatternCopy encrypted inspection rejected",
+      "expected_accept": false,
+      "accepted": false,
+      "tests": 1
+    },
+    {
+      "name": "PatternCopy excessive pages rejected",
+      "expected_accept": false,
+      "accepted": false,
+      "tests": 1
+    },
+    {
+      "name": "PatternCopy matching PDF bytes and digest",
+      "expected_accept": true,
+      "accepted": true,
+      "tests": 3
+    },
+    {
+      "name": "PatternCopy altered digest rejected",
+      "expected_accept": false,
+      "accepted": false,
+      "tests": 3
+    },
+    {
+      "name": "PatternCopy missing PDF prefix rejected",
+      "expected_accept": false,
+      "accepted": false,
+      "tests": 3
+    },
+    {
+      "name": "ShelfRelay current engine accepted sample",
+      "expected_accept": true,
+      "accepted": true,
+      "tests": 2
+    },
+    {
+      "name": "ShelfRelay HTTP200 rejected record fails",
+      "expected_accept": false,
+      "accepted": false,
+      "tests": 2
+    },
+    {
+      "name": "ShelfRelay incorrect sample price rejected",
+      "expected_accept": false,
+      "accepted": false,
+      "tests": 2
+    },
+    {
+      "name": "ShelfRelay wrong ISBN rejected",
+      "expected_accept": false,
+      "accepted": false,
+      "tests": 2
+    },
+    {
+      "name": "ShelfRelay array mutations rejected",
+      "expected_accept": false,
+      "accepted": false,
+      "tests": 2
+    },
+    {
+      "name": "ShelfRelay missing retained state rejected",
+      "expected_accept": false,
+      "accepted": false,
+      "tests": 2
+    }
+  ],
+  "files_sha256": {
+    "README.md": "218bc79ecc12c7a7ba196e9be5897cdd131b346cb938dfb13b957ab7b13122cc",
+    "access-file-extractor.postman_collection.json": "669f5bc2bf0563377bae8bb6a06d15117a458f507b22549d63d6a0ce52212ff1",
+    "build.py": "d427ebab9e58bd95a6184525c61b30816e1ec262a2b9cd4757e865f863e75d85",
+    "creativepack.postman_collection.json": "40855dc0f8b5afb198ff0403a7637dafa169266448ada0b6aaaceb4f1ef968cb",
+    "fixtures/access-response.json": "11606d8ba1a2800099b2c03c469865f1ebe78c26d78df319b9a12a687c0e882d",
+    "fixtures/creative-response.json": "faaf4a2736f8a034e6ecd269b4d822f0a19a05b0332bb19a8a23d3af1fab14cb",
+    "fixtures/pattern-inspect-response.json": "2b913716c28827c05a5d7ec2612a0a788e7d562b02347ff6e9a9aa36303cd4d5",
+    "fixtures/pattern-response.pdf": "834c183fdcff897f22e85cd7212a0d2e5231cb7b03a49d1cf5c66768f9cec3b9",
+    "fixtures/shelfrelay-response.json": "dd07085050e629e0882874a12213a562b3caba5f5fc5c98a590b7da7216fcedd",
+    "patterncopy-pdf.postman_collection.json": "7829f80fb2d55250299286c08c27644bfbd218101414206bb0e420ae5b54579e",
+    "scripts/access-json.test.js": "b1441cee2d690490f488a35583d04d9147414688637740fb47f10d7794fecd66",
+    "scripts/creativepack.test.js": "69b906cd4e5dd10376ac829ed2029c40822862ea39d3d50ddfaeda08c7035062",
+    "scripts/patterncopy-inspect.test.js": "76fa8734793fd48d76f0f851fdfa3ae7d968daf0a860d4a160b9d6d26a282700",
+    "scripts/patterncopy-stamp.test.js": "42294d748a91293a167af438a14f1021159dbc343e853a67bf75c49a4d057a24",
+    "scripts/shelfrelay.test.js": "9c90e2cfb52072481299f34f5885abf96aa491de0bf718155b5341dfa0eaf0af",
+    "shelfrelay-onix.postman_collection.json": "a7e1c966e0927012d20bd772fb201e580ecf06fe657029017d7f11a36ab32fb3",
+    "source-binding.json": "194000b3f752419cb4bcf4e46c0c69adef1dc5949f5dc57714adbb1b24f9806d",
+    "validate-scripts.cjs": "40b5ab5706d9be17bedf5371aaf5185782709ff7d48854c61c750b9476912b44",
+    "validate.py": "375d26df7ce53654cffd5b75a592c42ba5551352b450ac112589c2535f2704ac",
+    "vendor/collection-v2.1.0.schema.json": "0b99c704ae77a22cdedc841b67212eae9d72cc1fe24389d21b8c6e9ec05889df"
+  }
+}

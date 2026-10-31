@@ -13,6 +13,12 @@ Read the [Flamingo API guides](https://flamingo-api-guides.flatemu1.chatgpt.site
 
 The publisher of these APIs maintains this repository. Free plans are available; check current marketplace quotas and terms. Requests have hard monthly caps, and separate platform bandwidth fees may apply. A validation failure or deliberate retry can consume allowance. The Python examples make one request, refuse redirects, and do not automatically retry. Connector previews, scheduled checks and deliberate retries also consume allowance.
 
+## Try one API in Postman
+
+Download one of the four [Postman quickstart collections](postman/) and import it into your own workspace. Keep your subscribed app key as a local value, leave shared values blank, and send one chosen request. Access and PatternCopy need local selection of the linked synthetic file; CreativePack and ShelfRelay embed their demonstration input.
+
+The collections passed offline schema, contract and response-script checks. Live Postman import/runtime verification and Public API Network publication remain pending. See the [setup and verification notes](postman/README.md) before your first request.
+
 ## Set up the Python examples
 
 Use Python 3.10 or newer with a configured HTTPS trust store. Download or clone this repository, open a Bash or zsh terminal in its directory, and subscribe to the relevant API on RapidAPI. Enter your own app key without putting it in a command argument:
