@@ -42,6 +42,6 @@ Supplier credentials stay on the WordPress host. Product XML, required previous 
 
 Version 0.1.2 fixes private staging of downloaded XML, including directory containment, symlink and permission checks. Its source release passed 50 local WooCommerce web workflow checks, 16 private-staging checks, 31 connector contract checks and the official WordPress Plugin Check. The workflow uses an actual local API and WordPress/WooCommerce with owned fixtures. These checks do not establish arbitrary-feed compatibility or customer adoption.
 
-This is direct GitHub distribution. **WordPress.org submission and approval are pending.** The historical NAS download and API runtime remain at 0.1.1. The connector ZIP and matching source in this directory are 0.1.2; installing them does not change the hosted API runtime.
+This is direct GitHub distribution. **WordPress.org received 0.1.2 on October 31, 2026. Its status is Awaiting Review; manual approval and directory publication remain pending.** Its automated scan passed. The historical NAS download and API runtime remain at 0.1.1. The connector ZIP and matching source in this directory are 0.1.2; installing them does not change the hosted API runtime.
 
 IsraelDiego publishes the connector and processing service. This repository's introductory documentation was prepared with AI assistance.

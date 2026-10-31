@@ -27,9 +27,13 @@
   },
   "distribution": {
     "github": "Direct versioned ZIP and source",
-    "wordpress_org_submitted": false,
+    "wordpress_org_submitted": true,
     "wordpress_org_approved": false,
     "historical_nas_connector": "0.1.1",
-    "api_runtime": "0.1.1"
+    "api_runtime": "0.1.1",
+    "wordpress_org_status": "Awaiting Review",
+    "wordpress_org_automated_scan": "Pass",
+    "wordpress_org_initial_slug": "shelfrelay-for-woocommerce",
+    "wordpress_org_submission_verified_at_utc": "2026-10-31T20:41:59.993280+00:00"
   }
 }

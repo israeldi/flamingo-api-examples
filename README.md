@@ -78,7 +78,7 @@ The free [ShelfRelay connector 0.1.2](integrations/woocommerce/downloads/shelfre
 
 The connector requires WooCommerce, PHP 8.1+ with the documented extensions, and a separate subscribed RapidAPI application key. Start on staging with the fictional sample and inspect the preview before approving changes. It supports ONIX 3.0/3.1 physical editions, one ISBN per simple product and one source authority. It does not include a supplier catalogue, convert currency/tax, infer stock quantities or reconcile multiple suppliers.
 
-Version 0.1.2 fixes private staging of feed downloads and includes the local regression qualification described in its release provenance. This is direct GitHub distribution: WordPress.org directory submission and approval are pending. The historical NAS download still serves 0.1.1; the versioned ZIP above is the current repository download. No claim of WordPress.org approval, universal feed compatibility or customer adoption is made.
+Version 0.1.2 fixes private staging of feed downloads and includes the local regression qualification described in its release provenance. WordPress.org received connector 0.1.2 on October 31, 2026. Its automated scan passed and its status is **Awaiting Review**; manual approval and directory publication remain pending. The GitHub download is available during review. The historical NAS download still serves 0.1.1; the versioned ZIP above is the current repository download. No claim of WordPress.org approval, universal feed compatibility or customer adoption is made.
 
 ## Python output handling and verification
 
