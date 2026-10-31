@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+tables.zip
+tables.json
+optimized.zip
+report.json
+personalized.pdf
