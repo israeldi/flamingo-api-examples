@@ -4,10 +4,10 @@ Four independent collections help a developer make one deliberate processing req
 
 | Collection | First-use workflow | Request body |
 | --- | --- | --- |
-| `access-file-extractor.postman_collection.json` | Export a synthetic ACCDB to typed JSON and check its table manifest | Download the sample; select it under **Body → binary** |
-| `creativepack.postman_collection.json` | Optimize an embedded synthetic HTML5 ad ZIP and inspect its budget report | Embedded base64 ZIP in **raw JSON** |
-| `patterncopy-pdf.postman_collection.json` | Inspect a source revision, then optionally stamp a fictional buyer copy | Download the PDF; select it separately under **Body → binary** for each request |
-| `shelfrelay-onix.postman_collection.json` | Preview one fictional ONIX record and verify its accepted title, price and availability | Embedded original sample envelope in **raw JSON** |
+| [access-file-extractor.postman_collection.json](https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/postman/access-file-extractor.postman_collection.json) | Export a synthetic ACCDB to typed JSON and check its table manifest | Download the sample; select it under **Body → binary** |
+| [creativepack.postman_collection.json](https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/postman/creativepack.postman_collection.json) | Optimize an embedded synthetic HTML5 ad ZIP and inspect its budget report | Embedded base64 ZIP in **raw JSON** |
+| [patterncopy-pdf.postman_collection.json](https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/postman/patterncopy-pdf.postman_collection.json) | Inspect a source revision, then optionally stamp a fictional buyer copy | Download the PDF; select it separately under **Body → binary** for each request |
+| [shelfrelay-onix.postman_collection.json](https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/postman/shelfrelay-onix.postman_collection.json) | Preview one fictional ONIX record and verify its accepted title, price and availability | Embedded original sample envelope in **raw JSON** |
 
 These downloadable collection files passed the source and format checks described below. Postman Network publication and live Postman runtime checks are still pending.
 
@@ -19,7 +19,7 @@ These downloadable collection files passed the source and format checks describe
    [PatternCopy PDF](https://rapidapi.com/IsraelDiego/api/patterncopy-pdf),
    [ShelfRelay ONIX](https://rapidapi.com/IsraelDiego/api/shelfrelay-onix).
    Subscribe to that product's plan; its free Basic plan is intended for an initial compatibility check. Each API has a separate subscription and resource allowance.
-2. Import the chosen collection JSON into your own Postman workspace, or fork the actual published collection if a Network link has been provided. No Network URL or Run in Postman link is fabricated here.
+2. Import the chosen collection into your own Postman workspace using its JSON download link in the table above, or download the JSON file and import that file.
 3. In the collection's **Variables** tab, set `rapidapi_key` as a **local value only**. Leave its shared value blank. Obtain your own existing subscribed key through **RapidAPI Developer Dashboard → Apps → your application → Authorization**. [RapidAPI's instructions](https://docs.rapidapi.com/docs/keys-and-key-rotation).
    Alternatively, store the value in **Postman Local Vault** and change this collection's API Key authorization value to your local `{{vault:rapidapi_key}}` reference. The collection contains no script that reads the Vault or exports its contents.
 4. Read the collection's Start here section. Access and PatternCopy require local file selection; their published `file.src` is deliberately `null`. Public workspaces cannot distribute team-uploaded test files. Select a downloaded owned synthetic sample, or your own compatible authorized file.

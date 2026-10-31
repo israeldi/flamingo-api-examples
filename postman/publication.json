@@ -29,9 +29,11 @@
     },
     {
       "path": "README.md",
-      "bytes": 7803,
-      "sha256": "2dc3458f640f6733e360bc84fff80fd6599938ea4d045731b40367ceebd067b2",
-      "qualification_source_name": "README.public.md"
+      "bytes": 8238,
+      "sha256": "cdeb7057ce94777bc421d0b414fb0583d65815b1751e7d30890cba093d690b0f",
+      "qualification_source_name": "README.public.md",
+      "original_frozen_source_sha256": "2dc3458f640f6733e360bc84fff80fd6599938ea4d045731b40367ceebd067b2",
+      "root_consumer_edit": "Added direct JSON import/download links and simplified the import instruction; collection bytes unchanged."
     },
     {
       "path": "source-binding.json",
@@ -47,11 +49,12 @@
     }
   ],
   "qualification_receipt": "validation.json",
-  "qualification_receipt_scope": "Original complete qualification source, including build/test helpers and a maintainer README, which are not bundled here. The consumer README.md is copied from README.public.md and has the hash listed in this publication manifest.",
+  "qualification_receipt_scope": "Original complete qualification source, including build/test helpers and a maintainer README, which are not bundled here. Consumer README.md began as README.public.md, then received direct download links; original and current hashes are listed in this manifest.",
   "source_examples_commit": "117f529087673c3c1ee2e18771cdc7dd15d58283",
   "network_publication_verified": false,
   "live_postman_runtime_verified": false,
   "authenticated_gateway_execution_for_package": false,
   "shared_api_keys": "blank",
-  "no_processing_calls_for_publication": true
+  "no_processing_calls_for_publication": true,
+  "consumer_docs_updated_at_utc": "2026-10-31T21:30:54.278971+00:00"
 }
