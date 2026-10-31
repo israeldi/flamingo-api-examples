@@ -34,6 +34,8 @@ The key remains in your shell environment. Keep it out of browser code, source c
 
 If Python reports a certificate error, configure its trusted certificate store. Keep HTTPS certificate verification enabled.
 
+<a id="choose-your-workflow"></a>
+
 ## Export Access tables to CSV or JSON
 
 ```sh

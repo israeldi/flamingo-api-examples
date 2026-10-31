@@ -87,5 +87,12 @@
       "historical_validation_and_runtime_receipts_preserved": true,
       "qualification_scope": "Existing runtime qualification still covers identical executable content. This edit corrects documentation metadata only; no new gateway or runtime execution is claimed."
     }
+  ],
+  "legacy_documentation_aliases": [
+    {
+      "url": "https://github.com/israeldi/flamingo-api-examples#choose-your-workflow",
+      "target_section_url": "https://github.com/israeldi/flamingo-api-examples#export-access-tables-to-csv-or-json",
+      "purpose": "Existing public Postman and external references retain a working path to the Access workflow; the new downloadable collection uses the current explicit section fragment."
+    }
   ]
 }
