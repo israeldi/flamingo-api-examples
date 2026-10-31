@@ -29,11 +29,14 @@
     },
     {
       "path": "README.md",
-      "bytes": 8238,
-      "sha256": "cdeb7057ce94777bc421d0b414fb0583d65815b1751e7d30890cba093d690b0f",
+      "bytes": 10194,
+      "sha256": "498628848a8251fbcee0da5e7d3951146cec998d904d83e64d1550c4e11fff90",
       "qualification_source_name": "README.public.md",
       "original_frozen_source_sha256": "2dc3458f640f6733e360bc84fff80fd6599938ea4d045731b40367ceebd067b2",
-      "root_consumer_edit": "Added direct JSON import/download links and simplified the import instruction; collection bytes unchanged."
+      "root_consumer_edit": "Added direct JSON import/download links and simplified the import instruction; collection bytes unchanged.",
+      "previous_consumer_sha256": "cdeb7057ce94777bc421d0b414fb0583d65815b1751e7d30890cba093d690b0f",
+      "qualification_source_sha256": "498628848a8251fbcee0da5e7d3951146cec998d904d83e64d1550c4e11fff90",
+      "update_scope": "Published Network links and actual import/runtime qualification; all four collection JSONs unchanged"
     },
     {
       "path": "source-binding.json",
@@ -51,10 +54,21 @@
   "qualification_receipt": "validation.json",
   "qualification_receipt_scope": "Original complete qualification source, including build/test helpers and a maintainer README, which are not bundled here. Consumer README.md began as README.public.md, then received direct download links; original and current hashes are listed in this manifest.",
   "source_examples_commit": "117f529087673c3c1ee2e18771cdc7dd15d58283",
-  "network_publication_verified": false,
-  "live_postman_runtime_verified": false,
+  "network_publication_verified": true,
   "authenticated_gateway_execution_for_package": false,
   "shared_api_keys": "blank",
   "no_processing_calls_for_publication": true,
-  "consumer_docs_updated_at_utc": "2026-10-31T21:30:54.278971+00:00"
+  "consumer_docs_updated_at_utc": "2026-10-31T21:59:23.368760+00:00",
+  "workspace_url": "https://www.postman.com/idiego612-5459945/flamingo-apis-quickstarts/overview",
+  "postman_web_import_verified": true,
+  "official_postman_node_sandbox_verified": true,
+  "live_postman_web_send_verified": false,
+  "consumer_fork_completion_verified": false,
+  "public_collections": {
+    "Access File Extractor": "https://www.postman.com/idiego612-5459945/flamingo-apis-quickstarts/collection/59374683-c2d7281c-feb9-4174-8f15-6eb363991901",
+    "CreativePack": "https://www.postman.com/idiego612-5459945/flamingo-apis-quickstarts/collection/59374683-69cac163-66d2-4226-8982-95298156fed1",
+    "PatternCopy PDF": "https://www.postman.com/idiego612-5459945/flamingo-apis-quickstarts/collection/59374683-7b8ca820-a0b6-4591-ba23-09cb38b3b551",
+    "ShelfRelay ONIX": "https://www.postman.com/idiego612-5459945/flamingo-apis-quickstarts/collection/59374683-a30ca0ae-494b-4d7d-92a5-7f32635f7487"
+  },
+  "verification_scope": "All four imports and Public setting observed by publisher; signed-out workspace, four collection names and subscription/trial instructions independently rendered. Official Node Runtime fixture execution passed. No live web Send, authenticated gateway request, completed consumer fork or customer adoption is inferred."
 }

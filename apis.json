@@ -35,6 +35,11 @@
         {
           "type": "PostmanCollection",
           "url": "https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/postman/access-file-extractor.postman_collection.json"
+        },
+        {
+          "name": "Public Postman quickstart",
+          "type": "GettingStarted",
+          "url": "https://www.postman.com/idiego612-5459945/flamingo-apis-quickstarts/collection/59374683-c2d7281c-feb9-4174-8f15-6eb363991901"
         }
       ]
     },
@@ -81,6 +86,11 @@
           "name": "GitHub Marketplace Action",
           "type": "Documentation",
           "url": "https://github.com/marketplace/actions/creativepack-html5-zip-optimizer"
+        },
+        {
+          "name": "Public Postman quickstart",
+          "type": "GettingStarted",
+          "url": "https://www.postman.com/idiego612-5459945/flamingo-apis-quickstarts/collection/59374683-69cac163-66d2-4226-8982-95298156fed1"
         }
       ]
     },
@@ -110,6 +120,11 @@
         {
           "type": "PostmanCollection",
           "url": "https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/postman/patterncopy-pdf.postman_collection.json"
+        },
+        {
+          "name": "Public Postman quickstart",
+          "type": "GettingStarted",
+          "url": "https://www.postman.com/idiego612-5459945/flamingo-apis-quickstarts/collection/59374683-7b8ca820-a0b6-4591-ba23-09cb38b3b551"
         }
       ]
     },
@@ -140,6 +155,11 @@
         {
           "type": "PostmanCollection",
           "url": "https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/postman/shelfrelay-onix.postman_collection.json"
+        },
+        {
+          "name": "Public Postman quickstart",
+          "type": "GettingStarted",
+          "url": "https://www.postman.com/idiego612-5459945/flamingo-apis-quickstarts/collection/59374683-a30ca0ae-494b-4d7d-92a5-7f32635f7487"
         }
       ]
     }
@@ -152,6 +172,11 @@
     {
       "type": "GitHubRepository",
       "url": "https://github.com/israeldi/flamingo-api-examples"
+    },
+    {
+      "name": "Postman API Network workspace",
+      "type": "Documentation",
+      "url": "https://www.postman.com/idiego612-5459945/flamingo-apis-quickstarts/overview"
     }
   ],
   "maintainers": [

@@ -15,9 +15,9 @@ The publisher of these APIs maintains this repository. Free plans are available;
 
 ## Try one API in Postman
 
-Download one of the four [Postman quickstart collections](postman/) and import it into your own workspace. Keep your subscribed app key as a local value, leave shared values blank, and send one chosen request. Access and PatternCopy need local selection of the linked synthetic file; CreativePack and ShelfRelay embed their demonstration input.
+Choose a collection in the [public Postman workspace](https://www.postman.com/idiego612-5459945/flamingo-apis-quickstarts/overview), or download one of the four [collection JSON files](postman/) and import it into your own workspace. Keep your subscribed app key as a local value, leave shared values blank, and send one chosen request. Access and PatternCopy need local selection of the linked synthetic file; CreativePack and ShelfRelay embed their demonstration input.
 
-The collections passed offline schema, contract and response-script checks. Live Postman import/runtime verification and Public API Network publication remain pending. See the [setup and verification notes](postman/README.md) before your first request.
+All four collections were imported into Postman and the public workspace was verified while signed out. The response scripts also passed checks in the official Runtime against synthetic responses. See the [setup and verification notes](postman/README.md) before your first request.
 
 ## Set up the Python examples
 
