@@ -123,6 +123,11 @@
           "url": "https://github.com/israeldi/flamingo-api-examples/tree/main/integrations/patterncopy-woocommerce"
         },
         {
+          "name": "88-second layered PDF buyer-stamp demonstration",
+          "type": "Documentation",
+          "url": "https://www.youtube.com/watch?v=d_EdOoZVCAw"
+        },
+        {
           "type": "PostmanCollection",
           "url": "https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/postman/patterncopy-pdf.postman_collection.json"
         },

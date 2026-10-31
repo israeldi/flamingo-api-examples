@@ -70,6 +70,8 @@ For a build pipeline, use the [CreativePack GitHub Action](https://github.com/is
 
 ## Personalize a layered sewing-pattern PDF
 
+Watch the [88-second PatternCopy demo](https://www.youtube.com/watch?v=d_EdOoZVCAw) to see a buyer stamp with selectable S/M/L size layers. It uses original fictional artwork and buyer details, with actual locally processed PDF output.
+
 ```sh
 python3 patterncopy_stamp.py sample-pattern.pdf --text "Licensed to Alex Example - Order 1042" --output personalized.pdf
 ```

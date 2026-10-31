@@ -4,6 +4,8 @@ Add a visible buyer/order stamp to a supported PDF after WooCommerce authorizes 
 
 [Download connector 0.1.1](https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/integrations/patterncopy-woocommerce/downloads/patterncopy-pdf-0.1.1.zip) · [Browse GPL source](patterncopy-pdf/) · [Layered PDF guide](https://flamingo-api-guides.flatemu1.chatgpt.site/layered-pdf-personalization/) · [Try the Python example](../../patterncopy_stamp.py)
 
+See the stamped copy and selectable S/M/L layers in the [88-second PatternCopy demo](https://www.youtube.com/watch?v=d_EdOoZVCAw). The artwork and buyer details are fictional; the PDF output was processed locally with the released engine.
+
 ## Check your store's fit
 
 - PHP 8.1+ on a POSIX host, WordPress 6.7+ and WooCommerce 10.3+.
