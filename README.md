@@ -2,7 +2,7 @@
 
 Three runnable Python examples and a free WooCommerce connector for four focused APIs. The Python clients use the standard library, a local input file, and your own subscribed RapidAPI app key. The ShelfRelay connector previews supported ONIX book-feed updates before changing store products.
 
-Read the [Flamingo API guides](https://flamingo-api-guides.flatemu1.chatgpt.site/) for the full workflow and compatibility notes.
+Read the [Flamingo API guides](https://flamingo-api-guides.flatemu1.chatgpt.site/) for the full workflow and compatibility notes. The [machine-readable API index](apis.json) links each listing, customer gateway and workflow resource.
 
 | Task | API | Example or integration |
 | --- | --- | --- |

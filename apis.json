@@ -1,0 +1,136 @@
+{
+  "name": "Flamingo APIs",
+  "description": "An independent developer API portfolio by Israel Diego, published as IsraelDiego on RapidAPI. Four APIs with public workflow guides, Python examples and a free WooCommerce connector. Subscriptions and authenticated processing use RapidAPI.",
+  "url": "https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/apis.json",
+  "created": "2026-10-31",
+  "modified": "2026-10-31",
+  "specificationVersion": "0.24",
+  "type": "Collection",
+  "apis": [
+    {
+      "name": "Access File Extractor",
+      "description": "Access File Extractor exports supported local scalar MDB/ACCDB tables to CSV ZIP or typed JSON.",
+      "humanURL": "https://rapidapi.com/IsraelDiego/api/access-file-extractor",
+      "baseURL": "https://access-file-extractor.p.rapidapi.com",
+      "tags": [
+        "Access",
+        "MDB",
+        "ACCDB",
+        "CSV",
+        "JSON"
+      ],
+      "properties": [
+        {
+          "type": "Documentation",
+          "url": "https://rapidapi.com/IsraelDiego/api/access-file-extractor"
+        },
+        {
+          "type": "GettingStarted",
+          "url": "https://flamingo-api-guides.flatemu1.chatgpt.site/access-to-csv-json/"
+        },
+        {
+          "type": "Examples",
+          "url": "https://github.com/israeldi/flamingo-api-examples/blob/main/access_extract.py"
+        }
+      ]
+    },
+    {
+      "name": "CreativePack",
+      "description": "CreativePack optimizes PNG/JPEG assets inside an HTML5 advertising ZIP and reports the resulting archive size and budget outcome.",
+      "humanURL": "https://rapidapi.com/IsraelDiego/api/creativepack",
+      "baseURL": "https://creativepack.p.rapidapi.com",
+      "tags": [
+        "HTML5",
+        "Advertising",
+        "ZIP",
+        "PNG",
+        "JPEG"
+      ],
+      "properties": [
+        {
+          "type": "Documentation",
+          "url": "https://rapidapi.com/IsraelDiego/api/creativepack"
+        },
+        {
+          "type": "GettingStarted",
+          "url": "https://flamingo-api-guides.flatemu1.chatgpt.site/html5-ad-zip-optimization/"
+        },
+        {
+          "type": "Examples",
+          "url": "https://github.com/israeldi/flamingo-api-examples/blob/main/creativepack_optimize.py"
+        },
+        {
+          "type": "OpenAPI",
+          "url": "https://creativepack.flamingoapis.synology.me:8443/openapi.json"
+        }
+      ]
+    },
+    {
+      "name": "PatternCopy PDF",
+      "description": "PatternCopy PDF inspects supported PDFs and adds visible buyer-specific text while retaining supported original page geometry and PDF size layers.",
+      "humanURL": "https://rapidapi.com/IsraelDiego/api/patterncopy-pdf",
+      "baseURL": "https://patterncopy-pdf.p.rapidapi.com",
+      "tags": [
+        "PDF",
+        "Personalization",
+        "Sewing patterns"
+      ],
+      "properties": [
+        {
+          "type": "Documentation",
+          "url": "https://rapidapi.com/IsraelDiego/api/patterncopy-pdf"
+        },
+        {
+          "type": "GettingStarted",
+          "url": "https://flamingo-api-guides.flatemu1.chatgpt.site/layered-pdf-personalization/"
+        },
+        {
+          "type": "Examples",
+          "url": "https://github.com/israeldi/flamingo-api-examples/blob/main/patterncopy_stamp.py"
+        }
+      ]
+    },
+    {
+      "name": "ShelfRelay ONIX",
+      "description": "ShelfRelay ONIX interprets authorized ONIX 3.0/3.1 feeds for physical-book WooCommerce catalog updates, including preview, selected price/availability and prior-state block updates.",
+      "humanURL": "https://rapidapi.com/IsraelDiego/api/shelfrelay-onix",
+      "baseURL": "https://shelfrelay-onix.p.rapidapi.com",
+      "tags": [
+        "ONIX",
+        "Books",
+        "WooCommerce",
+        "Product catalog"
+      ],
+      "properties": [
+        {
+          "type": "Documentation",
+          "url": "https://rapidapi.com/IsraelDiego/api/shelfrelay-onix"
+        },
+        {
+          "type": "GettingStarted",
+          "url": "https://flamingo-api-guides.flatemu1.chatgpt.site/onix-to-woocommerce/"
+        },
+        {
+          "type": "GitHubRepository",
+          "url": "https://github.com/israeldi/flamingo-api-examples/tree/main/integrations/woocommerce"
+        }
+      ]
+    }
+  ],
+  "common": [
+    {
+      "type": "Documentation",
+      "url": "https://flamingo-api-guides.flatemu1.chatgpt.site/"
+    },
+    {
+      "type": "GitHubRepository",
+      "url": "https://github.com/israeldi/flamingo-api-examples"
+    }
+  ],
+  "maintainers": [
+    {
+      "FN": "Israel Diego",
+      "url": "https://github.com/israeldi"
+    }
+  ]
+}
