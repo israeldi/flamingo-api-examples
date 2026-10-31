@@ -1,18 +1,19 @@
-# Access export, HTML5 ad ZIP optimization, and layered PDF personalization
+# File-processing API examples and WooCommerce integrations
 
-Runnable Python 3 examples for three focused file-processing APIs. These examples use the standard library, a local input file, and your own subscribed RapidAPI app key.
+Three runnable Python examples and a free WooCommerce connector for four focused APIs. The Python clients use the standard library, a local input file, and your own subscribed RapidAPI app key. The ShelfRelay connector previews supported ONIX book-feed updates before changing store products.
 
 Read the [Flamingo API guides](https://flamingo-api-guides.flatemu1.chatgpt.site/) for the full workflow and compatibility notes.
 
-| Task | API | Python example |
+| Task | API | Example or integration |
 | --- | --- | --- |
 | Export MDB/ACCDB local tables to a CSV ZIP or typed JSON | [Access File Extractor](https://rapidapi.com/IsraelDiego/api/access-file-extractor) | [Python example](access_extract.py) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/access-to-csv-json/) |
 | Optimize PNG/JPEG assets inside an HTML5 advertising ZIP | [CreativePack](https://rapidapi.com/IsraelDiego/api/creativepack) | [Python example](creativepack_optimize.py) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/html5-ad-zip-optimization/) |
 | Add a visible buyer stamp while retaining supported PDF size layers | [PatternCopy PDF](https://rapidapi.com/IsraelDiego/api/patterncopy-pdf) | [Python example](patterncopy_stamp.py) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/layered-pdf-personalization/) |
+| Preview and apply supported ONIX physical-book updates in WooCommerce | [ShelfRelay ONIX](https://rapidapi.com/IsraelDiego/api/shelfrelay-onix) | [Connector, source and installation](integrations/woocommerce/) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/onix-to-woocommerce/) |
 
-The publisher of these APIs maintains this repository. Free plans are available; check current marketplace quotas and terms. Requests have hard monthly caps, and separate platform bandwidth fees may apply. A validation failure or deliberate retry can consume allowance. The examples make one request, refuse redirects, and do not automatically retry.
+The publisher of these APIs maintains this repository. Free plans are available; check current marketplace quotas and terms. Requests have hard monthly caps, and separate platform bandwidth fees may apply. A validation failure or deliberate retry can consume allowance. The Python examples make one request, refuse redirects, and do not automatically retry. Connector previews, scheduled checks and deliberate retries also consume allowance.
 
-## Set up
+## Set up the Python examples
 
 Use Python 3.10 or newer with a configured HTTPS trust store. Download or clone this repository, open a Bash or zsh terminal in its directory, and subscribe to the relevant API on RapidAPI. Enter your own app key without putting it in a command argument:
 
@@ -71,7 +72,15 @@ Limits include 20 MiB/100 pages of source, 24 MiB output, and up to 160 characte
 
 For supported simple WooCommerce downloadable products, see [service onboarding and the connector download](https://flamingoapis.synology.me:8443/). Its scope is one to five local PDFs; source-directory protection remains your store’s responsibility.
 
-## Output handling and verification
+## Preview ONIX book updates in WooCommerce
+
+The free [ShelfRelay connector 0.1.2](integrations/woocommerce/downloads/shelfrelay-for-woocommerce-0.1.2.zip) and its [GPLv2-or-later source](integrations/woocommerce/shelfrelay-for-woocommerce/) are available directly from this repository. Follow the [installation instructions](integrations/woocommerce/README.md) and [preview-first walkthrough](https://rapidapi.com/IsraelDiego/api/shelfrelay-onix/tutorials/import-onix-into-woocommerce%3A-a-preview-first-walkthrough).
+
+The connector requires WooCommerce, PHP 8.1+ with the documented extensions, and a separate subscribed RapidAPI application key. Start on staging with the fictional sample and inspect the preview before approving changes. It supports ONIX 3.0/3.1 physical editions, one ISBN per simple product and one source authority. It does not include a supplier catalogue, convert currency/tax, infer stock quantities or reconcile multiple suppliers.
+
+Version 0.1.2 fixes private staging of feed downloads and includes the local regression qualification described in its release provenance. This is direct GitHub distribution: WordPress.org directory submission and approval are pending. The historical NAS download still serves 0.1.1; the versioned ZIP above is the current repository download. No claim of WordPress.org approval, universal feed compatibility or customer adoption is made.
+
+## Python output handling and verification
 
 All output paths must be new. These scripts refuse to overwrite an existing file or symlink. A successful integrity check verifies the delivered container and supported response fields; compare exported values and inspect PDF/artwork behavior before production use.
 

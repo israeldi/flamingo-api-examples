@@ -1,0 +1,35 @@
+{
+  "product": "ShelfRelay for WooCommerce",
+  "version": "0.1.2",
+  "license": "GPL-2.0-or-later",
+  "source_release_commit": "95f2a6179fa5aa650515eba2da2e98934f76cb16",
+  "qualification_parent_commit": "d46a485ee865c2decc8f446a0895057a2646353a",
+  "zip": "downloads/shelfrelay-for-woocommerce-0.1.2.zip",
+  "zip_bytes": 41316,
+  "zip_sha256": "53facd8d6c206cb7ba0b58c27195cdfd9976b2160936e8b18bc030b53914ef06",
+  "source_files_sha256": {
+    "LICENSE.txt": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6",
+    "assets/admin.css": "f3edaf4e4739f99a9f8db146e83a11f0f4d39b584b2f5d7fd4c4cd7c999a6e2e",
+    "assets/admin.js": "fc16004a30256410bd158a9eefd1e9f051d25bc4d78f8640ad0154eb2aad5151",
+    "includes/class-shelfrelay-api.php": "192c79dbdbec3182f331187eb8209cc30e4b645e481b41486090b1d1b50e6aca",
+    "includes/class-shelfrelay-feed.php": "30fb64ae2ff5b16a30aaf4bc23465f477934eaf76920520a379b38df2973fa30",
+    "includes/class-shelfrelay-store.php": "6a4d01c2589fe727b2879d449290803e935549401f6d47a2833e8cbed3209808",
+    "includes/class-shelfrelay.php": "99cf01e3314407fe6e3bcacb30a9f0b37e31ed7c92deeebc8a1ac673040775ea",
+    "readme.txt": "69fb03235e3a4ab7e76cdf1be02cc35d02420d01adb68be9346869e4999b2d0b",
+    "shelfrelay-for-woocommerce.php": "0084bdd629dd89bcb13893d880de479bbe1cda2b0bbb41600b990c97eeac0434"
+  },
+  "qualification": {
+    "woocommerce_web_workflow_checks": 50,
+    "private_staging_checks": 16,
+    "connector_contract_checks": 31,
+    "official_wordpress_plugin_check": "passed",
+    "scope": "Local API and actual WordPress admin HTTP/WooCommerce writes using owned fixtures. These checks are not new RapidAPI gateway calls or evidence of arbitrary-feed compatibility or customer adoption."
+  },
+  "distribution": {
+    "github": "Direct versioned ZIP and source",
+    "wordpress_org_submitted": false,
+    "wordpress_org_approved": false,
+    "historical_nas_connector": "0.1.1",
+    "api_runtime": "0.1.1"
+  }
+}
