@@ -1,0 +1,42 @@
+{
+  "connector": "PatternCopy PDF for WooCommerce",
+  "version": "0.1.1",
+  "published_source_release_commit": "604c61f1f5a41752b4621a1770e6098991fd9ffc",
+  "mirror_prepared_at_utc": "2026-10-31T22:56:33.026841+00:00",
+  "upstream_public_download": "https://flamingoapis.synology.me:8443/downloads/patterncopy-pdf-0.1.1.zip",
+  "zip": "downloads/patterncopy-pdf-0.1.1.zip",
+  "zip_bytes": 22581,
+  "zip_sha256": "4ea14fbd32c0fbafe4289893e620f7ed25e6aed38c31ef75336e30d717e3ffd4",
+  "source_root": "patterncopy-pdf/",
+  "production_file_count": 6,
+  "production_files": {
+    "patterncopy-pdf.php": "f883c14c0d3f045109a34b9d63e885e1d0f1b5bf8f10ec9c2c97ca974d503057",
+    "includes/class-patterncopy-service.php": "8d9bd3846bcb4d433ded7e5354e2320455e643e10e44d6397f17137f97266e49",
+    "includes/class-patterncopy-plugin.php": "21fade3ef35ad522b4468564a2a23260c9ef8001f4d1145c080e2ec549f3cdb8",
+    "uninstall.php": "bf37c56629d8469ca46f68fa8afd9956ca43267be41405b0878ea15faa71c67a",
+    "readme.txt": "dca2e8a9f28ffababa5a7024de824c0188425c34d7828a03eeb94cd8d9d8318a",
+    "LICENSE": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6"
+  },
+  "license": "GPL-2.0-or-later; scoped to this plugin",
+  "qualification_manifest_sha256": "27aa4e7c74540127c1b75dd0e08c75720b42c783e6bafd7c2c8be10921bba9d0",
+  "existing_qualification": {
+    "observed_fixture_versions": {
+      "php": "8.4.27",
+      "wordpress": "7.1.4",
+      "woocommerce": "11.2.1"
+    },
+    "baseline": "42 historical connector web checks; distinguish from later 0.1.1-focused checks.",
+    "version_0_1_1": "15 focused response/transport checks and 9 actual external-gateway/WooCommerce checks, plus gateway-quota fail-closed observation.",
+    "source_php_unchanged": true,
+    "readme_updated_after_behavior_tests": true
+  },
+  "mirror_checks": {
+    "archive_crc": "pass",
+    "archive_exact_allowlist_and_source_parity": "pass",
+    "mirrored_source_and_zip_hashes": "pass"
+  },
+  "fresh_runtime_tests_run_for_mirror": false,
+  "fresh_gateway_calls": 0,
+  "wordpress_directory_approval_claimed": false,
+  "customer_adoption_claimed": false
+}

@@ -1,6 +1,6 @@
 # File-processing API examples and WooCommerce integrations
 
-Three runnable Python examples and a free WooCommerce connector for four focused APIs. The Python clients use the standard library, a local input file, and your own subscribed RapidAPI app key. The ShelfRelay connector previews supported ONIX book-feed updates before changing store products.
+Three runnable Python examples and two free WooCommerce connectors for four focused APIs. The Python clients use the standard library, a local input file, and your own subscribed RapidAPI app key. The PatternCopy connector personalizes authorized PDF downloads; the ShelfRelay connector previews supported ONIX book-feed updates before changing store products.
 
 Read the [Flamingo API guides](https://flamingo-api-guides.flatemu1.chatgpt.site/) for the full workflow and compatibility notes. The [machine-readable API index](apis.json) links each listing, customer gateway and workflow resource.
 
@@ -8,7 +8,7 @@ Read the [Flamingo API guides](https://flamingo-api-guides.flatemu1.chatgpt.site
 | --- | --- | --- |
 | Export MDB/ACCDB local tables to a CSV ZIP or typed JSON | [Access File Extractor](https://rapidapi.com/IsraelDiego/api/access-file-extractor) | [Python example](access_extract.py) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/access-to-csv-json/) |
 | Optimize PNG/JPEG assets inside an HTML5 advertising ZIP | [CreativePack](https://rapidapi.com/IsraelDiego/api/creativepack) | [Python example](creativepack_optimize.py) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/html5-ad-zip-optimization/) |
-| Add a visible buyer stamp while retaining supported PDF size layers | [PatternCopy PDF](https://rapidapi.com/IsraelDiego/api/patterncopy-pdf) | [Python example](patterncopy_stamp.py) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/layered-pdf-personalization/) |
+| Add a visible buyer stamp while retaining supported PDF size layers | [PatternCopy PDF](https://rapidapi.com/IsraelDiego/api/patterncopy-pdf) | [Python example](patterncopy_stamp.py) · [WooCommerce connector](integrations/patterncopy-woocommerce/) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/layered-pdf-personalization/) |
 | Preview and apply supported ONIX physical-book updates in WooCommerce | [ShelfRelay ONIX](https://rapidapi.com/IsraelDiego/api/shelfrelay-onix) | [Connector, source and installation](integrations/woocommerce/) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/onix-to-woocommerce/) |
 
 The publisher of these APIs maintains this repository. Free plans are available; check current marketplace quotas and terms. Requests have hard monthly caps, and separate platform bandwidth fees may apply. A validation failure or deliberate retry can consume allowance. The Python examples make one request, refuse redirects, and do not automatically retry. Connector previews, scheduled checks and deliberate retries also consume allowance.
@@ -80,7 +80,7 @@ The service retains supported optional-content layers and original page geometry
 
 Limits include 20 MiB/100 pages of source, 24 MiB output, and up to 160 characters that fit the page. Supported text is unshaped left-to-right glyphs in the included DejaVu Sans font. Encryption, signatures, attachments, scripts, XFA, unsafe actions, and other unsupported features are rejected. The owned `sample-pattern.pdf` is a synthetic layered demonstration, not a redistributed commercial pattern.
 
-For supported simple WooCommerce downloadable products, see [service onboarding and the connector download](https://flamingoapis.synology.me:8443/). Its scope is one to five local PDFs; source-directory protection remains your store’s responsibility.
+For supported simple WooCommerce downloadable products, use the free [PatternCopy connector 0.1.1 and installation guide](integrations/patterncopy-woocommerce/). The unchanged GPLv2-or-later source and installable ZIP are available here. Its scope is one to five local PDFs; source-directory protection remains your store’s responsibility. [Service onboarding](https://flamingoapis.synology.me:8443/) is also available.
 
 ## Preview ONIX book updates in WooCommerce
 

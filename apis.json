@@ -1,6 +1,6 @@
 {
   "name": "Flamingo APIs",
-  "description": "An independent developer API portfolio by Israel Diego, published as IsraelDiego on RapidAPI. Four APIs with public workflow guides, Python examples and a free WooCommerce connector. Subscriptions and authenticated processing use RapidAPI.",
+  "description": "An independent developer API portfolio by Israel Diego, published as IsraelDiego on RapidAPI. Four APIs with public workflow guides, Python examples and free WooCommerce connectors. Subscriptions and authenticated processing use RapidAPI.",
   "url": "https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/apis.json",
   "created": "2026-10-31",
   "modified": "2026-10-31",
@@ -116,6 +116,11 @@
         {
           "type": "Examples",
           "url": "https://github.com/israeldi/flamingo-api-examples/blob/main/patterncopy_stamp.py"
+        },
+        {
+          "name": "WooCommerce connector, source and installation",
+          "type": "GitHubRepository",
+          "url": "https://github.com/israeldi/flamingo-api-examples/tree/main/integrations/patterncopy-woocommerce"
         },
         {
           "type": "PostmanCollection",
