@@ -5,9 +5,10 @@
   "artifacts": [
     {
       "path": "access-file-extractor.postman_collection.json",
-      "bytes": 7122,
-      "sha256": "669f5bc2bf0563377bae8bb6a06d15117a458f507b22549d63d6a0ce52212ff1",
-      "qualification_source_name": "access-file-extractor.postman_collection.json"
+      "bytes": 7137,
+      "sha256": "4a7cca202504593e5063a22a6ca89b9850747398b3c08374c896d262ce3ee7a8",
+      "qualification_source_name": "access-file-extractor.postman_collection.json",
+      "original_runtime_qualified_sha256": "669f5bc2bf0563377bae8bb6a06d15117a458f507b22549d63d6a0ce52212ff1"
     },
     {
       "path": "creativepack.postman_collection.json",
@@ -70,5 +71,21 @@
     "PatternCopy PDF": "https://www.postman.com/idiego612-5459945/flamingo-apis-quickstarts/collection/59374683-7b8ca820-a0b6-4591-ba23-09cb38b3b551",
     "ShelfRelay ONIX": "https://www.postman.com/idiego612-5459945/flamingo-apis-quickstarts/collection/59374683-a30ca0ae-494b-4d7d-92a5-7f32635f7487"
   },
-  "verification_scope": "All four imports and Public setting observed by publisher; signed-out workspace, four collection names and subscription/trial instructions independently rendered. Official Node Runtime fixture execution passed. No live web Send, authenticated gateway request, completed consumer fork or customer adoption is inferred."
+  "verification_scope": "All four imports and Public setting observed by publisher; signed-out workspace, four collection names and subscription/trial instructions independently rendered. Official Node Runtime fixture execution passed. No live web Send, authenticated gateway request, completed consumer fork or customer adoption is inferred.",
+  "metadata_amendments": [
+    {
+      "verified_at_utc": "2026-10-31T22:22:32.003323+00:00",
+      "file": "access-file-extractor.postman_collection.json",
+      "changed_json_path": "info.description",
+      "old_url": "https://github.com/israeldi/flamingo-api-examples#choose-your-workflow",
+      "new_url": "https://github.com/israeldi/flamingo-api-examples#export-access-tables-to-csv-or-json",
+      "exactly_one_literal_replacement": true,
+      "all_other_bytes_unchanged": true,
+      "before_sha256": "669f5bc2bf0563377bae8bb6a06d15117a458f507b22549d63d6a0ce52212ff1",
+      "after_sha256": "4a7cca202504593e5063a22a6ca89b9850747398b3c08374c896d262ce3ee7a8",
+      "request_auth_body_variables_and_scripts_unchanged": true,
+      "historical_validation_and_runtime_receipts_preserved": true,
+      "qualification_scope": "Existing runtime qualification still covers identical executable content. This edit corrects documentation metadata only; no new gateway or runtime execution is claimed."
+    }
+  ]
 }
