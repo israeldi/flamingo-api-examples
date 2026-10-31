@@ -70,6 +70,12 @@
         {
           "type": "PostmanCollection",
           "url": "https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/postman/creativepack.postman_collection.json"
+        },
+        {
+          "name": "GitHub Actions integration",
+          "description": "Optimize a built HTML5 ZIP, save a verified report and enforce the complete archive byte budget in a build workflow.",
+          "type": "GitHubRepository",
+          "url": "https://github.com/israeldi/creativepack-optimize-action"
         }
       ]
     },
