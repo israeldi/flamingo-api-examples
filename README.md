@@ -23,6 +23,8 @@ All four collections were imported into Postman and the public workspace was ver
 
 [Flamingo File Tools](https://github.com/israeldi/flamingo-file-tools-mcp) connects these four APIs to clients that support the Model Context Protocol (MCP) over local stdio. Its [version 0.1.0 bundle](https://github.com/israeldi/flamingo-file-tools-mcp/releases/download/v0.1.0/flamingo-file-tools.mcpb) is for clients that support MCPB installation; the repository also documents manual setup with Node.js 20 or later.
 
+The free [Flamingo File Tools workflow skill on Agensi](https://www.agensi.io/skills/flamingo-file-tools-access-pdf-zip-onix) provides instructions for the separately installed MCP bridge. It requires your own RapidAPI app key and a separate subscription for each selected API; API processing is separately metered and no allowance is included with the skill.
+
 Select a private working folder you control and configure your own subscribed RapidAPI app key through the client's private settings. Start with `capabilities`, which needs no key and makes no upload. Each processing invocation requires consent and consumes allowance; PatternCopy inspection and stamping are separate requests. ShelfRelay saves a projection for review rather than changing store products. Read the bridge's [supported inputs, installation and data-handling notes](https://github.com/israeldi/flamingo-file-tools-mcp#readme) before processing files.
 
 ## Set up the Python examples
