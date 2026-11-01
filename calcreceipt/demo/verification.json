@@ -1,0 +1,44 @@
+{
+  "recorded_at_utc": "2026-11-01T20:52:55.812052+00:00",
+  "input": "../sample.xlsx",
+  "output": "calculated.xlsx",
+  "full_report": "report.json",
+  "client_commit_used": "4f681f3c09e3d8b70ea2e9ddbd78a9653a569daf",
+  "client_sha256": "70c97d23369a16ef7acad54f4d4901f8b620c64cdb37d95287264e85d3fbd10d",
+  "source_bytes": 1822,
+  "output_bytes": 1861,
+  "input_sha256": "cb48733830a433ec3c03b9081d42ded6efb40fc73d38fa43767a7dd2f69262d4",
+  "output_sha256": "884c3964028fcca52856865c3617e9694f77d3b32c4a6688ec1c3c2ea5c76ebf",
+  "engine_version": "7.4.7.2",
+  "formula_cells": 10,
+  "all_ten_typed_results_verified": true,
+  "original_missing_formula_caches": 8,
+  "changed_cache_count": 10,
+  "intentional_error_cells": [
+    {
+      "sheet": "Results",
+      "cell": "A6",
+      "error": "#DIV/0!"
+    }
+  ],
+  "review_required": true,
+  "preservation": {
+    "original_formulas": true,
+    "non_formula_cells": true,
+    "other_package_parts_byte_identical": true
+  },
+  "real_gateway_statuses": [
+    200,
+    200,
+    200,
+    429
+  ],
+  "remaining_free_requests": [
+    "2",
+    "1",
+    "0",
+    "0"
+  ],
+  "explicit_platform_monthly_hard_stop": true,
+  "scope": "Actual original-fictional-workbook run through the published standalone client and RapidAPI. Not an Agensi-connected-agent run, customer testimonial, paid sale or payout. No requests were retried."
+}

@@ -1,0 +1,204 @@
+{
+  "source_sha256": "cb48733830a433ec3c03b9081d42ded6efb40fc73d38fa43767a7dd2f69262d4",
+  "input_sha256": "cb48733830a433ec3c03b9081d42ded6efb40fc73d38fa43767a7dd2f69262d4",
+  "input_bytes": 1822,
+  "expanded_bytes": 2383,
+  "members": 6,
+  "worksheets": 2,
+  "populated_cells": 12,
+  "formula_cells": 10,
+  "original_missing_formula_caches": 8,
+  "unrefreshed_derived_parts": [],
+  "schema_version": "1.0",
+  "engine": "LibreOffice Calc",
+  "engine_version": "7.4.7.2",
+  "status": "calculated",
+  "output_sha256": "884c3964028fcca52856865c3617e9694f77d3b32c4a6688ec1c3c2ea5c76ebf",
+  "output_bytes": 1861,
+  "source_formulas_sha256": "ca22c8550b0e60544075a6855d1b4443943288214f7228b884d7da499aa25be8",
+  "formula_text_included": false,
+  "cache_changes": [
+    {
+      "sheet": "Results",
+      "cell": "A1",
+      "original_cache": {
+        "kind": "number",
+        "value": "999"
+      },
+      "calculated_cache": {
+        "kind": "number",
+        "value": "12"
+      },
+      "cache_changed": true
+    },
+    {
+      "sheet": "Results",
+      "cell": "A2",
+      "original_cache": {
+        "kind": "number",
+        "value": "999"
+      },
+      "calculated_cache": {
+        "kind": "number",
+        "value": "24"
+      },
+      "cache_changed": true
+    },
+    {
+      "sheet": "Results",
+      "cell": "A3",
+      "original_cache": {
+        "kind": "missing",
+        "value": null
+      },
+      "calculated_cache": {
+        "kind": "string",
+        "value": "ready"
+      },
+      "cache_changed": true
+    },
+    {
+      "sheet": "Results",
+      "cell": "A4",
+      "original_cache": {
+        "kind": "missing",
+        "value": null
+      },
+      "calculated_cache": {
+        "kind": "boolean",
+        "value": "1"
+      },
+      "cache_changed": true
+    },
+    {
+      "sheet": "Results",
+      "cell": "A5",
+      "original_cache": {
+        "kind": "missing",
+        "value": null
+      },
+      "calculated_cache": {
+        "kind": "string",
+        "value": ""
+      },
+      "cache_changed": true
+    },
+    {
+      "sheet": "Results",
+      "cell": "A6",
+      "original_cache": {
+        "kind": "missing",
+        "value": null
+      },
+      "calculated_cache": {
+        "kind": "error",
+        "value": "#DIV/0!"
+      },
+      "cache_changed": true
+    },
+    {
+      "sheet": "Results",
+      "cell": "A7",
+      "original_cache": {
+        "kind": "missing",
+        "value": null
+      },
+      "calculated_cache": {
+        "kind": "number",
+        "value": "46327"
+      },
+      "cache_changed": true
+    },
+    {
+      "sheet": "Results",
+      "cell": "A8",
+      "original_cache": {
+        "kind": "missing",
+        "value": null
+      },
+      "calculated_cache": {
+        "kind": "number",
+        "value": "0.3"
+      },
+      "cache_changed": true
+    },
+    {
+      "sheet": "Results",
+      "cell": "A9",
+      "original_cache": {
+        "kind": "missing",
+        "value": null
+      },
+      "calculated_cache": {
+        "kind": "string",
+        "value": "#REF!"
+      },
+      "cache_changed": true
+    },
+    {
+      "sheet": "Results",
+      "cell": "A10",
+      "original_cache": {
+        "kind": "missing",
+        "value": null
+      },
+      "calculated_cache": {
+        "kind": "string",
+        "value": "caf\u00e9"
+      },
+      "cache_changed": true
+    }
+  ],
+  "changed_cache_count": 10,
+  "error_cells": [
+    {
+      "sheet": "Results",
+      "cell": "A6",
+      "error": "#DIV/0!"
+    }
+  ],
+  "review_required": true,
+  "preservation": {
+    "original_formulas": true,
+    "non_formula_cells": true,
+    "other_package_parts_byte_identical": true
+  },
+  "warnings": [
+    "LibreOffice calculation results are not a guarantee of Microsoft Excel parity or business/financial correctness.",
+    "Only formula-cell caches were refreshed. Original formulas, other cell values and non-worksheet package parts were preserved.",
+    "A missing original cache is reported as missing, never converted to zero for comparison.",
+    "Numeric results are lexical strings from LibreOffice; date results retain the workbook numeric/date-format convention."
+  ],
+  "elapsed_seconds": 1.938,
+  "network_boundary": {
+    "mode": "docker_network_none",
+    "interface_inventory": [
+      {
+        "name": "lo",
+        "ifindex": 1,
+        "flags_hex": "0x9",
+        "up": true,
+        "loopback": true
+      },
+      {
+        "name": "sit0",
+        "ifindex": 2,
+        "flags_hex": "0x80",
+        "up": false,
+        "loopback": false
+      }
+    ],
+    "non_loopback_interfaces": [
+      "sit0"
+    ],
+    "dormant_non_loopback_interfaces": [
+      "sit0"
+    ],
+    "active_non_loopback_interfaces": [],
+    "non_loopback_routes": [],
+    "outbound_connect": "unreachable",
+    "ipv4_tcp_probe": "unreachable",
+    "ipv4_udp_probe": "unreachable",
+    "uno_local_pipe": "permitted"
+  }
+}

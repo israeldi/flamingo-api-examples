@@ -1,6 +1,6 @@
 # CalcReceipt standalone client and fictional sample
 
-**Candidate API: not public yet.** These original example files are published in advance so the Agensi workflow can use an independently obtained client. Public origin/gateway acceptance, subscription-cap checks and the Agensi listing remain pending. Do not upload customer files or infer availability from this repository alone.
+**API published:** [CalcReceipt on RapidAPI](https://rapidapi.com/IsraelDiego/api/calcreceipt). The public listing, anonymous pricing and subscription entry were verified on November 1, 2026. The standalone client below completed real gateway processing, and the current free plan stopped the fourth request at its monthly hard cap. Read the [contract](CONTRACT.md) and current [Pricing](https://rapidapi.com/IsraelDiego/api/calcreceipt/pricing) before uploading a file.
 
 The creator supplies these standalone files for downloading, saving and running with the CalcReceipt API. They are separate from the instructions delivered through Agensi's agent connection. Agensi does not install a local skill directory, run this client or include API access. Do not export Agensi-delivered skill files to obtain a runnable script.
 
@@ -11,11 +11,11 @@ The creator supplies these standalone files for downloading, saving and running 
 - `generate_sample.py`: reproduces the fictional workbook locally without a request or credentials; refuses an existing output path.
 - `checksums.json`: SHA-256 of these client/example files.
 
-Use Python 3.10+ with a configured HTTPS trust store, an authorized local input/output directory, your own separate active CalcReceipt RapidAPI subscription and its application key configured privately as `RAPIDAPI_KEY`. Do not put a key into chat, source, a URL or command arguments. Keep TLS certificate verification enabled. The fixed assigned host is `calcreceipt.p.rapidapi.com`; its public processing path has not yet been accepted in this candidate release.
+Use Python 3.10+ with a configured HTTPS trust store, an authorized local input/output directory, your own separate active CalcReceipt RapidAPI subscription and its application key configured privately as `RAPIDAPI_KEY`. Do not put a key into chat, source, a URL or command arguments. Keep TLS certificate verification enabled. The fixed assigned host is `calcreceipt.p.rapidapi.com`; its public processing path was verified with the original fictional workbook.
 
 Download these files from an exact reviewed repository commit, check `checksums.json`, and inspect the original client before running it. Do not pipe a download into a shell. Use an already authorized client/configuration when available rather than installing duplicates. This download is independent of Agensi; no skill-file export is required.
 
-## One processing attempt, after release
+## One processing attempt
 
 From the directory containing the independently obtained client and sample:
 
@@ -25,7 +25,7 @@ python3 client.py sample.xlsx --output recalculated.xlsx --report calculation-re
 
 Choose two distinct new output paths in an existing authorized directory. The command uploads the selected workbook through RapidAPI to CalcReceipt and consumes one request if processed. Network failures do not prove whether a request was processed; a deliberate retry can consume another request. The client does not retry automatically.
 
-The saved private plans are Basic $0/3 requests, Pro $9/250 and Ultra $19/1,000 per month, each with a hard request cap. This is candidate configuration, not current public checkout proof. Platform bandwidth fees are separately disclosed by RapidAPI. This repository and any free Agensi instruction skill provide no subscription or hosted-processing allowance.
+The published plans are Basic $0/3 requests, Pro $9/250 and Ultra $19/1,000 per month, each with a hard request cap. Anonymous pricing was checked, and the current free-plan counter was observed at 2, 1 and 0 before an explicit platform monthly HTTP 429. Paid checkout was not exercised. Platform bandwidth fees are separately disclosed by RapidAPI. This repository and any free Agensi instruction skill provide no subscription or hosted-processing allowance.
 
 To reproduce only the fictional source, without an upload:
 
@@ -41,6 +41,12 @@ Check `error_cells`, `review_required`, `cache_changes`, missing/changed-cache c
 
 The fictional sample deliberately needs review because `Results!A6` calculates to an error. A successful API response is not certification of Excel compatibility, business logic, financial decisions or rendered appearance. Charts/drawings are preserved but their caches are not refreshed. Unsupported workbooks are refused.
 
-Supported maxima include 4 MiB compressed input, 8 MiB output workbook, 32 MiB expanded package, 32 sheets, 50,000 populated cells and 10,000 ordinary formula cells. Macros, embedded objects, external relationships/data, names, tables/pivots, shared/array/data-table/spill and volatile/network formulas, 1904 dates, iteration and precision-as-displayed are unsupported. Refer to the final API contract before processing a file.
+Supported maxima include 4 MiB compressed input, 8 MiB output workbook, 32 MiB expanded package, 32 sheets, 50,000 populated cells and 10,000 ordinary formula cells. Macros, embedded objects, external relationships/data, names, tables/pivots, shared/array/data-table/spill and volatile/network formulas, 1904 dates, iteration and precision-as-displayed are unsupported. Read the [API contract](CONTRACT.md) before processing a file.
 
 The private NAS runtime has passed the original ten-formula sample and all 10,000 formula results in a 50,000-cell synthetic workbook, plus restart recovery. These checks are private-origin proof, not gateway, customer-use, sustained-load or byte-ceiling proof. The calculator uses a credential-free Docker network-none container and a bounded dedicated tmpfs job queue. Tmpfs can be swapped, and RapidAPI has separate logging/retention policies. Upload only authorized files; this is not end-to-end zero retention.
+
+## Complete recorded demonstration
+
+The [original source](sample.xlsx) produced [calculated.xlsx](demo/calculated.xlsx) and this [complete JSON report](demo/report.json). The [verification record](demo/verification.json) identifies the actual client, hashes and scope. The result deliberately requires review: `Results!A6` has the typed error `#DIV/0!`; `Results!A9` is ordinary string text `#REF!`. Empty string, missing cache and zero remain distinct. All ten cells are included in the report.
+
+The actual first request returned HTTP 200, refreshed two stale and eight missing caches, preserved source formulas and inputs, and returned LibreOffice 7.4.7.2 as its engine. The 1,822-byte input and 1,861-byte output have the hashes in the full report. Three original-fixture calculations succeeded; the fourth attempt received the platform's explicit monthly quota denial. This is a real standalone-client/gateway run, not an Agensi-connected-agent run, customer testimonial, paid sale or payout. No retries were made.

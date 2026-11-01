@@ -1,6 +1,10 @@
 {
-  "README.md": "48ce7a421eb190e29af8bf099bce927c70040a84695b73a29906257c8e2adc8e",
+  "README.md": "09acc2c1e3081967ca65f16b6d442e3b09e42bf4bdcc5c36961e42d7c18e1955",
+  "CONTRACT.md": "0fece43ae3bbfb4e830afa5510f3f5b10bf1e075d1ae2c6e04d161b80fda8150",
   "client.py": "70c97d23369a16ef7acad54f4d4901f8b620c64cdb37d95287264e85d3fbd10d",
   "generate_sample.py": "19dfd4304ffc2a6c1361727ff5668e696cecd286608e05797639a2be9d5bda27",
-  "sample.xlsx": "cb48733830a433ec3c03b9081d42ded6efb40fc73d38fa43767a7dd2f69262d4"
+  "sample.xlsx": "cb48733830a433ec3c03b9081d42ded6efb40fc73d38fa43767a7dd2f69262d4",
+  "demo/calculated.xlsx": "884c3964028fcca52856865c3617e9694f77d3b32c4a6688ec1c3c2ea5c76ebf",
+  "demo/report.json": "c91cc77d9ae43bbc9f865eafaa306985421e4260c4f71d485de4b2530086b478",
+  "demo/verification.json": "c2194952b57ae06ab6df0fc123864a818889d77e06e13f1d494ecb95513dc4fb"
 }
