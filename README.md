@@ -20,13 +20,17 @@ Choose a collection in the [public Postman workspace](https://www.postman.com/id
 
 All four collections were imported into Postman and the public workspace was verified while signed out. The response scripts also passed checks in the official Runtime against synthetic responses. See the [setup and verification notes](postman/README.md) before your first request.
 
-## Use the APIs from a local AI client
+## Use the APIs from your agent
 
-[Flamingo File Tools](https://github.com/israeldi/flamingo-file-tools-mcp) connects Access File Extractor, CreativePack, PatternCopy PDF and ShelfRelay ONIX to clients that support the Model Context Protocol (MCP) over local stdio. Its [version 0.1.0 bundle](https://github.com/israeldi/flamingo-file-tools-mcp/releases/download/v0.1.0/flamingo-file-tools.mcpb) is for clients that support MCPB installation; the repository also documents manual setup with Node.js 20 or later.
+The free [Flamingo File Tools skill on Agensi](https://www.agensi.io/skills/flamingo-file-tools-access-pdf-zip-onix) now includes instructions and self-contained temporary Python clients for Access exports, CreativePack ZIP optimization, PatternCopy inspection/stamping and ShelfRelay previews.
 
-The free [Flamingo File Tools workflow skill on Agensi](https://www.agensi.io/skills/flamingo-file-tools-access-pdf-zip-onix) provides instructions for the separately installed MCP bridge. It requires your own RapidAPI app key and a separate subscription for each selected API; API processing is separately metered and no allowance is included with the skill.
+Ask your Agensi-connected agent for the job, for example: “Use Flamingo File Tools to export this authorized Access snapshot to a CSV ZIP. Preserve the original and give me the output and table counts.” The agent loads the selected client through Agensi, runs the authorized operation in your chosen private workspace, delivers the result files and removes the temporary script.
 
-Select a private working folder you control and configure your own subscribed RapidAPI app key through the client's private settings. Start with `capabilities`, which needs no key and makes no upload. Each processing invocation requires consent and consumes allowance; PatternCopy inspection and stamping are separate requests. ShelfRelay saves a projection for review rather than changing store products. Read the bridge's [supported inputs, installation and data-handling notes](https://github.com/israeldi/flamingo-file-tools-mcp#readme) before processing files.
+The direct route requires macOS/Linux, Python 3.10+ with a working HTTPS trust store, file/shell/network access, your privately configured `RAPIDAPI_KEY`, and a separate active subscription for each API you choose. It needs no additional Flamingo MCP server, pip install or separate client download. The skill is free; hosted processing is separately metered, and no API allowance is included with the skill. Existing keys and authorized setup can be reused. The agent must explain missing prerequisites and obtain authorization for the selected file upload before processing.
+
+For clients that already use local stdio MCP, [Flamingo File Tools MCP](https://github.com/israeldi/flamingo-file-tools-mcp) remains an alternative. Its [version 0.1.0 bundle](https://github.com/israeldi/flamingo-file-tools-mcp/releases/download/v0.1.0/flamingo-file-tools.mcpb) and manual Node.js 20+ setup are unchanged. Start with `capabilities` for a no-key, no-upload check; see the bridge's [compatibility and data-handling notes](https://github.com/israeldi/flamingo-file-tools-mcp#readme).
+
+Both routes use separately subscribed RapidAPI access and the same bounded service contracts. PatternCopy inspection and stamping are separate requests. ShelfRelay produces a projection for review rather than making store changes. Neither route automatically retries a processing call.
 
 ## Set up the Python examples
 
