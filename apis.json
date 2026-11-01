@@ -1,9 +1,9 @@
 {
   "name": "Flamingo APIs",
-  "description": "An independent developer API portfolio by Israel Diego, published as IsraelDiego on RapidAPI. Four APIs with public workflow guides, Python examples and free WooCommerce connectors. Subscriptions and authenticated processing use RapidAPI.",
+  "description": "An independent developer API portfolio by Israel Diego, published as IsraelDiego on RapidAPI. Five APIs with public workflow guides, Python examples and free WooCommerce connectors. Subscriptions and authenticated processing use RapidAPI.",
   "url": "https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/apis.json",
   "created": "2026-10-31",
-  "modified": "2026-10-31",
+  "modified": "2026-11-01",
   "specificationVersion": "0.24",
   "type": "Collection",
   "apis": [
@@ -199,6 +199,42 @@
           "description": "Local MCP client tool for an ONIX projection saved for review; no store writes.",
           "type": "GitHubRepository",
           "url": "https://github.com/israeldi/flamingo-file-tools-mcp"
+        }
+      ]
+    },
+    {
+      "name": "CalcReceipt",
+      "description": "CalcReceipt recalculates supported XLSX formula-cell caches with LibreOffice and returns a source-preserving workbook plus a typed calculation/preservation report.",
+      "humanURL": "https://rapidapi.com/IsraelDiego/api/calcreceipt",
+      "baseURL": "https://calcreceipt.p.rapidapi.com",
+      "tags": [
+        "XLSX",
+        "Spreadsheets",
+        "Formulas",
+        "Recalculation",
+        "Verification"
+      ],
+      "properties": [
+        {
+          "type": "Documentation",
+          "url": "https://rapidapi.com/IsraelDiego/api/calcreceipt"
+        },
+        {
+          "type": "GettingStarted",
+          "url": "https://github.com/israeldi/flamingo-api-examples/tree/main/calcreceipt"
+        },
+        {
+          "type": "Examples",
+          "url": "https://github.com/israeldi/flamingo-api-examples/blob/main/calcreceipt/client.py"
+        },
+        {
+          "name": "Complete fictional-workbook result and report",
+          "type": "Examples",
+          "url": "https://github.com/israeldi/flamingo-api-examples/tree/main/calcreceipt/demo"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://github.com/israeldi/flamingo-api-examples/blob/main/calcreceipt/CONTRACT.md"
         }
       ]
     }

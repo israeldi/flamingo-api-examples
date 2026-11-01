@@ -1,6 +1,6 @@
 # File-processing API examples and WooCommerce integrations
 
-Three runnable Python examples and two free WooCommerce connectors for four focused APIs. The Python clients use the standard library, a local input file, and your own subscribed RapidAPI app key. The PatternCopy connector personalizes authorized PDF downloads; the ShelfRelay connector previews supported ONIX book-feed updates before changing store products.
+Four runnable Python examples and two free WooCommerce connectors for five focused APIs. The Python clients use the standard library, a local input file, and your own subscribed RapidAPI app key. The PatternCopy connector personalizes authorized PDF downloads; the ShelfRelay connector previews supported ONIX book-feed updates before changing store products.
 
 Read the [Flamingo API guides](https://flamingo-api-guides.flatemu1.chatgpt.site/) for the full workflow and compatibility notes. The [machine-readable API index](apis.json) links each listing, customer gateway and workflow resource.
 
@@ -10,6 +10,7 @@ Read the [Flamingo API guides](https://flamingo-api-guides.flatemu1.chatgpt.site
 | Optimize PNG/JPEG assets inside an HTML5 advertising ZIP | [CreativePack](https://rapidapi.com/IsraelDiego/api/creativepack) | [Python example](creativepack_optimize.py) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/html5-ad-zip-optimization/) |
 | Add a visible buyer stamp while retaining supported PDF size layers | [PatternCopy PDF](https://rapidapi.com/IsraelDiego/api/patterncopy-pdf) | [Python example](patterncopy_stamp.py) · [WooCommerce connector](integrations/patterncopy-woocommerce/) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/layered-pdf-personalization/) |
 | Preview and apply supported ONIX physical-book updates in WooCommerce | [ShelfRelay ONIX](https://rapidapi.com/IsraelDiego/api/shelfrelay-onix) | [Connector, source and installation](integrations/woocommerce/) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/onix-to-woocommerce/) |
+| Recalculate supported XLSX formula caches and inspect preservation findings | [CalcReceipt](https://rapidapi.com/IsraelDiego/api/calcreceipt) | [Standalone client, sample and contract](calcreceipt/) |
 
 The publisher of these APIs maintains this repository. Free plans are available; check current marketplace quotas and terms. Requests have hard monthly caps, and separate platform bandwidth fees may apply. A validation failure or deliberate retry can consume allowance. The Python examples make one request, refuse redirects, and do not automatically retry. Connector previews, scheduled checks and deliberate retries also consume allowance.
 
@@ -21,7 +22,7 @@ All four collections were imported into Postman and the public workspace was ver
 
 ## Use the APIs from a local AI client
 
-[Flamingo File Tools](https://github.com/israeldi/flamingo-file-tools-mcp) connects these four APIs to clients that support the Model Context Protocol (MCP) over local stdio. Its [version 0.1.0 bundle](https://github.com/israeldi/flamingo-file-tools-mcp/releases/download/v0.1.0/flamingo-file-tools.mcpb) is for clients that support MCPB installation; the repository also documents manual setup with Node.js 20 or later.
+[Flamingo File Tools](https://github.com/israeldi/flamingo-file-tools-mcp) connects Access File Extractor, CreativePack, PatternCopy PDF and ShelfRelay ONIX to clients that support the Model Context Protocol (MCP) over local stdio. Its [version 0.1.0 bundle](https://github.com/israeldi/flamingo-file-tools-mcp/releases/download/v0.1.0/flamingo-file-tools.mcpb) is for clients that support MCPB installation; the repository also documents manual setup with Node.js 20 or later.
 
 The free [Flamingo File Tools workflow skill on Agensi](https://www.agensi.io/skills/flamingo-file-tools-access-pdf-zip-onix) provides instructions for the separately installed MCP bridge. It requires your own RapidAPI app key and a separate subscription for each selected API; API processing is separately metered and no allowance is included with the skill.
 
@@ -106,6 +107,6 @@ Version 0.1.2 fixes private staging of feed downloads and includes the local reg
 
 All output paths must be new. These scripts refuse to overwrite an existing file or symlink. A successful integrity check verifies the delivered container and supported response fields; compare exported values and inspect PDF/artwork behavior before production use.
 
-The examples were checked offline against released contracts and synthetic responses. Access’s sample also passed local CSV and JSON extraction through the released engine. CreativePack and PatternCopy samples were retrieved from their public fixed-sample routes over verified HTTPS. This repository’s release does not claim authenticated end-to-end gateway testing of these new scripts or evidence of customer adoption.
+The examples were checked offline against released contracts and synthetic responses. Access’s sample also passed local CSV and JSON extraction through the released engine. CreativePack and PatternCopy samples were retrieved from their public fixed-sample routes over verified HTTPS. This offline record does not claim authenticated end-to-end gateway testing of those three Python examples or evidence of customer adoption. CalcReceipt has a separate [actual standalone-client gateway demonstration and quota-stop record](calcreceipt/), using an original fictional workbook.
 
 Run `python3 SCRIPT.py --help` for each CLI. Marketplace requests and backend resource caps can differ; refer to the current API listing for the full contract and support route.
