@@ -163,6 +163,11 @@
           "url": "https://github.com/israeldi/flamingo-api-examples/tree/main/integrations/woocommerce"
         },
         {
+          "name": "55-second ONIX preview demonstration",
+          "type": "Documentation",
+          "url": "https://www.youtube.com/watch?v=FAHl9yr5u_o"
+        },
+        {
           "type": "PostmanCollection",
           "url": "https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/postman/shelfrelay-onix.postman_collection.json"
         },

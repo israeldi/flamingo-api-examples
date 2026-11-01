@@ -86,6 +86,8 @@ For supported simple WooCommerce downloadable products, use the free [PatternCop
 
 ## Preview ONIX book updates in WooCommerce
 
+The [55-second ShelfRelay demo](https://www.youtube.com/watch?v=FAHl9yr5u_o) shows a recorded local result for one fictional book and a diagram of preview, review and application.
+
 The free [ShelfRelay connector 0.1.2](integrations/woocommerce/downloads/shelfrelay-for-woocommerce-0.1.2.zip) and its [GPLv2-or-later source](integrations/woocommerce/shelfrelay-for-woocommerce/) are available directly from this repository. Follow the [installation instructions](integrations/woocommerce/README.md) and [preview-first walkthrough](https://rapidapi.com/IsraelDiego/api/shelfrelay-onix/tutorials/import-onix-into-woocommerce%3A-a-preview-first-walkthrough).
 
 The connector requires WooCommerce, PHP 8.1+ with the documented extensions, and a separate subscribed RapidAPI application key. Start on staging with the fictional sample and inspect the preview before approving changes. It supports ONIX 3.0/3.1 physical editions, one ISBN per simple product and one source authority. It does not include a supplier catalogue, convert currency/tax, infer stock quantities or reconcile multiple suppliers.

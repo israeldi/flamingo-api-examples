@@ -9,6 +9,7 @@ Preview supported ONIX book-feed updates before applying them to a WooCommerce c
 - [Preview-first walkthrough](https://rapidapi.com/IsraelDiego/api/shelfrelay-onix/tutorials/import-onix-into-woocommerce%3A-a-preview-first-walkthrough)
 - [API plans and complete contract](https://rapidapi.com/IsraelDiego/api/shelfrelay-onix)
 - [Guide hub](https://flamingo-api-guides.flatemu1.chatgpt.site/onix-to-woocommerce/)
+- [55-second recorded example and workflow diagram](https://www.youtube.com/watch?v=FAHl9yr5u_o)
 
 The versioned ZIP is 41,316 bytes. Its SHA-256 is:
 
