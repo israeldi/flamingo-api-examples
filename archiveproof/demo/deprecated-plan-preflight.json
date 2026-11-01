@@ -1,0 +1,71 @@
+{
+  "passed": false,
+  "started_at_utc": "2026-11-01T23:36:04.460884+00:00",
+  "consumer_host": "archiveproof.p.rapidapi.com",
+  "profile": "2b",
+  "operator_confirmed_current_unused_free_basic_5": true,
+  "strict_tls": true,
+  "redirects_permitted": false,
+  "automatic_retries": 0,
+  "gateway_responses": [
+    {
+      "attempt": 1,
+      "case": "01-compare-regression",
+      "operation": "compare",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-requests-limit": "500000",
+        "x-ratelimit-requests-remaining": "499999",
+        "x-ratelimit-requests-reset": "2585523"
+      },
+      "elapsed_seconds_to_headers": 7.397,
+      "response_bytes": 8388,
+      "response_sha256": "a78af8ebc50a08a233591ff5763d0499b9dd8850b29ee83647d842404c505f66",
+      "client_exit_code": 0,
+      "request_bytes": 61817,
+      "request_sha256": "8c27b8c158398f81aa837c7c65c0fff8345595f6f69f30ad50859bba3294bcc1",
+      "artifacts": {
+        "before-verapdf.xml": {
+          "bytes": 1372,
+          "sha256": "9099daebe798828f4d2d2a5153dc8727f49ced8d657a1091e9b6a072274632be"
+        },
+        "after-verapdf.xml": {
+          "bytes": 2237,
+          "sha256": "d1dd14da3dd317ae4f0daf289f470c827382e5d1963a0559e18108f9e0cf5f55"
+        },
+        "receipt.json": {
+          "bytes": 9199,
+          "sha256": "2117b7991ec1ac517f33057aa643aa32c7e94fef2adfcc9556f0f77c2246c00f"
+        }
+      }
+    }
+  ],
+  "fixtures": {
+    "before": {
+      "bytes": 23523,
+      "sha256": "5c3eb511e4ea5d13378498cb0a568330a60d28eebc9804970ae7feb7d30cabe6"
+    },
+    "after": {
+      "bytes": 22800,
+      "sha256": "d36a7a11971f3e53c9adca6adc93120f48269757c370d5354df40712e1f55390"
+    },
+    "maximum": {
+      "bytes": 4194304,
+      "sha256": "3e2b9f0565a8d94391aea6b1406ac49a68b0c5f5ce727c3145f4308cbbac066d"
+    }
+  },
+  "published_standalone_client": {
+    "repository": "https://github.com/israeldi/flamingo-api-examples",
+    "commit": "37f99da001e5b048b851a78bdbb3dd88c51c19c5",
+    "path": "archiveproof/client.py",
+    "sha256": "11d9d0b6746dd0430b4cf2dc27a380d6349a8ad1fa498d83a6840263116220f1",
+    "url": "https://raw.githubusercontent.com/israeldi/flamingo-api-examples/37f99da001e5b048b851a78bdbb3dd88c51c19c5/archiveproof/client.py"
+  },
+  "scope": "Original fictional PDFs only. Real gateway/client processing, validation/regression/resolution and observed monthly hard-stop test. No paid purchase, sale, settlement, payout, archival acceptance or accessibility/visual certification.",
+  "bandwidth_fees": "Not tested or inferred; see current RapidAPI Pricing for separately disclosed bandwidth fees.",
+  "current_stage": "01-compare-regression",
+  "failed_stage": "01-compare-regression",
+  "error": "A required check failed. Sequence stopped; no retries, quota resets or paid upgrades were attempted. Review sanitized status/stage evidence.",
+  "successful_gateway_calls": 1,
+  "finished_at_utc": "2026-11-01T23:36:11.894058+00:00"
+}

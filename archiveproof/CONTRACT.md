@@ -2,7 +2,7 @@
 
 ArchiveProof checks PDFs against an explicitly selected PDF/A archival profile with veraPDF 1.30.3. It returns source-linked validation evidence. It does not modify, repair, convert, render or certify a PDF.
 
-This document describes a release candidate. The consumer host and private plan configuration have been observed. The authenticated origin and strict TLS are now configured. Actual gateway processing, final source/demo pins and marketplace publication remain separate release gates.
+The [ArchiveProof RapidAPI listing](https://rapidapi.com/IsraelDiego/api/archiveproof) has its public publication setting verified after reload. The authenticated origin and strict TLS are configured. The exact published standalone client completed five real gateway requests on the saved Basic five-request plan; the sixth request received an explicit platform monthly HTTP 429. These original-fixture processing and quota checks passed before publication. Anonymous listing and published-pricing visibility remain unverified.
 
 ## Requests
 
@@ -84,7 +84,7 @@ The backend is intended for bounded transient processing on the owner's Synology
 
 ## Access and pricing
 
-The Agensi instruction skill is intended to be free. Hosted API processing requires a separate RapidAPI account, subscription and consumer key. Saved private-draft monthly request caps are Basic $0 / 5, Pro $7 / 200, Ultra $15 / 750, all hard caps. Public availability and final published pricing remain to be verified. One validation or one comparison is one endpoint request; a comparison validates two source PDFs. Platform bandwidth charges, taxes or other checkout terms may apply separately and must be read on the current pricing page. No income or customer adoption is established by implementation or publication.
+The Agensi instruction skill is intended to be free. Hosted API processing requires a separate RapidAPI account, subscription and consumer key. The saved monthly request caps are Basic $0 / 5, Pro $7 / 200, Ultra $15 / 750, all hard caps. The Basic five-request gateway run completed five HTTP 200 requests and received an explicit platform monthly HTTP 429 on its sixth request, with no automatic retries. A separate earlier preflight completed one HTTP 200 on a deprecated plan and stopped when its 500,000-request allowance differed from the intended Basic five-request limit; it is excluded from the current-plan qualification. The listing's public setting was verified after reload; anonymous listing and published-pricing visibility remain unverified, and paid checkout was not exercised. One validation or one comparison is one endpoint request; a comparison validates two source PDFs. Platform bandwidth charges, taxes or other checkout terms may apply separately and must be read on the current pricing page. No income or customer adoption is established by this evidence.
 
 Agensi delivers skill instructions through its agent connection; it does not host this backend or imply API execution rights. The skill includes a self-contained Python client for temporary execution by a capable connected agent, with original instructions in SKILL.md; it does not install a persistent local skill directory. The creator also supplies independent public client files for standalone use. The client requires Python 3.10+ and its standard library; users do not need a local Java or veraPDF installation or an additional Flamingo MCP bridge to call the hosted service.
 

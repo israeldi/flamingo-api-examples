@@ -1,6 +1,6 @@
 # File-processing API examples and WooCommerce integrations
 
-Four runnable Python examples and two free WooCommerce connectors for five focused APIs. The Python clients use the standard library, a local input file, and your own subscribed RapidAPI app key. The PatternCopy connector personalizes authorized PDF downloads; the ShelfRelay connector previews supported ONIX book-feed updates before changing store products.
+Five runnable Python examples and two free WooCommerce connectors for six focused APIs. The Python clients use the standard library, a local input file, and your own subscribed RapidAPI app key. The PatternCopy connector personalizes authorized PDF downloads; the ShelfRelay connector previews supported ONIX book-feed updates before changing store products.
 
 Read the [Flamingo API guides](https://flamingo-api-guides.flatemu1.chatgpt.site/) for the full workflow and compatibility notes. The [machine-readable API index](apis.json) links each listing, customer gateway and workflow resource.
 
@@ -11,6 +11,7 @@ Read the [Flamingo API guides](https://flamingo-api-guides.flatemu1.chatgpt.site
 | Add a visible buyer stamp while retaining supported PDF size layers | [PatternCopy PDF](https://rapidapi.com/IsraelDiego/api/patterncopy-pdf) | [Python example](patterncopy_stamp.py) · [WooCommerce connector](integrations/patterncopy-woocommerce/) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/layered-pdf-personalization/) |
 | Preview and apply supported ONIX physical-book updates in WooCommerce | [ShelfRelay ONIX](https://rapidapi.com/IsraelDiego/api/shelfrelay-onix) | [Connector, source and installation](integrations/woocommerce/) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/onix-to-woocommerce/) |
 | Recalculate supported XLSX formula caches and inspect preservation findings | [CalcReceipt](https://rapidapi.com/IsraelDiego/api/calcreceipt) | [Standalone client, sample and contract](calcreceipt/) |
+| Check an explicit PDF/A profile and compare before/after failing rules | [ArchiveProof](https://rapidapi.com/IsraelDiego/api/archiveproof) | [Client, original samples, receipts and XML reports](archiveproof/) |
 
 The publisher of these APIs maintains this repository. Free plans are available; check current marketplace quotas and terms. Requests have hard monthly caps, and separate platform bandwidth fees may apply. A validation failure or deliberate retry can consume allowance. The Python examples make one request, refuse redirects, and do not automatically retry. Connector previews, scheduled checks and deliberate retries also consume allowance.
 
@@ -111,6 +112,6 @@ Version 0.1.2 fixes private staging of feed downloads and includes the local reg
 
 All output paths must be new. These scripts refuse to overwrite an existing file or symlink. A successful integrity check verifies the delivered container and supported response fields; compare exported values and inspect PDF/artwork behavior before production use.
 
-The examples were checked offline against released contracts and synthetic responses. Access’s sample also passed local CSV and JSON extraction through the released engine. CreativePack and PatternCopy samples were retrieved from their public fixed-sample routes over verified HTTPS. This offline record does not claim authenticated end-to-end gateway testing of those three Python examples or evidence of customer adoption. CalcReceipt has a separate [actual standalone-client gateway demonstration and quota-stop record](calcreceipt/), using an original fictional workbook.
+The examples were checked offline against released contracts and synthetic responses. Access’s sample also passed local CSV and JSON extraction through the released engine. CreativePack and PatternCopy samples were retrieved from their public fixed-sample routes over verified HTTPS. This offline record does not claim authenticated end-to-end gateway testing of those three Python examples or evidence of customer adoption. CalcReceipt has a separate [actual standalone-client gateway demonstration and quota-stop record](calcreceipt/), using an original fictional workbook. ArchiveProof also has a [complete actual gateway receipt, original XML reports and free-plan quota-stop record](archiveproof/), using original fictional PDFs.
 
 Run `python3 SCRIPT.py --help` for each CLI. Marketplace requests and backend resource caps can differ; refer to the current API listing for the full contract and support route.

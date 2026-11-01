@@ -1,0 +1,121 @@
+{
+  "schema_version": "archiveproof.receipt.v1",
+  "operation": "compare",
+  "profile": "2b",
+  "engine_success": true,
+  "engine": {
+    "name": "veraPDF",
+    "version": "1.30.3",
+    "component_versions": {
+      "core": "1.30.3",
+      "validation-model": "1.30.3",
+      "apps": "1.30.3"
+    },
+    "bundle_sha256": "19f6edd5c92841a38d9b3b018a555b7ba173b13e4e0d29edecc232e5ba6c1d70",
+    "processes": 1,
+    "java_heap_max_mib": 128
+  },
+  "documents": {
+    "before": {
+      "compliant": true,
+      "status": "compliant",
+      "counts": {
+        "passedRules": 144,
+        "failedRules": 0,
+        "passedChecks": 829,
+        "failedChecks": 0
+      },
+      "failed_rules": [],
+      "reporting": {
+        "all_failed_rule_counts_returned": true,
+        "engine_max_displayed_checks_per_rule": 20,
+        "normalized_max_contexts_per_rule": 4,
+        "contexts_complete": true,
+        "failed_contexts_may_be_limited": false
+      },
+      "input_sha256": "5c3eb511e4ea5d13378498cb0a568330a60d28eebc9804970ae7feb7d30cabe6",
+      "input_bytes": 23523,
+      "raw_report": {
+        "format": "xml",
+        "sha256": "4e5a4c05d85aee213e777b231e982055d719174cec84a6931cc6e9c6748a4737",
+        "bytes": 1372,
+        "base64": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHJlcG9ydD4KICA8YnVpbGRJbmZvcm1hdGlvbj4KICAgIDxyZWxlYXNlRGV0YWlscyBpZD0iY29yZSIgdmVyc2lvbj0iMS4zMC4zIiBidWlsZERhdGU9IjIwMjYtMTAtMDdUMTA6MDI6MDBaIj48L3JlbGVhc2VEZXRhaWxzPgogICAgPHJlbGVhc2VEZXRhaWxzIGlkPSJ2YWxpZGF0aW9uLW1vZGVsIiB2ZXJzaW9uPSIxLjMwLjMiIGJ1aWxkRGF0ZT0iMjAyNi0xMC0wN1QxMzo0NDowMFoiPjwvcmVsZWFzZURldGFpbHM+CiAgICA8cmVsZWFzZURldGFpbHMgaWQ9ImFwcHMiIHZlcnNpb249IjEuMzAuMyIgYnVpbGREYXRlPSIyMDI2LTEwLTA3VDEzOjUyOjAwWiI+PC9yZWxlYXNlRGV0YWlscz4KICA8L2J1aWxkSW5mb3JtYXRpb24+CiAgPGpvYnM+CiAgICA8am9iPgogICAgICA8aXRlbSBzaXplPSIyMzUyMyI+CiAgICAgICAgPG5hbWU+L2pvYnMvZTVkNTExNmFjNjRhZTY3MmFiZDc2ZjUzNmI4ZjEyNjAvcnVudGltZS9hcmNoaXZlcHJvb2Yta2J6YmViczcvaW5wdXQucGRmPC9uYW1lPgogICAgICA8L2l0ZW0+CiAgICAgIDx2YWxpZGF0aW9uUmVwb3J0IGpvYkVuZFN0YXR1cz0ibm9ybWFsIiBwcm9maWxlTmFtZT0iUERGL0EtMmIgdmFsaWRhdGlvbiBwcm9maWxlIiBzdGF0ZW1lbnQ9IlBERiBmaWxlIGlzIGNvbXBsaWFudCB3aXRoIFZhbGlkYXRpb24gUHJvZmlsZSByZXF1aXJlbWVudHMuIiBpc0NvbXBsaWFudD0idHJ1ZSI+CiAgICAgICAgPGRldGFpbHMgcGFzc2VkUnVsZXM9IjE0NCIgZmFpbGVkUnVsZXM9IjAiIHBhc3NlZENoZWNrcz0iODI5IiBmYWlsZWRDaGVja3M9IjAiPjwvZGV0YWlscz4KICAgICAgPC92YWxpZGF0aW9uUmVwb3J0PgogICAgICA8ZHVyYXRpb24gc3RhcnQ9IjE3OTM1NzYyNTUzNjgiIGZpbmlzaD0iMTc5MzU3NjI1NjE3OCI+MDA6MDA6MDAuODEwPC9kdXJhdGlvbj4KICAgIDwvam9iPgogIDwvam9icz4KICA8YmF0Y2hTdW1tYXJ5IHRvdGFsSm9icz0iMSIgZmFpbGVkVG9QYXJzZT0iMCIgZW5jcnlwdGVkPSIwIiBvdXRPZk1lbW9yeT0iMCIgdmVyYUV4Y2VwdGlvbnM9IjAiPgogICAgPHZhbGlkYXRpb25SZXBvcnRzIGNvbXBsaWFudD0iMSIgbm9uQ29tcGxpYW50PSIwIiBmYWlsZWRKb2JzPSIwIj4xPC92YWxpZGF0aW9uUmVwb3J0cz4KICAgIDxmZWF0dXJlUmVwb3J0cyBmYWlsZWRKb2JzPSIwIj4wPC9mZWF0dXJlUmVwb3J0cz4KICAgIDxyZXBhaXJSZXBvcnRzIGZhaWxlZEpvYnM9IjAiPjA8L3JlcGFpclJlcG9ydHM+CiAgICA8ZHVyYXRpb24gc3RhcnQ9IjE3OTM1NzYyNTUyNzciIGZpbmlzaD0iMTc5MzU3NjI1NjIwNSI+MDA6MDA6MDAuOTI4PC9kdXJhdGlvbj4KICA8L2JhdGNoU3VtbWFyeT4KPC9yZXBvcnQ+Cg=="
+      }
+    },
+    "after": {
+      "compliant": false,
+      "status": "noncompliant",
+      "counts": {
+        "passedRules": 143,
+        "failedRules": 1,
+        "passedChecks": 789,
+        "failedChecks": 1
+      },
+      "failed_rules": [
+        {
+          "id": "d93f8f761f45073831673aacb92b2920af7d2be877a2a9f267e6df218e7c11c2",
+          "specification": "ISO 19005-2:2011",
+          "clause": "6.6.2.1",
+          "test_number": "1",
+          "status": "failed",
+          "failed_checks": 1,
+          "passed_checks": null,
+          "description": "The Catalog dictionary of a conforming file shall contain the Metadata key whose value is a metadata stream as defined in ISO 32000-1:2008, 14.3.2. The metadata stream dictionary shall contain entry Type with value /Metadata and entry Subtype with value /XML",
+          "contexts": [
+            {
+              "context": "root/document[0]",
+              "message": "The document catalog dictionary doesn't contain metadata key or metadata stream dictionary does not contain either entry Type with value /Metadata or entry Subtype with value /XML"
+            }
+          ],
+          "engine_displayed_checks": 1,
+          "engine_contexts_complete": true,
+          "normalized_contexts_complete": true,
+          "normalized_text_truncated": false
+        }
+      ],
+      "reporting": {
+        "all_failed_rule_counts_returned": true,
+        "engine_max_displayed_checks_per_rule": 20,
+        "normalized_max_contexts_per_rule": 4,
+        "contexts_complete": true,
+        "failed_contexts_may_be_limited": false
+      },
+      "input_sha256": "d36a7a11971f3e53c9adca6adc93120f48269757c370d5354df40712e1f55390",
+      "input_bytes": 22800,
+      "raw_report": {
+        "format": "xml",
+        "sha256": "c39d1a6b85191e7b49430646a28988ada4dd3eacd3b916ebff9942a75ad06b52",
+        "bytes": 2237,
+        "base64": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHJlcG9ydD4KICA8YnVpbGRJbmZvcm1hdGlvbj4KICAgIDxyZWxlYXNlRGV0YWlscyBpZD0iY29yZSIgdmVyc2lvbj0iMS4zMC4zIiBidWlsZERhdGU9IjIwMjYtMTAtMDdUMTA6MDI6MDBaIj48L3JlbGVhc2VEZXRhaWxzPgogICAgPHJlbGVhc2VEZXRhaWxzIGlkPSJ2YWxpZGF0aW9uLW1vZGVsIiB2ZXJzaW9uPSIxLjMwLjMiIGJ1aWxkRGF0ZT0iMjAyNi0xMC0wN1QxMzo0NDowMFoiPjwvcmVsZWFzZURldGFpbHM+CiAgICA8cmVsZWFzZURldGFpbHMgaWQ9ImFwcHMiIHZlcnNpb249IjEuMzAuMyIgYnVpbGREYXRlPSIyMDI2LTEwLTA3VDEzOjUyOjAwWiI+PC9yZWxlYXNlRGV0YWlscz4KICA8L2J1aWxkSW5mb3JtYXRpb24+CiAgPGpvYnM+CiAgICA8am9iPgogICAgICA8aXRlbSBzaXplPSIyMjgwMCI+CiAgICAgICAgPG5hbWU+L2pvYnMvZTVkNTExNmFjNjRhZTY3MmFiZDc2ZjUzNmI4ZjEyNjAvcnVudGltZS9hcmNoaXZlcHJvb2YteWs5ZXI1ZHovaW5wdXQucGRmPC9uYW1lPgogICAgICA8L2l0ZW0+CiAgICAgIDx2YWxpZGF0aW9uUmVwb3J0IGpvYkVuZFN0YXR1cz0ibm9ybWFsIiBwcm9maWxlTmFtZT0iUERGL0EtMmIgdmFsaWRhdGlvbiBwcm9maWxlIiBzdGF0ZW1lbnQ9IlBERiBmaWxlIGlzIG5vdCBjb21wbGlhbnQgd2l0aCBWYWxpZGF0aW9uIFByb2ZpbGUgcmVxdWlyZW1lbnRzLiIgaXNDb21wbGlhbnQ9ImZhbHNlIj4KICAgICAgICA8ZGV0YWlscyBwYXNzZWRSdWxlcz0iMTQzIiBmYWlsZWRSdWxlcz0iMSIgcGFzc2VkQ2hlY2tzPSI3ODkiIGZhaWxlZENoZWNrcz0iMSI+CiAgICAgICAgICA8cnVsZSBzcGVjaWZpY2F0aW9uPSJJU08gMTkwMDUtMjoyMDExIiBjbGF1c2U9IjYuNi4yLjEiIHRlc3ROdW1iZXI9IjEiIHN0YXR1cz0iZmFpbGVkIiBmYWlsZWRDaGVja3M9IjEiPgogICAgICAgICAgICA8ZGVzY3JpcHRpb24+VGhlIENhdGFsb2cgZGljdGlvbmFyeSBvZiBhIGNvbmZvcm1pbmcgZmlsZSBzaGFsbCBjb250YWluIHRoZSBNZXRhZGF0YSBrZXkgd2hvc2UgdmFsdWUgaXMgYSBtZXRhZGF0YSBzdHJlYW0gYXMgZGVmaW5lZCBpbiBJU08gMzIwMDAtMToyMDA4LCAxNC4zLjIuIFRoZSBtZXRhZGF0YSBzdHJlYW0gZGljdGlvbmFyeSBzaGFsbCBjb250YWluIGVudHJ5IFR5cGUgd2l0aCB2YWx1ZSAvTWV0YWRhdGEgYW5kIGVudHJ5IFN1YnR5cGUgd2l0aCB2YWx1ZSAvWE1MPC9kZXNjcmlwdGlvbj4KICAgICAgICAgICAgPG9iamVjdD5QRERvY3VtZW50PC9vYmplY3Q+CiAgICAgICAgICAgIDx0ZXN0PmNvbnRhaW5zTWV0YWRhdGEgPT0gdHJ1ZTwvdGVzdD4KICAgICAgICAgICAgPGNoZWNrIHN0YXR1cz0iZmFpbGVkIj4KICAgICAgICAgICAgICA8Y29udGV4dD5yb290L2RvY3VtZW50WzBdPC9jb250ZXh0PgogICAgICAgICAgICAgIDxlcnJvck1lc3NhZ2U+VGhlIGRvY3VtZW50IGNhdGFsb2cgZGljdGlvbmFyeSBkb2Vzbid0IGNvbnRhaW4gbWV0YWRhdGEga2V5IG9yIG1ldGFkYXRhIHN0cmVhbSBkaWN0aW9uYXJ5IGRvZXMgbm90IGNvbnRhaW4gZWl0aGVyIGVudHJ5IFR5cGUgd2l0aCB2YWx1ZSAvTWV0YWRhdGEgb3IgZW50cnkgU3VidHlwZSB3aXRoIHZhbHVlIC9YTUw8L2Vycm9yTWVzc2FnZT4KICAgICAgICAgICAgPC9jaGVjaz4KICAgICAgICAgIDwvcnVsZT4KICAgICAgICA8L2RldGFpbHM+CiAgICAgIDwvdmFsaWRhdGlvblJlcG9ydD4KICAgICAgPGR1cmF0aW9uIHN0YXJ0PSIxNzkzNTc2MjU4NTE3IiBmaW5pc2g9IjE3OTM1NzYyNTkyOTkiPjAwOjAwOjAwLjc4MjwvZHVyYXRpb24+CiAgICA8L2pvYj4KICA8L2pvYnM+CiAgPGJhdGNoU3VtbWFyeSB0b3RhbEpvYnM9IjEiIGZhaWxlZFRvUGFyc2U9IjAiIGVuY3J5cHRlZD0iMCIgb3V0T2ZNZW1vcnk9IjAiIHZlcmFFeGNlcHRpb25zPSIwIj4KICAgIDx2YWxpZGF0aW9uUmVwb3J0cyBjb21wbGlhbnQ9IjAiIG5vbkNvbXBsaWFudD0iMSIgZmFpbGVkSm9icz0iMCI+MTwvdmFsaWRhdGlvblJlcG9ydHM+CiAgICA8ZmVhdHVyZVJlcG9ydHMgZmFpbGVkSm9icz0iMCI+MDwvZmVhdHVyZVJlcG9ydHM+CiAgICA8cmVwYWlyUmVwb3J0cyBmYWlsZWRKb2JzPSIwIj4wPC9yZXBhaXJSZXBvcnRzPgogICAgPGR1cmF0aW9uIHN0YXJ0PSIxNzkzNTc2MjU4NDA4IiBmaW5pc2g9IjE3OTM1NzYyNTkzMzIiPjAwOjAwOjAwLjkyNDwvZHVyYXRpb24+CiAgPC9iYXRjaFN1bW1hcnk+CjwvcmVwb3J0Pgo="
+      }
+    }
+  },
+  "limits": {
+    "input_bytes_per_document": 4194304,
+    "report_bytes_per_document": 2097152,
+    "seconds_per_document": 32
+  },
+  "scope": "Machine validation against the explicitly selected PDF/A profile. No conversion, repair, visual review, legal or archive acceptance, or accessibility certification.",
+  "comparison": {
+    "basis": "stable_rule_identity_and_failed_check_counts",
+    "object_contexts_matched": false,
+    "before_input_sha256": "5c3eb511e4ea5d13378498cb0a568330a60d28eebc9804970ae7feb7d30cabe6",
+    "after_input_sha256": "d36a7a11971f3e53c9adca6adc93120f48269757c370d5354df40712e1f55390",
+    "rule_changes": [
+      {
+        "id": "d93f8f761f45073831673aacb92b2920af7d2be877a2a9f267e6df218e7c11c2",
+        "specification": "ISO 19005-2:2011",
+        "clause": "6.6.2.1",
+        "test_number": "1",
+        "before_failed_checks": 0,
+        "after_failed_checks": 1,
+        "delta_failed_checks": 1,
+        "change": "added"
+      }
+    ],
+    "added_rules": 1,
+    "resolved_rules": 0,
+    "persistent_rules": 0,
+    "meaning": "Counts summarize rule failures only; fewer failures do not prove the same objects were repaired, visual fidelity, or acceptance by any archive."
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "Flamingo APIs",
-  "description": "An independent developer API portfolio by Israel Diego, published as IsraelDiego on RapidAPI. Five APIs with public workflow guides, Python examples and free WooCommerce connectors. Subscriptions and authenticated processing use RapidAPI.",
+  "description": "An independent developer API portfolio by Israel Diego, published as IsraelDiego on RapidAPI. Six APIs with public workflow guides, Python examples and free WooCommerce connectors. Subscriptions and authenticated processing use RapidAPI.",
   "url": "https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/apis.json",
   "created": "2026-10-31",
   "modified": "2026-11-01",
@@ -237,6 +237,42 @@
           "url": "https://github.com/israeldi/flamingo-api-examples/blob/main/calcreceipt/CONTRACT.md"
         }
       ]
+    },
+    {
+      "name": "ArchiveProof",
+      "description": "ArchiveProof validates authorized PDFs against an explicit PDF/A profile with veraPDF and compares rule-level findings before and after transformations.",
+      "humanURL": "https://rapidapi.com/IsraelDiego/api/archiveproof",
+      "baseURL": "https://archiveproof.p.rapidapi.com",
+      "tags": [
+        "PDF",
+        "PDF/A",
+        "Archiving",
+        "Validation",
+        "Verification"
+      ],
+      "properties": [
+        {
+          "type": "Documentation",
+          "url": "https://rapidapi.com/IsraelDiego/api/archiveproof"
+        },
+        {
+          "type": "GettingStarted",
+          "url": "https://github.com/israeldi/flamingo-api-examples/tree/main/archiveproof"
+        },
+        {
+          "type": "Examples",
+          "url": "https://github.com/israeldi/flamingo-api-examples/blob/main/archiveproof/client.py"
+        },
+        {
+          "name": "Complete fictional-PDF gateway receipt and original XML reports",
+          "type": "Examples",
+          "url": "https://github.com/israeldi/flamingo-api-examples/tree/main/archiveproof/demo"
+        },
+        {
+          "type": "Documentation",
+          "url": "https://github.com/israeldi/flamingo-api-examples/blob/main/archiveproof/CONTRACT.md"
+        }
+      ]
     }
   ],
   "common": [
@@ -261,3 +297,4 @@
     }
   ]
 }
+

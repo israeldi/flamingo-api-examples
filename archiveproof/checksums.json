@@ -1,11 +1,11 @@
 {
   "CONTRACT.md": {
-    "bytes": 11734,
-    "sha256": "dcbb0806544633f4d0411e628c8603e354fcbee5f3b687bc578453b4dae12713"
+    "bytes": 12438,
+    "sha256": "045af332ce9b9caff74be0b019eba97659361cc55fc9ef9f07f57a5c9738cc43"
   },
   "README.md": {
-    "bytes": 3854,
-    "sha256": "df2e6a188474a15b426a8909032faa213f16ef20892eb6528ac73ba854fcb5bf"
+    "bytes": 6945,
+    "sha256": "33412d77ef859654d051e17d1e5e88d483c2ad9f443133b14c5b06335bd90c6c"
   },
   "archive-after.pdf": {
     "bytes": 22800,
@@ -18,6 +18,26 @@
   "client.py": {
     "bytes": 14601,
     "sha256": "11d9d0b6746dd0430b4cf2dc27a380d6349a8ad1fa498d83a6840263116220f1"
+  },
+  "demo/after-verapdf.xml": {
+    "bytes": 2237,
+    "sha256": "c39d1a6b85191e7b49430646a28988ada4dd3eacd3b916ebff9942a75ad06b52"
+  },
+  "demo/before-verapdf.xml": {
+    "bytes": 1372,
+    "sha256": "4e5a4c05d85aee213e777b231e982055d719174cec84a6931cc6e9c6748a4737"
+  },
+  "demo/deprecated-plan-preflight.json": {
+    "bytes": 2951,
+    "sha256": "522426a08381e9d3b40b50e176c22ee10d3a63fece70c702a8290e797773e1f9"
+  },
+  "demo/receipt.json": {
+    "bytes": 9199,
+    "sha256": "b2a9fea22536bade477c6059773ee670d6992ed6233f0af54fb3a14a55bff642"
+  },
+  "demo/verification.json": {
+    "bytes": 10504,
+    "sha256": "44423b0907015cc23cedee3faf6b1bf1988b70b70ebb6122ca56cb711be54854"
   },
   "setup_key.py": {
     "bytes": 5299,

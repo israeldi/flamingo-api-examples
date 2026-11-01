@@ -1,0 +1,285 @@
+{
+  "passed": true,
+  "started_at_utc": "2026-11-01T23:37:31.893136+00:00",
+  "consumer_host": "archiveproof.p.rapidapi.com",
+  "profile": "2b",
+  "operator_confirmed_current_unused_free_basic_5": true,
+  "strict_tls": true,
+  "redirects_permitted": false,
+  "automatic_retries": 0,
+  "gateway_responses": [
+    {
+      "attempt": 1,
+      "case": "01-compare-regression",
+      "operation": "compare",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-requests-limit": "5",
+        "x-ratelimit-requests-remaining": "4",
+        "x-ratelimit-requests-reset": "2591973"
+      },
+      "elapsed_seconds_to_headers": 7.62,
+      "response_bytes": 8388,
+      "response_sha256": "c6787d6c31ad6fd61e732d19d4f993a22dc9e0a9007184f40fd79600a1fc75b6",
+      "client_exit_code": 0,
+      "request_bytes": 61817,
+      "request_sha256": "8c27b8c158398f81aa837c7c65c0fff8345595f6f69f30ad50859bba3294bcc1",
+      "artifacts": {
+        "before-verapdf.xml": {
+          "bytes": 1372,
+          "sha256": "4e5a4c05d85aee213e777b231e982055d719174cec84a6931cc6e9c6748a4737"
+        },
+        "after-verapdf.xml": {
+          "bytes": 2237,
+          "sha256": "c39d1a6b85191e7b49430646a28988ada4dd3eacd3b916ebff9942a75ad06b52"
+        },
+        "receipt.json": {
+          "bytes": 9199,
+          "sha256": "b2a9fea22536bade477c6059773ee670d6992ed6233f0af54fb3a14a55bff642"
+        }
+      },
+      "verification": {
+        "source_and_raw_report_hashes_verified_by_published_client": true,
+        "fixture_decisions_and_rule_counts_verified": true,
+        "comparison_semantics_verified": true,
+        "engine_version": "1.30.3",
+        "documents": {
+          "before": {
+            "sha256": "5c3eb511e4ea5d13378498cb0a568330a60d28eebc9804970ae7feb7d30cabe6",
+            "bytes": 23523
+          },
+          "after": {
+            "sha256": "d36a7a11971f3e53c9adca6adc93120f48269757c370d5354df40712e1f55390",
+            "bytes": 22800
+          }
+        }
+      }
+    },
+    {
+      "attempt": 2,
+      "case": "02-validate-before",
+      "operation": "validate",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-requests-limit": "5",
+        "x-ratelimit-requests-remaining": "3",
+        "x-ratelimit-requests-reset": "2591967"
+      },
+      "elapsed_seconds_to_headers": 5.693,
+      "response_bytes": 3135,
+      "response_sha256": "8724453db6ba7fd2ff6868d8ff6e68781ba95da7eb9555d96b3457becf3bb582",
+      "client_exit_code": 0,
+      "request_bytes": 31396,
+      "request_sha256": "453325c8a560ec8decd68ce510dc58a68bd00b177a1f4988a1691d62b63f7ef2",
+      "artifacts": {
+        "input-verapdf.xml": {
+          "bytes": 1372,
+          "sha256": "c17eca07b2cab06a8976128ad61638bb9ba46f5a62438e46d6bf4076b6a251d0"
+        },
+        "receipt.json": {
+          "bytes": 3412,
+          "sha256": "9939261644311bb5e0d13f1fa185eab0dd2decf1d8c49aae759c830a88c5ae37"
+        }
+      },
+      "verification": {
+        "source_and_raw_report_hashes_verified_by_published_client": true,
+        "fixture_decisions_and_rule_counts_verified": true,
+        "comparison_semantics_verified": false,
+        "engine_version": "1.30.3",
+        "documents": {
+          "input": {
+            "sha256": "5c3eb511e4ea5d13378498cb0a568330a60d28eebc9804970ae7feb7d30cabe6",
+            "bytes": 23523
+          }
+        }
+      }
+    },
+    {
+      "attempt": 3,
+      "case": "03-validate-after",
+      "operation": "validate",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-requests-limit": "5",
+        "x-ratelimit-requests-remaining": "2",
+        "x-ratelimit-requests-reset": "2591963"
+      },
+      "elapsed_seconds_to_headers": 4.106,
+      "response_bytes": 5162,
+      "response_sha256": "9f15675bf65133057f0188effb9395d78bd25b0196f21bccc592cac61df3f9e5",
+      "client_exit_code": 0,
+      "request_bytes": 30432,
+      "request_sha256": "6ebac06769988f4f960c37f9975ac34dee55642def71f1735489650338395f79",
+      "artifacts": {
+        "input-verapdf.xml": {
+          "bytes": 2237,
+          "sha256": "597c9d87ea4fa80b86e9bd2dcf79ed950eb285d1d4fc8fa213c0f7c2d32cd488"
+        },
+        "receipt.json": {
+          "bytes": 5661,
+          "sha256": "9fd29592cc2b9c01b8a626b1fa714d14e0850425845fa50ed99768cf85678d92"
+        }
+      },
+      "verification": {
+        "source_and_raw_report_hashes_verified_by_published_client": true,
+        "fixture_decisions_and_rule_counts_verified": true,
+        "comparison_semantics_verified": false,
+        "engine_version": "1.30.3",
+        "documents": {
+          "input": {
+            "sha256": "d36a7a11971f3e53c9adca6adc93120f48269757c370d5354df40712e1f55390",
+            "bytes": 22800
+          }
+        }
+      }
+    },
+    {
+      "attempt": 4,
+      "case": "04-compare-resolved",
+      "operation": "compare",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-requests-limit": "5",
+        "x-ratelimit-requests-remaining": "1",
+        "x-ratelimit-requests-reset": "2591956"
+      },
+      "elapsed_seconds_to_headers": 6.706,
+      "response_bytes": 8392,
+      "response_sha256": "b93ee0c89223500ef4589ac0edf8def30bfdc6b0563a8f10d5595b4fdb66ebbb",
+      "client_exit_code": 0,
+      "request_bytes": 61817,
+      "request_sha256": "b6f32c0c7b2bad7847a79d836a16cd9b67ccf850598989e11f12aee67cded18d",
+      "artifacts": {
+        "before-verapdf.xml": {
+          "bytes": 2237,
+          "sha256": "5fa31f546f1847a8f35578ee67de6d8758339f0b8e045f1cfb4c9491abb49a00"
+        },
+        "after-verapdf.xml": {
+          "bytes": 1372,
+          "sha256": "ad344e23afa2602c31a4c30a37ac3fd5da705e7f626215227dbff13b6e73d1b5"
+        },
+        "receipt.json": {
+          "bytes": 9203,
+          "sha256": "df7c9c5c6113fd2109e546281f9e4ab88d909473776ccb20e51568bcba2e3564"
+        }
+      },
+      "verification": {
+        "source_and_raw_report_hashes_verified_by_published_client": true,
+        "fixture_decisions_and_rule_counts_verified": true,
+        "comparison_semantics_verified": true,
+        "engine_version": "1.30.3",
+        "documents": {
+          "before": {
+            "sha256": "d36a7a11971f3e53c9adca6adc93120f48269757c370d5354df40712e1f55390",
+            "bytes": 22800
+          },
+          "after": {
+            "sha256": "5c3eb511e4ea5d13378498cb0a568330a60d28eebc9804970ae7feb7d30cabe6",
+            "bytes": 23523
+          }
+        }
+      }
+    },
+    {
+      "attempt": 5,
+      "case": "05-compare-two-4MiB",
+      "operation": "compare",
+      "status": 200,
+      "headers": {
+        "x-ratelimit-requests-limit": "5",
+        "x-ratelimit-requests-remaining": "0",
+        "x-ratelimit-requests-reset": "2591947"
+      },
+      "elapsed_seconds_to_headers": 8.956,
+      "response_bytes": 6115,
+      "response_sha256": "1bb62cd565fe9ccd186b2ca52d494bb7198001aa52281cabbfc4c74e8301cd42",
+      "client_exit_code": 0,
+      "request_bytes": 11184869,
+      "request_sha256": "aa9bdef8ec5c566eb8723e6f0f9b1fb77af2397d1ba3dd7397bdaabb2369949c",
+      "artifacts": {
+        "before-verapdf.xml": {
+          "bytes": 1374,
+          "sha256": "93c69f024fb974eabd133cec85a9644f5a0c5ab08401cfa37137ab4842f6e412"
+        },
+        "after-verapdf.xml": {
+          "bytes": 1374,
+          "sha256": "4ecdc16c576d561a1f3d702728c8462fca09f4c43a49120ab8393db77a897e36"
+        },
+        "receipt.json": {
+          "bytes": 6620,
+          "sha256": "2d8730454baa07731e912048f88709bb638de6b16257c34ef794bb14d584cd33"
+        }
+      },
+      "verification": {
+        "source_and_raw_report_hashes_verified_by_published_client": true,
+        "fixture_decisions_and_rule_counts_verified": true,
+        "comparison_semantics_verified": true,
+        "engine_version": "1.30.3",
+        "documents": {
+          "before": {
+            "sha256": "3e2b9f0565a8d94391aea6b1406ac49a68b0c5f5ce727c3145f4308cbbac066d",
+            "bytes": 4194304
+          },
+          "after": {
+            "sha256": "3e2b9f0565a8d94391aea6b1406ac49a68b0c5f5ce727c3145f4308cbbac066d",
+            "bytes": 4194304
+          }
+        }
+      }
+    },
+    {
+      "attempt": 6,
+      "case": "06-monthly-denial",
+      "operation": "compare",
+      "status": 429,
+      "headers": {
+        "x-ratelimit-requests-limit": "5",
+        "x-ratelimit-requests-remaining": "0",
+        "x-ratelimit-requests-reset": "2591946",
+        "x-rapidapi-proxy-response": "true"
+      },
+      "elapsed_seconds_to_headers": 0.301,
+      "response_bytes": 167,
+      "response_sha256": "cdb9c20dcf3358758751f306ce2ed472e9b2d0dd1f9a49eec0ae75486d08ae59",
+      "error": {
+        "origin_error_code": null,
+        "explicit_monthly_quota_message": true,
+        "body_bytes": 167,
+        "body_sha256": "cdb9c20dcf3358758751f306ce2ed472e9b2d0dd1f9a49eec0ae75486d08ae59"
+      },
+      "client_exit_code": 1,
+      "request_bytes": 61817,
+      "request_sha256": "8c27b8c158398f81aa837c7c65c0fff8345595f6f69f30ad50859bba3294bcc1"
+    }
+  ],
+  "fixtures": {
+    "before": {
+      "bytes": 23523,
+      "sha256": "5c3eb511e4ea5d13378498cb0a568330a60d28eebc9804970ae7feb7d30cabe6"
+    },
+    "after": {
+      "bytes": 22800,
+      "sha256": "d36a7a11971f3e53c9adca6adc93120f48269757c370d5354df40712e1f55390"
+    },
+    "maximum": {
+      "bytes": 4194304,
+      "sha256": "3e2b9f0565a8d94391aea6b1406ac49a68b0c5f5ce727c3145f4308cbbac066d"
+    }
+  },
+  "published_standalone_client": {
+    "repository": "https://github.com/israeldi/flamingo-api-examples",
+    "commit": "37f99da001e5b048b851a78bdbb3dd88c51c19c5",
+    "path": "archiveproof/client.py",
+    "sha256": "11d9d0b6746dd0430b4cf2dc27a380d6349a8ad1fa498d83a6840263116220f1",
+    "url": "https://raw.githubusercontent.com/israeldi/flamingo-api-examples/37f99da001e5b048b851a78bdbb3dd88c51c19c5/archiveproof/client.py"
+  },
+  "scope": "Original fictional PDFs only. Real gateway/client processing, validation/regression/resolution and observed monthly hard-stop test. No paid purchase, sale, settlement, payout, archival acceptance or accessibility/visual certification.",
+  "bandwidth_fees": "Not tested or inferred; see current RapidAPI Pricing for separately disclosed bandwidth fees.",
+  "current_stage": "06-monthly-denial",
+  "explicit_platform_monthly_429_verified": true,
+  "denial_is_not_origin_six_per_minute_or_busy": true,
+  "published_standalone_client_actual_gateway_verified": true,
+  "two_exact_4MiB_sources_processed": true,
+  "successful_gateway_calls": 5,
+  "finished_at_utc": "2026-11-01T23:38:06.188142+00:00"
+}
