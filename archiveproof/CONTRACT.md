@@ -2,7 +2,7 @@
 
 ArchiveProof checks PDFs against an explicitly selected PDF/A archival profile with veraPDF 1.30.3. It returns source-linked validation evidence. It does not modify, repair, convert, render or certify a PDF.
 
-This document describes a release candidate. The consumer host and private plan configuration have been observed. Public origin activation, actual gateway processing, public source pins and Agensi publication remain separate release gates.
+This document describes a release candidate. The consumer host and private plan configuration have been observed. The authenticated origin and strict TLS are now configured. Actual gateway processing, final source/demo pins and marketplace publication remain separate release gates.
 
 ## Requests
 
@@ -24,9 +24,17 @@ Each decoded PDF is nonempty and at most 4 MiB (4,194,304 bytes). JSON request b
 
 The service runs one job at a time, with a 75-second overall job budget. A comparison includes two validations within that job budget. Concurrent work can receive a busy response. This is a bounded synchronous API, not a batch archival repository.
 
-The assigned consumer gateway is `https://archiveproof.p.rapidapi.com`. The standalone client uses only this fixed HTTPS host, performs ordinary certificate verification and does not follow redirects. It reads only `RAPIDAPI_KEY` for consumer authentication, sends it in `X-RapidAPI-Key` and sets `X-RapidAPI-Host` to the same gateway. A subscribed consumer key is separate from a provider's private origin secret. The client does not accept or require that provider secret.
+The assigned consumer gateway is `https://archiveproof.p.rapidapi.com`. The standalone client uses only this fixed HTTPS host, performs ordinary certificate verification and does not follow redirects. It uses `RAPIDAPI_KEY` by default, or an explicit private `--key-file`; it sends the selected subscribed application key in `X-RapidAPI-Key` and sets `X-RapidAPI-Host` to the same gateway. A subscribed consumer key is separate from a provider's private origin secret. The client does not accept or require that provider secret.
 
 The optional `--local-port` switch is for operator diagnostics only. It targets HTTP on fixed `127.0.0.1`, permits ports 1024–65535 and cannot select an arbitrary remote host. Public consumer instructions use the HTTPS gateway.
+
+## Private credential setup
+
+Subscribing does not populate the agent execution environment. Reuse an existing private `RAPIDAPI_KEY`, or run the included `setup_key.py` in the user's own private interactive Terminal on the **same host and OS user** as the client. Setup uses a hidden prompt without echo fallback, makes no HTTP/processing request, and exclusively creates `~/.config/flamingo-api/rapidapi.key` with mode600 in an owned mode700 directory outside a Git project. It never overwrites or rotates an existing key and refuses symlinked paths.
+
+Pass that absolute path with `--key-file`. An explicit file takes precedence; failure never falls back to environment authentication. The reader uses directory descriptors and nofollow/nonblock flags, requires an owned regular600/400 file with one link and owned700 immediate parent, rejects symlink path components, bounds the file to4096bytes and checks stable file identity/metadata. The file contains one printable ASCII key line, optionally followed by LF/CRLF. A key value must be16–512 printable ASCII characters without whitespace. This is a credential format bound, not subscription verification.
+
+A laptop file cannot configure a remote host. Use that host's own private Terminal or secure secret settings. Never attach credential files to chat. Setup and key loading require POSIX semantics; the existing environment route remains available. The client refuses selected PDF bytes containing the literal configured key; this is a literal-byte guard, not a general sensitive-content scan.
 
 ## Successful receipts
 
@@ -78,7 +86,7 @@ The backend is intended for bounded transient processing on the owner's Synology
 
 The Agensi instruction skill is intended to be free. Hosted API processing requires a separate RapidAPI account, subscription and consumer key. Saved private-draft monthly request caps are Basic $0 / 5, Pro $7 / 200, Ultra $15 / 750, all hard caps. Public availability and final published pricing remain to be verified. One validation or one comparison is one endpoint request; a comparison validates two source PDFs. Platform bandwidth charges, taxes or other checkout terms may apply separately and must be read on the current pricing page. No income or customer adoption is established by implementation or publication.
 
-Agensi delivers skill instructions through its agent connection; it does not host this backend or imply API execution rights. The callable Python client is independent public project material to be obtained from a verified release, rather than an assumed installed Agensi file. The client requires Python 3 and its standard library; users do not need a local Java or veraPDF installation to call the hosted service. No new MCP bridge is required for the standalone client.
+Agensi delivers skill instructions through its agent connection; it does not host this backend or imply API execution rights. The skill includes a self-contained Python client for temporary execution by a capable connected agent, with original instructions in SKILL.md; it does not install a persistent local skill directory. The creator also supplies independent public client files for standalone use. The client requires Python 3.10+ and its standard library; users do not need a local Java or veraPDF installation or an additional Flamingo MCP bridge to call the hosted service.
 
 ## Primary references
 

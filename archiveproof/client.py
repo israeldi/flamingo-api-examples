@@ -19,10 +19,67 @@ MAX_REQUEST_BYTES = 12 * 1024 * 1024
 MAX_REPORT_BYTES = 2 * 1024 * 1024
 MAX_RESPONSE_BYTES = 24 * 1024 * 1024
 ENGINE_VERSION = '1.30.3'
+MAX_KEY_BYTES = 4096
+
+
+class KeyFileError(ValueError):
+    pass
+
+
+def read_key_file(path):
+    """Read only an owned private file through non-symlink directory handles."""
+    message = ('Use an owned private POSIX key file (mode 600 or 400) in an owned '
+               '700 directory, without links, containing one ASCII key line.')
+    directory = descriptor = None
+    try:
+        if os.name != 'posix' or not all(hasattr(os, name) for name in ('O_NOFOLLOW', 'O_NONBLOCK', 'O_DIRECTORY', 'geteuid')):
+            raise KeyFileError(message)
+        absolute = Path(os.path.abspath(Path(path).expanduser()))
+        directory_flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW | os.O_NONBLOCK
+        directory = os.open(absolute.anchor, directory_flags)
+        for part in absolute.parts[1:-1]:
+            child = os.open(part, directory_flags, dir_fd=directory)
+            os.close(directory)
+            directory = child
+        parent = os.fstat(directory)
+        if parent.st_uid != os.geteuid() or stat.S_IMODE(parent.st_mode) != 0o700:
+            raise KeyFileError(message)
+        descriptor = os.open(absolute.name, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK, dir_fd=directory)
+        before = os.fstat(descriptor)
+        if (not stat.S_ISREG(before.st_mode) or before.st_uid != os.geteuid()
+                or stat.S_IMODE(before.st_mode) not in (0o600, 0o400)
+                or before.st_nlink != 1 or not 0 < before.st_size <= MAX_KEY_BYTES):
+            raise KeyFileError(message)
+        raw = os.read(descriptor, MAX_KEY_BYTES + 1)
+        signature = lambda info: (info.st_dev, info.st_ino, info.st_size, info.st_mode,
+                                  info.st_uid, info.st_nlink, info.st_mtime_ns, info.st_ctime_ns)
+        if (len(raw) != before.st_size or len(raw) > MAX_KEY_BYTES
+                or signature(before) != signature(os.fstat(descriptor))
+                or signature(before) != signature(os.stat(absolute.name, dir_fd=directory, follow_symlinks=False))):
+            raise KeyFileError(message)
+        raw = raw[:-2] if raw.endswith(b'\r\n') else raw[:-1] if raw.endswith(b'\n') else raw
+        if not raw or any(value < 33 or value > 126 for value in raw):
+            raise KeyFileError(message)
+        return raw.decode('ascii')
+    except (OSError, TypeError, ValueError) as exc:
+        if isinstance(exc, KeyFileError):
+            raise
+        raise KeyFileError(message) from None
+    finally:
+        if descriptor is not None:
+            os.close(descriptor)
+        if directory is not None:
+            os.close(directory)
 
 
 class ClientError(Exception):
     pass
+
+
+def validate_key(key):
+    if (not isinstance(key, str) or not 16 <= len(key) <= 512
+            or any(ord(char) < 33 or ord(char) > 126 for char in key)):
+        raise ClientError('Configure a valid subscribed key privately using RAPIDAPI_KEY or --key-file.')
 
 
 class GatewayError(ClientError):
@@ -89,8 +146,7 @@ def request_payload(operation, profile, sources):
 def post(operation, payload, key, local_port=None):
     if operation not in ('validate', 'compare'):
         raise ClientError('Unsupported operation.')
-    if not key or '\r' in key or '\n' in key:
-        raise ClientError('Configure your own subscribed RAPIDAPI_KEY privately in the environment.')
+    validate_key(key)
     if local_port is None:
         connection = http.client.HTTPSConnection(GATEWAY_HOST, timeout=120, context=ssl.create_default_context())
     else:
@@ -199,6 +255,7 @@ def main(argv=None):
             command.add_argument('after', type=Path)
         command.add_argument('--profile', required=True, choices=PROFILES)
         command.add_argument('--output-dir', required=True, type=Path)
+        command.add_argument('--key-file', type=Path, help='Optional private key file; otherwise use RAPIDAPI_KEY.')
         command.add_argument('--local-port', type=int, help='Diagnostic use only: HTTP port on fixed 127.0.0.1, never another host.')
     args = parser.parse_args(argv)
     try:
@@ -206,15 +263,19 @@ def main(argv=None):
             raise ClientError('Output directory already exists; choose a new directory. Existing work is preserved.')
         names = ('input',) if args.operation == 'validate' else ('before', 'after')
         sources = {name: read_pdf(getattr(args, name)) for name in names}
+        key = read_key_file(args.key_file) if args.key_file is not None else os.environ.get('RAPIDAPI_KEY', '')
+        validate_key(key)
+        if key and any(key.encode('utf-8') in source for source in sources.values()):
+            raise ClientError('A selected input contains the literal configured credential bytes; choose inputs without credentials.')
         payload = request_payload(args.operation, args.profile, sources)
-        receipt = post(args.operation, payload, os.environ.get('RAPIDAPI_KEY', ''), args.local_port)
+        receipt = post(args.operation, payload, key, args.local_port)
         artifacts = verified_artifacts(receipt, args.operation, args.profile, sources)
         save_new_directory(args.output_dir, artifacts)
         print(json.dumps({'output_directory': str(args.output_dir), 'profile': args.profile,
                           'results': {name: document['status'] for name, document in receipt['documents'].items()},
                           'message': 'Receipt and raw reports saved. Review scope and rule findings before delivery.'}))
         return 0
-    except (ClientError, OSError) as exc:
+    except (ClientError, KeyFileError, OSError) as exc:
         result = {'message': str(exc), 'automatic_retry': False}
         if isinstance(exc, GatewayError):
             result.update({'http_status': exc.status, 'error_code': exc.code, 'retry_after': exc.retry_after})

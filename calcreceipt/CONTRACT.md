@@ -20,11 +20,23 @@ Content-Length: <exact byte count>
 
 Use your own active CalcReceipt subscription and its application key. Keep the key in private client configuration; never put it in a URL, chat, source file or command arguments. Send it only to the fixed RapidAPI HTTPS host above, with certificate verification enabled. Consumers do not need a provider secret or direct-origin credentials.
 
-The supplied Python 3.10+ standard-library client makes one request, refuses redirects and automatic retries, and creates two distinct new output files without overwriting existing files. With `RAPIDAPI_KEY` already configured privately:
+The supplied Python 3.10+ standard-library client makes one request, refuses redirects and automatic retries, and creates two distinct new output files without overwriting existing files. Subscribing to RapidAPI does not populate credentials in a local or remote agent process. With `RAPIDAPI_KEY` already configured privately in the client's own execution environment:
 
 ```sh
 python3 client.py sample.xlsx --output recalculated.xlsx --report calculation-report.json
 ```
+
+Alternatively, run [setup_key.py](setup_key.py) once in your own private Terminal on the **same host and OS user** as the client. It makes no network or processing request, requires a hidden prompt without echo fallback, and creates only a new `~/.config/flamingo-api/rapidapi.key` file with mode 600 in an owned mode-700 configuration directory outside a Git project. Existing key files and unsafe or symlinked paths are refused; there is no overwrite or rotation option.
+
+```sh
+python3 setup_key.py
+python3 client.py sample.xlsx --key-file "$HOME/.config/flamingo-api/rapidapi.key" \
+  --output recalculated.xlsx --report calculation-report.json
+```
+
+The optional `--key-file` route requires POSIX file semantics. An explicit file takes precedence over `RAPIDAPI_KEY`; an invalid explicit file fails locally with no environment fallback. The client accepts only an owned regular file with mode 600 or 400, one link, and an owned mode-700 immediate parent. Symlinks, including ancestor symlinks, and nonregular files are refused. The file contains one nonempty printable ASCII key line, optionally followed by LF or CRLF, and is at most 4,096 bytes including that ending. File identity and metadata must remain stable while read. Either route requires the resulting key value to be 16–512 printable ASCII characters without whitespace; malformed values fail locally before HTTP headers are constructed. The file-size bound remains separate from this key-value validation. These checks and the setup helper run before any processing upload. The existing environment route remains available without `--key-file`.
+
+A laptop key file cannot configure a remote host. Use that host's own private Terminal or existing secure secret settings for its agent OS user. Never attach credential files or paste credentials into chat. The client refuses selected input bytes containing the literal configured key; this check covers literal bytes only.
 
 A timeout or disconnected response does not prove that processing did not occur. A deliberate retry can consume another request. There is no idempotency-key facility.
 
@@ -156,4 +168,4 @@ Upload only files you are authorized to disclose to both RapidAPI and this servi
 
 The published monthly plans are Basic **$0 / 3 requests**, Pro **$9 / 250 requests** and Ultra **$19 / 1,000 requests**, each with a hard request cap. RapidAPI separately discloses platform bandwidth fees on [Pricing](https://rapidapi.com/IsraelDiego/api/calcreceipt/pricing); a hard request cap does not remove those fees. Check current pricing before subscribing or processing. The standalone examples or an Agensi instruction skill do not include API access or a hosted-processing allowance.
 
-The recorded demonstration is an original fictional fixture processed through the actual gateway. It is not a customer testimonial, paid sale, revenue result or guarantee of correctness for other workbooks.
+The recorded demonstration is an original fictional fixture processed through the actual gateway with the earlier client identified in [demo/verification.json](demo/verification.json). The optional key-file/setup update was checked offline with fake keys and mocked transport, without fresh API requests or an Agensi-connected-session run. The recorded demonstration is not a customer testimonial, paid sale, revenue result or guarantee of correctness for other workbooks.

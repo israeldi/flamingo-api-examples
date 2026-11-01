@@ -1,11 +1,11 @@
 {
   "CONTRACT.md": {
-    "bytes": 9973,
-    "sha256": "90c910a2b2455415694403cc28386d123191c6a49cc04ea53b96e5a62f915585"
+    "bytes": 11734,
+    "sha256": "dcbb0806544633f4d0411e628c8603e354fcbee5f3b687bc578453b4dae12713"
   },
   "README.md": {
-    "bytes": 2083,
-    "sha256": "7349befc62cd62c5352b897d5ead12f970099c00df3ae3829d6b6668d8346379"
+    "bytes": 3854,
+    "sha256": "df2e6a188474a15b426a8909032faa213f16ef20892eb6528ac73ba854fcb5bf"
   },
   "archive-after.pdf": {
     "bytes": 22800,
@@ -16,7 +16,11 @@
     "sha256": "5c3eb511e4ea5d13378498cb0a568330a60d28eebc9804970ae7feb7d30cabe6"
   },
   "client.py": {
-    "bytes": 11411,
-    "sha256": "688c807ee413dd1409f5f2f3a9e1af6cf0512c1b2f7dc4383aeff90ef5e84788"
+    "bytes": 14601,
+    "sha256": "11d9d0b6746dd0430b4cf2dc27a380d6349a8ad1fa498d83a6840263116220f1"
+  },
+  "setup_key.py": {
+    "bytes": 5299,
+    "sha256": "53b412ee7918b6093c5d2d7604cf8bf8ad42e9c7a538492c90d15b2183b0445f"
   }
 }
