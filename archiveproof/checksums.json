@@ -1,0 +1,22 @@
+{
+  "CONTRACT.md": {
+    "bytes": 9973,
+    "sha256": "90c910a2b2455415694403cc28386d123191c6a49cc04ea53b96e5a62f915585"
+  },
+  "README.md": {
+    "bytes": 2083,
+    "sha256": "7349befc62cd62c5352b897d5ead12f970099c00df3ae3829d6b6668d8346379"
+  },
+  "archive-after.pdf": {
+    "bytes": 22800,
+    "sha256": "d36a7a11971f3e53c9adca6adc93120f48269757c370d5354df40712e1f55390"
+  },
+  "archive-before.pdf": {
+    "bytes": 23523,
+    "sha256": "5c3eb511e4ea5d13378498cb0a568330a60d28eebc9804970ae7feb7d30cabe6"
+  },
+  "client.py": {
+    "bytes": 11411,
+    "sha256": "688c807ee413dd1409f5f2f3a9e1af6cf0512c1b2f7dc4383aeff90ef5e84788"
+  }
+}
