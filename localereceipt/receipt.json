@@ -1,0 +1,125 @@
+{
+  "inputs": {
+    "current": {
+      "bytes": 116,
+      "name": "proof-current.json",
+      "nodes": 5,
+      "sha256": "bdc3cc99b0a0fc220f714d41c63c0611de3b5e975ee82162a9c77963d693213b",
+      "string_leaves": 4
+    },
+    "previous": {
+      "bytes": 103,
+      "name": "proof-previous.json",
+      "nodes": 5,
+      "sha256": "e5aedd26532e97952e3ff76fd0135dcb4de9df5c46d37f5b5fc280ea4151783e",
+      "string_leaves": 4
+    },
+    "targets": [
+      {
+        "bytes": 121,
+        "label": "fr",
+        "name": "proof-fr.json",
+        "nodes": 5,
+        "sha256": "ddab7427b2d93a4036ef44ab8aeb2c24d3c5cc07a219382b4b2f543916587994",
+        "string_leaves": 4
+      }
+    ]
+  },
+  "policy": {
+    "approval": "not_granted",
+    "comparison": "exact_decoded_JSON_strings_and_node_kinds",
+    "originals_modified": false,
+    "runtime_compatibility": "not_assessed",
+    "selected_targets_only": true,
+    "strings": "opaque",
+    "template_validation": "not_assessed",
+    "translation_quality": "not_assessed"
+  },
+  "product_version": "0.1.0",
+  "schema_version": "localereceipt.review.v1",
+  "source_summary": {
+    "added": 1,
+    "changed": 2,
+    "current_keys": 4,
+    "previous_keys": 4,
+    "removed": 1,
+    "structure_changes": 0,
+    "unchanged": 1
+  },
+  "structure_changes": [],
+  "targets": [
+    {
+      "label": "fr",
+      "rows": [
+        {
+          "current_kind": "string",
+          "current_text": "Start free trial",
+          "pointer": "/checkout",
+          "previous_kind": "string",
+          "previous_text": "Pay now",
+          "reasons": [
+            "source_changed"
+          ],
+          "source_change": "changed",
+          "target_kind": "string",
+          "target_state": "present",
+          "target_text": "Payer maintenant"
+        },
+        {
+          "current_kind": "string",
+          "current_text": "Welcome {name}",
+          "pointer": "/greeting",
+          "previous_kind": "string",
+          "previous_text": "Hello {name}",
+          "reasons": [
+            "source_changed"
+          ],
+          "source_change": "changed",
+          "target_kind": "string",
+          "target_state": "present",
+          "target_text": "Bonjour {name}"
+        },
+        {
+          "current_kind": "missing",
+          "current_text": null,
+          "pointer": "/legacy",
+          "previous_kind": "string",
+          "previous_text": "Legacy",
+          "reasons": [
+            "source_removed"
+          ],
+          "source_change": "removed",
+          "target_kind": "string",
+          "target_state": "retained_removed",
+          "target_text": "Ancien"
+        },
+        {
+          "current_kind": "string",
+          "current_text": "Try again",
+          "pointer": "/retry",
+          "previous_kind": "missing",
+          "previous_text": null,
+          "reasons": [
+            "source_added",
+            "target_missing"
+          ],
+          "source_change": "added",
+          "target_kind": "missing",
+          "target_state": "missing",
+          "target_text": null
+        }
+      ],
+      "summary": {
+        "added_source_rows": 1,
+        "changed_source_rows": 2,
+        "removed_source_rows": 1,
+        "rows_needing_review": 4,
+        "target_empty": 0,
+        "target_extra": 0,
+        "target_missing": 1,
+        "target_structure_mismatch": 0,
+        "unchanged_present": 1
+      }
+    }
+  ]
+}

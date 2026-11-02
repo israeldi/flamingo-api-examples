@@ -1,0 +1,67 @@
+{
+  "recorded_at_utc": "2026-11-02T02:13:49.721181+00:00",
+  "product": "LocaleReceipt \u2014 Translation Update Handoff",
+  "version": "0.1.0",
+  "helper": {
+    "bytes": 33954,
+    "sha256": "aad165adf2cb83496ce5899d72a8ed9941a866460cf2078797e4402f621ebe64"
+  },
+  "run": "Actual standalone local execution with original fictional JSON inputs; unchanged temporary-script forward execution independently reproduced both final artifacts. Not an Agensi-connected buyer session.",
+  "cli_tests_passed": 25,
+  "browser_checks": {
+    "desktop_filters_and_search": true,
+    "multiple_translation_filters": true,
+    "narrow_viewport_390": true,
+    "no_change_control_without_approval": true,
+    "console_errors_observed": 0
+  },
+  "demo": {
+    "source_changed": 2,
+    "source_added": 1,
+    "source_removed": 1,
+    "unchanged": 1,
+    "target_review_rows": 4,
+    "target_missing": 1,
+    "unchanged_present": 1
+  },
+  "inputs": {
+    "current": {
+      "bytes": 116,
+      "name": "proof-current.json",
+      "nodes": 5,
+      "sha256": "bdc3cc99b0a0fc220f714d41c63c0611de3b5e975ee82162a9c77963d693213b",
+      "string_leaves": 4
+    },
+    "previous": {
+      "bytes": 103,
+      "name": "proof-previous.json",
+      "nodes": 5,
+      "sha256": "e5aedd26532e97952e3ff76fd0135dcb4de9df5c46d37f5b5fc280ea4151783e",
+      "string_leaves": 4
+    },
+    "targets": [
+      {
+        "bytes": 121,
+        "label": "fr",
+        "name": "proof-fr.json",
+        "nodes": 5,
+        "sha256": "ddab7427b2d93a4036ef44ab8aeb2c24d3c5cc07a219382b4b2f543916587994",
+        "string_leaves": 4
+      }
+    ]
+  },
+  "outputs": {
+    "receipt.json": {
+      "bytes": 3400,
+      "sha256": "0b168169ce665b93d0eb5636645f235ec5c679eb8f25664a20706fb4a4b32446"
+    },
+    "review.html": {
+      "bytes": 12473,
+      "sha256": "486a060a81ff155d3511acda3458d42d691d3b8d5784893ce0b9c90b299a975a"
+    }
+  },
+  "network_or_api_processing_requests": 0,
+  "original_inputs_modified": false,
+  "translation_quality_or_runtime_validated": false,
+  "new_customer_use_or_income_established": false
+}

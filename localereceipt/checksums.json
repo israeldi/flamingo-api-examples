@@ -1,0 +1,30 @@
+{
+  "README.md": {
+    "bytes": 3086,
+    "sha256": "c2cbf605296029247e255630990429127b4076b2b9a38bc51d64c31b187f46d8"
+  },
+  "proof-current.json": {
+    "bytes": 116,
+    "sha256": "bdc3cc99b0a0fc220f714d41c63c0611de3b5e975ee82162a9c77963d693213b"
+  },
+  "proof-fr.json": {
+    "bytes": 121,
+    "sha256": "ddab7427b2d93a4036ef44ab8aeb2c24d3c5cc07a219382b4b2f543916587994"
+  },
+  "proof-previous.json": {
+    "bytes": 103,
+    "sha256": "e5aedd26532e97952e3ff76fd0135dcb4de9df5c46d37f5b5fc280ea4151783e"
+  },
+  "receipt.json": {
+    "bytes": 3400,
+    "sha256": "0b168169ce665b93d0eb5636645f235ec5c679eb8f25664a20706fb4a4b32446"
+  },
+  "review.html": {
+    "bytes": 12473,
+    "sha256": "486a060a81ff155d3511acda3458d42d691d3b8d5784893ce0b9c90b299a975a"
+  },
+  "verification.json": {
+    "bytes": 2074,
+    "sha256": "be858307dcb4d266074c081e94fe168a855e46fe3272a92a503eaef4acd77b5d"
+  }
+}

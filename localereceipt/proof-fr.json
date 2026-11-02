@@ -1,0 +1,6 @@
+{
+  "checkout": "Payer maintenant",
+  "greeting": "Bonjour {name}",
+  "legacy": "Ancien",
+  "unchanged": "Enregistrer"
+}

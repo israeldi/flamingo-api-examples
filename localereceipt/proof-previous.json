@@ -1,0 +1,6 @@
+{
+  "checkout": "Pay now",
+  "greeting": "Hello {name}",
+  "legacy": "Legacy",
+  "unchanged": "Save"
+}
