@@ -1,6 +1,6 @@
 # GuideBranch: a support guide people can follow
 
-This free worked example shows the output of **GuideBranch — Support SOPs to Interactive Guides**. TableNest and its support procedure are fictional. No customer files or paid builder source are included.
+This free worked example shows the output of **GuideBranch — Support SOPs to Interactive Guides**. TableNest and its support procedure are fictional. No customer files or paid builder source are included. This sample was built with GuideBranch 0.1.2.
 
 GuideBranch is awaiting Agensi review. This example is available now; it is not a claim that the skill has been approved or is available to purchase.
 

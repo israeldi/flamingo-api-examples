@@ -1,15 +1,15 @@
 {
   "product": "GuideBranch",
-  "source_version": "0.1.0",
+  "source_version": "0.1.2",
   "example": "TableNest CSV export",
   "fictional": true,
   "product_status_at_publication": "Submitted to Agensi; pending review. Not yet verified live.",
-  "qualification_scope": "The unchanged generated TableNest reader had all nine paths exercised through HTTP localhost, including Back and heading focus. Desktop and 390px browser renders were inspected. No direct file-URL test is claimed.",
+  "qualification_scope": "Maintainer checks use fictional sources. Release 0.1.2 passed 37 Python and 12 runtime checks and an unchanged temporary-helper trial. Its route/runtime code is unchanged from the original nine-path TableNest browser run. The long-metadata reader matches the exact HTML checked at a 320px viewport during the portfolio audit. Screenshots show the same fictional TableNest workflow. Direct file-URL opening was not part of the recorded browser checks.",
   "semantic_correctness_verified": false,
   "files": {
     "README.md": {
-      "bytes": 2727,
-      "sha256": "bbcbe03c5197338fc67593e236624e534219a8ab8dfaa8f0addfb51a98ab4652"
+      "bytes": 2773,
+      "sha256": "88e22d1869ecdc78336127526ed81542c6e449bf4e9a666d19f34f4771e8ecbb"
     },
     "SOP.md": {
       "bytes": 2045,
@@ -20,8 +20,8 @@
       "sha256": "5e9cb2671f5d3bb0b9c2b0e321e2f97a5a73b23a6f4dc86f2d1e935cb6f29639"
     },
     "guide.html": {
-      "bytes": 38595,
-      "sha256": "b11e16c12339d9f85812b9722f62afdc0eac4213a193cb1d5585e20698d7d944"
+      "bytes": 38630,
+      "sha256": "ab8cbebf79c3cfbafc5630c2eecc68f12f3766e4181fc13f3d814cf40c92020b"
     },
     "mobile.jpg": {
       "bytes": 74413,
