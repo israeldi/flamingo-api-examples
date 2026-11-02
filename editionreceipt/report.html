@@ -1,0 +1,186 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EditionReceipt</title><style>body{font:16px/1.5 system-ui;background:#f5f5ef;color:#162b32;max-width:1400px;margin:36px auto;padding:0 24px}h1{font-size:36px;margin:0}h2{font-size:23px;margin:24px 0 12px}.eyebrow{font:12px ui-monospace,monospace;letter-spacing:.12em;color:#516771}.summary{padding:16px 20px;background:#e4eceb;border-left:4px solid #517f80;margin:24px 0}.badge{display:inline-block;background:#ead8ce;color:#793219;border-radius:4px;padding:3px 10px;font:700 13px/1.7 system-ui;white-space:nowrap;vertical-align:middle}table{border-collapse:collapse;table-layout:fixed;width:100%;background:#fff}th,td{padding:12px;border:1px solid #d9e1de;text-align:left;vertical-align:top;overflow-wrap:break-word}thead th{background:#edf0ec;font-size:12px;color:#425d65}th:first-child{width:10%}th:nth-child(2){width:13%}th:nth-child(3),th:nth-child(4){width:28%}th:nth-child(5){width:21%}td.status{white-space:nowrap;font-size:12px;font-weight:700}td small{display:block;overflow-wrap:anywhere;font:11px/1.5 ui-monospace,monospace}td details{margin-top:6px;font-size:12px}summary{cursor:pointer;color:#42636b}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:white;padding:16px}section>details{padding:14px 0}.foot{font-size:13px;color:#53666a;margin-top:28px}@media(max-width:700px){body{padding:0 12px;margin:24px auto}h1{font-size:30px}thead{display:none}table,tbody{display:block}tbody tr{display:grid;grid-template-columns:1fr 1fr;border:1px solid #d9e1de;margin-bottom:12px}tbody th,tbody td{display:block;width:auto!important;border:0;padding:10px;min-width:0}tbody th{font-size:16px}td.status{text-align:right}td[data-label]::before{content:attr(data-label);display:block;color:#677d83;font-size:11px;letter-spacing:.05em;margin-bottom:6px}td:last-child{grid-column:1/-1;border-top:1px solid #edf0ec}.summary{padding:12px;font-size:14px}}</style><p class="eyebrow">ONIX EXPORT / EPUB DELIVERY</p><h1>EditionReceipt <span class="badge">DIFFERENCE</span></h1><p>Compare the book record with the file being delivered.</p><div class="summary">Fields with differences: 1 · Agree: 6 · Unresolved: 0 · Optional declarations absent: 2</div><section><h2>9780000000019 <span class="badge">DIFFERENCE</span></h2><table><thead><tr><th>Field</th><th>Result</th><th>ONIX export</th><th>EPUB delivery</th><th>Details</th></tr></thead><tbody><tr><th>isbn</th><td class="status">MATCH</td><td data-label="ONIX"><div>9780000000019<details><summary>Source</summary><small>/ONIXMessage/Product[2]/ProductIdentifier[1]/IDValue[1]</small></details></div></td><td data-label="EPUB"><div>9780000000019<details><summary>Source</summary><small>EPUB/content.opf:/package/metadata[1]/identifier[2]</small></details></div></td><td><details><summary>Interpretation</summary>ISBN syntax/check digit only, not registration. UUID primary identifiers are allowed; dc:source is never ebook identity.</details></td></tr><tr><th>title</th><td class="status">DIFFERENCE</td><td data-label="ONIX"><div>The Quiet Lantern<details><summary>Source</summary><small>/ONIXMessage/Product[2]/DescriptiveDetail[1]/TitleDetail[1]/TitleElement[1]/TitleText[1]</small></details></div></td><td data-label="EPUB"><div>The Orchard Handbook — Earlier Draft<details><summary>Source</summary><small>EPUB/content.opf:/package/metadata[1]/title[1]</small></details></div></td><td><details><summary>Interpretation</summary>Only unambiguous book-level main/subtitle values. An unqualified combined EPUB title is not split by guessed punctuation.</details></td></tr><tr><th>subtitle</th><td class="status">MATCH</td><td data-label="ONIX"><div>A Field Guide to Small Lights<details><summary>Source</summary><small>/ONIXMessage/Product[2]/DescriptiveDetail[1]/TitleDetail[1]/TitleElement[1]/Subtitle[1]</small></details></div></td><td data-label="EPUB"><div>A Field Guide to Small Lights<details><summary>Source</summary><small>EPUB/content.opf:/package/metadata[1]/title[2]</small></details></div></td><td><details><summary>Interpretation</summary>Only unambiguous book-level main/subtitle values. An unqualified combined EPUB title is not split by guessed punctuation.</details></td></tr><tr><th>languages</th><td class="status">MATCH</td><td data-label="ONIX"><div>eng<details><summary>Source</summary><small>/ONIXMessage/Product[2]/DescriptiveDetail[1]/Language[1]/LanguageCode[1]</small></details></div></td><td data-label="EPUB"><div>en<details><summary>Source</summary><small>EPUB/content.opf:/package/metadata[1]/language[1]</small></details></div></td><td><details><summary>Interpretation</summary>ISO639 aliases normalized. Region/script qualification is retained; it is not guessed away.</details></td></tr><tr><th>contributors</th><td class="status">MATCH</td><td data-label="ONIX"><div>Ada Quill<details><summary>Source</summary><small>/ONIXMessage/Product[2]/DescriptiveDetail[1]/Contributor[1]/PersonName[1]</small></details></div></td><td data-label="EPUB"><div>Ada Quill<details><summary>Source</summary><small>EPUB/content.opf:/package/metadata[1]/creator[1]</small></details></div></td><td><details><summary>Interpretation</summary>Exact normalized display names with A01/aut,A12/ill,B01/edt,B06/trl. Inverted names and unsupported/unspecified roles need review.</details></td></tr><tr><th>publisher</th><td class="status">MATCH</td><td data-label="ONIX"><div>Lantern Test Press<details><summary>Source</summary><small>/ONIXMessage/Product[2]/PublishingDetail[1]/Publisher[1]/PublisherName[1]</small></details></div></td><td data-label="EPUB"><div>Lantern Test Press<details><summary>Source</summary><small>EPUB/content.opf:/package/metadata[1]/publisher[1]</small></details></div></td><td><details><summary>Interpretation</summary>Primary publisher only; a different imprint is not silently substituted.</details></td></tr><tr><th>format</th><td class="status">MATCH</td><td data-label="ONIX"><div>E101<details><summary>Source</summary><small>/ONIXMessage/Product[2]/DescriptiveDetail[1]/ProductFormDetail[1]</small></details></div></td><td data-label="EPUB"><div>EPUB<details><summary>Source</summary><small>mimetype</small></details></div></td><td><details><summary>Interpretation</summary>ONIX E101 corresponds to EPUB container bytes. This does not validate package content or schema.</details></td></tr><tr><th>layout</th><td class="status">NOT_DECLARED</td><td data-label="ONIX">Not declared / unavailable</td><td data-label="EPUB">Not declared / unavailable</td><td><details><summary>Interpretation</summary>Global standard EPUB3 layout/default only; mixed variants and spine overrides need review.</details></td></tr><tr><th>version</th><td class="status">NOT_DECLARED</td><td data-label="ONIX">Not declared / unavailable</td><td data-label="EPUB">Not declared / unavailable</td><td><details><summary>Interpretation</summary>No ONIX version declaration compared.</details></td></tr></tbody></table><details><summary>Complete source identities and evidence</summary><pre>{
+  &quot;requested_isbn&quot;: &quot;9780000000019&quot;,
+  &quot;inputs&quot;: {
+    &quot;onix&quot;: {
+      &quot;sha256&quot;: &quot;ceded38c6fae5d0ad097756d06a02297df397788dcc029ae9f4e2e1a921ad1fb&quot;,
+      &quot;bytes&quot;: 2516,
+      &quot;name&quot;: &quot;feed.xml&quot;
+    },
+    &quot;epub&quot;: {
+      &quot;sha256&quot;: &quot;d1541ff3eb50a1954707c2f7294b092f858e58f5ca11400d97d7d9cc4a9aa22e&quot;,
+      &quot;bytes&quot;: 2350,
+      &quot;name&quot;: &quot;delivery-difference.epub&quot;
+    },
+    &quot;opf&quot;: {
+      &quot;part&quot;: &quot;EPUB/content.opf&quot;,
+      &quot;sha256&quot;: &quot;ffb798930c5f63ef16ffa99c11aad189f6cfbe2fe64f75dcf6b3a1afcf8fdfe2&quot;
+    }
+  },
+  &quot;checks&quot;: [
+    {
+      &quot;field&quot;: &quot;isbn&quot;,
+      &quot;status&quot;: &quot;MATCH&quot;,
+      &quot;onix&quot;: [
+        {
+          &quot;value&quot;: &quot;9780000000019&quot;,
+          &quot;path&quot;: &quot;/ONIXMessage/Product[2]/ProductIdentifier[1]/IDValue[1]&quot;,
+          &quot;id_type&quot;: &quot;15&quot;,
+          &quot;normalized&quot;: &quot;9780000000019&quot;
+        }
+      ],
+      &quot;epub&quot;: [
+        {
+          &quot;value&quot;: &quot;9780000000019&quot;,
+          &quot;path&quot;: &quot;EPUB/content.opf:/package/metadata[1]/identifier[2]&quot;,
+          &quot;id&quot;: &quot;ebook-isbn&quot;,
+          &quot;scheme&quot;: null,
+          &quot;role&quot;: null,
+          &quot;normalized&quot;: &quot;9780000000019&quot;
+        }
+      ],
+      &quot;reason&quot;: &quot;ISBN syntax/check digit only, not registration. UUID primary identifiers are allowed; dc:source is never ebook identity.&quot;
+    },
+    {
+      &quot;field&quot;: &quot;title&quot;,
+      &quot;status&quot;: &quot;DIFFERENCE&quot;,
+      &quot;onix&quot;: [
+        {
+          &quot;value&quot;: &quot;The Quiet Lantern&quot;,
+          &quot;path&quot;: &quot;/ONIXMessage/Product[2]/DescriptiveDetail[1]/TitleDetail[1]/TitleElement[1]/TitleText[1]&quot;
+        }
+      ],
+      &quot;epub&quot;: [
+        {
+          &quot;value&quot;: &quot;The Orchard Handbook — Earlier Draft&quot;,
+          &quot;path&quot;: &quot;EPUB/content.opf:/package/metadata[1]/title[1]&quot;,
+          &quot;id&quot;: &quot;main-title&quot;,
+          &quot;scheme&quot;: null,
+          &quot;role&quot;: null
+        }
+      ],
+      &quot;reason&quot;: &quot;Only unambiguous book-level main/subtitle values. An unqualified combined EPUB title is not split by guessed punctuation.&quot;
+    },
+    {
+      &quot;field&quot;: &quot;subtitle&quot;,
+      &quot;status&quot;: &quot;MATCH&quot;,
+      &quot;onix&quot;: [
+        {
+          &quot;value&quot;: &quot;A Field Guide to Small Lights&quot;,
+          &quot;path&quot;: &quot;/ONIXMessage/Product[2]/DescriptiveDetail[1]/TitleDetail[1]/TitleElement[1]/Subtitle[1]&quot;
+        }
+      ],
+      &quot;epub&quot;: [
+        {
+          &quot;value&quot;: &quot;A Field Guide to Small Lights&quot;,
+          &quot;path&quot;: &quot;EPUB/content.opf:/package/metadata[1]/title[2]&quot;,
+          &quot;id&quot;: &quot;subtitle&quot;,
+          &quot;scheme&quot;: null,
+          &quot;role&quot;: null
+        }
+      ],
+      &quot;reason&quot;: &quot;Only unambiguous book-level main/subtitle values. An unqualified combined EPUB title is not split by guessed punctuation.&quot;
+    },
+    {
+      &quot;field&quot;: &quot;languages&quot;,
+      &quot;status&quot;: &quot;MATCH&quot;,
+      &quot;onix&quot;: [
+        {
+          &quot;value&quot;: &quot;eng&quot;,
+          &quot;path&quot;: &quot;/ONIXMessage/Product[2]/DescriptiveDetail[1]/Language[1]/LanguageCode[1]&quot;,
+          &quot;normalized&quot;: &quot;en&quot;,
+          &quot;countries&quot;: []
+        }
+      ],
+      &quot;epub&quot;: [
+        {
+          &quot;value&quot;: &quot;en&quot;,
+          &quot;path&quot;: &quot;EPUB/content.opf:/package/metadata[1]/language[1]&quot;,
+          &quot;id&quot;: null,
+          &quot;scheme&quot;: null,
+          &quot;role&quot;: null,
+          &quot;normalized&quot;: &quot;en&quot;
+        }
+      ],
+      &quot;reason&quot;: &quot;ISO639 aliases normalized. Region/script qualification is retained; it is not guessed away.&quot;
+    },
+    {
+      &quot;field&quot;: &quot;contributors&quot;,
+      &quot;status&quot;: &quot;MATCH&quot;,
+      &quot;onix&quot;: [
+        {
+          &quot;value&quot;: &quot;Ada Quill&quot;,
+          &quot;path&quot;: &quot;/ONIXMessage/Product[2]/DescriptiveDetail[1]/Contributor[1]/PersonName[1]&quot;,
+          &quot;normalized&quot;: &quot;aut:Ada Quill&quot;,
+          &quot;role&quot;: &quot;A01&quot;
+        }
+      ],
+      &quot;epub&quot;: [
+        {
+          &quot;value&quot;: &quot;Ada Quill&quot;,
+          &quot;path&quot;: &quot;EPUB/content.opf:/package/metadata[1]/creator[1]&quot;,
+          &quot;id&quot;: &quot;creator&quot;,
+          &quot;scheme&quot;: null,
+          &quot;role&quot;: &quot;aut&quot;,
+          &quot;normalized&quot;: &quot;aut:Ada Quill&quot;
+        }
+      ],
+      &quot;reason&quot;: &quot;Exact normalized display names with A01/aut,A12/ill,B01/edt,B06/trl. Inverted names and unsupported/unspecified roles need review.&quot;
+    },
+    {
+      &quot;field&quot;: &quot;publisher&quot;,
+      &quot;status&quot;: &quot;MATCH&quot;,
+      &quot;onix&quot;: [
+        {
+          &quot;value&quot;: &quot;Lantern Test Press&quot;,
+          &quot;path&quot;: &quot;/ONIXMessage/Product[2]/PublishingDetail[1]/Publisher[1]/PublisherName[1]&quot;
+        }
+      ],
+      &quot;epub&quot;: [
+        {
+          &quot;value&quot;: &quot;Lantern Test Press&quot;,
+          &quot;path&quot;: &quot;EPUB/content.opf:/package/metadata[1]/publisher[1]&quot;,
+          &quot;id&quot;: null,
+          &quot;scheme&quot;: null,
+          &quot;role&quot;: null
+        }
+      ],
+      &quot;reason&quot;: &quot;Primary publisher only; a different imprint is not silently substituted.&quot;
+    },
+    {
+      &quot;field&quot;: &quot;format&quot;,
+      &quot;status&quot;: &quot;MATCH&quot;,
+      &quot;onix&quot;: [
+        {
+          &quot;value&quot;: &quot;E101&quot;,
+          &quot;path&quot;: &quot;/ONIXMessage/Product[2]/DescriptiveDetail[1]/ProductFormDetail[1]&quot;
+        }
+      ],
+      &quot;epub&quot;: [
+        {
+          &quot;value&quot;: &quot;EPUB&quot;,
+          &quot;path&quot;: &quot;mimetype&quot;,
+          &quot;normalized&quot;: &quot;E101&quot;
+        }
+      ],
+      &quot;reason&quot;: &quot;ONIX E101 corresponds to EPUB container bytes. This does not validate package content or schema.&quot;
+    },
+    {
+      &quot;field&quot;: &quot;layout&quot;,
+      &quot;status&quot;: &quot;NOT_DECLARED&quot;,
+      &quot;onix&quot;: [],
+      &quot;epub&quot;: [],
+      &quot;reason&quot;: &quot;Global standard EPUB3 layout/default only; mixed variants and spine overrides need review.&quot;
+    },
+    {
+      &quot;field&quot;: &quot;version&quot;,
+      &quot;status&quot;: &quot;NOT_DECLARED&quot;,
+      &quot;onix&quot;: [],
+      &quot;epub&quot;: [],
+      &quot;reason&quot;: &quot;No ONIX version declaration compared.&quot;
+    }
+  ],
+  &quot;findings&quot;: [],
+  &quot;record_reference&quot;: &quot;ER-FICTIONAL-001&quot;,
+  &quot;comparison_complete&quot;: true,
+  &quot;verdict&quot;: &quot;DIFFERENCE&quot;
+}</pre></details></section><p class="foot">Supported metadata agreement only. This is not EPUB, accessibility, visual, ISBN-registration or retailer-acceptance certification. Full evidence retains field locations and input hashes. Reports can expose unpublished metadata; share deliberately.<br>Version 1.0.0 · Original source files were not edited.</p></html>

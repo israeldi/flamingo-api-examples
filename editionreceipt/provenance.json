@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "artifact": "EditionReceipt public fictional example",
+  "tool": "EditionReceipt",
+  "tool_version": "1.0.0",
+  "marketplace_status_snapshot": {
+    "service": "Agensi",
+    "status": "PENDING_REVIEW",
+    "submitted": true,
+    "published": false,
+    "currently_purchasable": false,
+    "proposed_price_usd": 15,
+    "proposed_pricing": "one-time",
+    "record_verified_at_utc": "2026-11-02T02:39:14.357158+00:00",
+    "creator_profile_url": "https://www.agensi.io/creators/israel-diego",
+    "public_listing_url": null,
+    "note": "Pending review; creator profile is not a claim that the pending skill is publicly visible or available."
+  },
+  "files": {
+    "feed.xml": {
+      "role": "fictional ONIX input",
+      "source_path_relative_to_product": "verification/demo/feed.xml",
+      "bytes": 2516,
+      "sha256": "ceded38c6fae5d0ad097756d06a02297df397788dcc029ae9f4e2e1a921ad1fb",
+      "copied_unchanged": true
+    },
+    "delivery-difference.epub": {
+      "role": "fictional delivery EPUB input",
+      "source_path_relative_to_product": "verification/demo/delivery-difference.epub",
+      "bytes": 2350,
+      "sha256": "d1541ff3eb50a1954707c2f7294b092f858e58f5ca11400d97d7d9cc4a9aa22e",
+      "copied_unchanged": true
+    },
+    "report.json": {
+      "role": "unchanged final JSON receipt",
+      "source_path_relative_to_product": "verification/demo/run-03/difference/receipt/report.json",
+      "bytes": 7085,
+      "sha256": "502b83e55eeb2b145e870768d0ab2fb0a3e111a0640b215bd4727ed5feefa017",
+      "copied_unchanged": true
+    },
+    "report.html": {
+      "role": "unchanged final HTML report",
+      "source_path_relative_to_product": "verification/demo/run-03/difference/receipt/report.html",
+      "bytes": 14843,
+      "sha256": "83357c587ccd0d2c83a19ab82813951d4de7e011c18d073ca229546f357d7dd9",
+      "copied_unchanged": true
+    }
+  },
+  "recorded_execution": {
+    "source_record_relative_to_product": "verification/cli-demo.json",
+    "verified_at_utc": "2026-11-02T02:23:01.899010+00:00",
+    "case": "difference",
+    "description": "Actual creator-local execution of three unchanged scripts copied to separate arbitrary temporary directories, run with unrelated cwd on fictional files. This public-example preparation did not rerun the skill.",
+    "script_sha256": {
+      "edition_receipt.py": "ae008bb88b6a19fc55c64f1544d1547010ad821f95a11a6d6334cdc06e130335",
+      "inspect_epub.py": "dcf7636ee6dff218691825102ed3c40fc964586032d3dfa70b7e43222c765280",
+      "inspect_onix.py": "d2a2ff03373dc36214c2c149d6d5fffe4f9df9260f54d85c861a00379b9fa559"
+    },
+    "exit_codes_in_order_onix_epub_compare": [
+      0,
+      0,
+      1
+    ],
+    "source_unchanged": true,
+    "recorded_html_matches_browser_preview_bytes": true,
+    "buyer_or_marketplace_delivery_sales_or_testimonial_claim": "None; this is creator-local execution evidence only."
+  },
+  "receipt_summary": {
+    "requested_isbn": "9780000000019",
+    "record_reference": "ER-FICTIONAL-001",
+    "opf_part": "EPUB/content.opf",
+    "opf_sha256": "ffb798930c5f63ef16ffa99c11aad189f6cfbe2fe64f75dcf6b3a1afcf8fdfe2",
+    "verdict": "DIFFERENCE",
+    "comparison_complete": true,
+    "field_statuses": {
+      "isbn": "MATCH",
+      "title": "DIFFERENCE",
+      "subtitle": "MATCH",
+      "languages": "MATCH",
+      "contributors": "MATCH",
+      "publisher": "MATCH",
+      "format": "MATCH",
+      "layout": "NOT_DECLARED",
+      "version": "NOT_DECLARED"
+    },
+    "source_identity_note": "The EPUB primary identifier is a UUID; ebook-isbn separately declares 9780000000019. dc:source declares print ISBN 9780000000026, which is not ebook identity."
+  },
+  "assembly_checks": {
+    "inputs_match_receipt_names_bytes_and_sha256": true,
+    "reports_are_byte_identical_to_recorded_run_03_difference_sources": true,
+    "html_sha256_matches_cli_record": true,
+    "report_tool_version_matches_submitted_package": true,
+    "report_checker_and_inspector_hashes_match_cli_record_and_submitted_package": true,
+    "opf_bytes_match_receipt_sha256": true,
+    "paid_runtime_or_test_execution_performed_during_assembly": false
+  },
+  "scope": "Supported paired metadata only; no schema/content/visual/a11y/registration or distributor acceptance verification. Fresh local inspector outputs are required; hashes are provenance, not authenticity signatures.",
+  "privacy": "Fictional fixtures only. Reports can expose unpublished metadata in real use. Agent/provider data handling still applies.",
+  "public_contents": "Exactly README.md, provenance.json, feed.xml, delivery-difference.epub, report.json and report.html; no paid skill code, scope resource, inspection snapshots, customer data or private operational records."
+}

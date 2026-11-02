@@ -1,0 +1,207 @@
+{
+  "tool": "EditionReceipt",
+  "version": "1.0.0",
+  "pairs": [
+    {
+      "requested_isbn": "9780000000019",
+      "inputs": {
+        "onix": {
+          "sha256": "ceded38c6fae5d0ad097756d06a02297df397788dcc029ae9f4e2e1a921ad1fb",
+          "bytes": 2516,
+          "name": "feed.xml"
+        },
+        "epub": {
+          "sha256": "d1541ff3eb50a1954707c2f7294b092f858e58f5ca11400d97d7d9cc4a9aa22e",
+          "bytes": 2350,
+          "name": "delivery-difference.epub"
+        },
+        "opf": {
+          "part": "EPUB/content.opf",
+          "sha256": "ffb798930c5f63ef16ffa99c11aad189f6cfbe2fe64f75dcf6b3a1afcf8fdfe2"
+        }
+      },
+      "checks": [
+        {
+          "field": "isbn",
+          "status": "MATCH",
+          "onix": [
+            {
+              "value": "9780000000019",
+              "path": "/ONIXMessage/Product[2]/ProductIdentifier[1]/IDValue[1]",
+              "id_type": "15",
+              "normalized": "9780000000019"
+            }
+          ],
+          "epub": [
+            {
+              "value": "9780000000019",
+              "path": "EPUB/content.opf:/package/metadata[1]/identifier[2]",
+              "id": "ebook-isbn",
+              "scheme": null,
+              "role": null,
+              "normalized": "9780000000019"
+            }
+          ],
+          "reason": "ISBN syntax/check digit only, not registration. UUID primary identifiers are allowed; dc:source is never ebook identity."
+        },
+        {
+          "field": "title",
+          "status": "DIFFERENCE",
+          "onix": [
+            {
+              "value": "The Quiet Lantern",
+              "path": "/ONIXMessage/Product[2]/DescriptiveDetail[1]/TitleDetail[1]/TitleElement[1]/TitleText[1]"
+            }
+          ],
+          "epub": [
+            {
+              "value": "The Orchard Handbook — Earlier Draft",
+              "path": "EPUB/content.opf:/package/metadata[1]/title[1]",
+              "id": "main-title",
+              "scheme": null,
+              "role": null
+            }
+          ],
+          "reason": "Only unambiguous book-level main/subtitle values. An unqualified combined EPUB title is not split by guessed punctuation."
+        },
+        {
+          "field": "subtitle",
+          "status": "MATCH",
+          "onix": [
+            {
+              "value": "A Field Guide to Small Lights",
+              "path": "/ONIXMessage/Product[2]/DescriptiveDetail[1]/TitleDetail[1]/TitleElement[1]/Subtitle[1]"
+            }
+          ],
+          "epub": [
+            {
+              "value": "A Field Guide to Small Lights",
+              "path": "EPUB/content.opf:/package/metadata[1]/title[2]",
+              "id": "subtitle",
+              "scheme": null,
+              "role": null
+            }
+          ],
+          "reason": "Only unambiguous book-level main/subtitle values. An unqualified combined EPUB title is not split by guessed punctuation."
+        },
+        {
+          "field": "languages",
+          "status": "MATCH",
+          "onix": [
+            {
+              "value": "eng",
+              "path": "/ONIXMessage/Product[2]/DescriptiveDetail[1]/Language[1]/LanguageCode[1]",
+              "normalized": "en",
+              "countries": []
+            }
+          ],
+          "epub": [
+            {
+              "value": "en",
+              "path": "EPUB/content.opf:/package/metadata[1]/language[1]",
+              "id": null,
+              "scheme": null,
+              "role": null,
+              "normalized": "en"
+            }
+          ],
+          "reason": "ISO639 aliases normalized. Region/script qualification is retained; it is not guessed away."
+        },
+        {
+          "field": "contributors",
+          "status": "MATCH",
+          "onix": [
+            {
+              "value": "Ada Quill",
+              "path": "/ONIXMessage/Product[2]/DescriptiveDetail[1]/Contributor[1]/PersonName[1]",
+              "normalized": "aut:Ada Quill",
+              "role": "A01"
+            }
+          ],
+          "epub": [
+            {
+              "value": "Ada Quill",
+              "path": "EPUB/content.opf:/package/metadata[1]/creator[1]",
+              "id": "creator",
+              "scheme": null,
+              "role": "aut",
+              "normalized": "aut:Ada Quill"
+            }
+          ],
+          "reason": "Exact normalized display names with A01/aut,A12/ill,B01/edt,B06/trl. Inverted names and unsupported/unspecified roles need review."
+        },
+        {
+          "field": "publisher",
+          "status": "MATCH",
+          "onix": [
+            {
+              "value": "Lantern Test Press",
+              "path": "/ONIXMessage/Product[2]/PublishingDetail[1]/Publisher[1]/PublisherName[1]"
+            }
+          ],
+          "epub": [
+            {
+              "value": "Lantern Test Press",
+              "path": "EPUB/content.opf:/package/metadata[1]/publisher[1]",
+              "id": null,
+              "scheme": null,
+              "role": null
+            }
+          ],
+          "reason": "Primary publisher only; a different imprint is not silently substituted."
+        },
+        {
+          "field": "format",
+          "status": "MATCH",
+          "onix": [
+            {
+              "value": "E101",
+              "path": "/ONIXMessage/Product[2]/DescriptiveDetail[1]/ProductFormDetail[1]"
+            }
+          ],
+          "epub": [
+            {
+              "value": "EPUB",
+              "path": "mimetype",
+              "normalized": "E101"
+            }
+          ],
+          "reason": "ONIX E101 corresponds to EPUB container bytes. This does not validate package content or schema."
+        },
+        {
+          "field": "layout",
+          "status": "NOT_DECLARED",
+          "onix": [],
+          "epub": [],
+          "reason": "Global standard EPUB3 layout/default only; mixed variants and spine overrides need review."
+        },
+        {
+          "field": "version",
+          "status": "NOT_DECLARED",
+          "onix": [],
+          "epub": [],
+          "reason": "No ONIX version declaration compared."
+        }
+      ],
+      "findings": [],
+      "record_reference": "ER-FICTIONAL-001",
+      "comparison_complete": true,
+      "verdict": "DIFFERENCE"
+    }
+  ],
+  "scope": "Supported paired metadata only; no schema/content/visual/a11y/registration or distributor acceptance verification. Fresh local inspector outputs are required; hashes are provenance, not authenticity signatures.",
+  "inspection_sources": {
+    "onix": {
+      "snapshot_sha256": "e05ff98f194875ae37e33fc2d0d6740ec40423ec9c0ee95a17ceffc05cf9ad61",
+      "inspector_sha256": "d2a2ff03373dc36214c2c149d6d5fffe4f9df9260f54d85c861a00379b9fa559"
+    },
+    "epub": {
+      "snapshot_sha256": "834ae04b5ca894c1ab98fd53e7ceec7ca07def43e546d619b8d67a5741dd73ce",
+      "inspector_sha256": "dcf7636ee6dff218691825102ed3c40fc964586032d3dfa70b7e43222c765280"
+    },
+    "manifest_sha256": null
+  },
+  "verdict": "DIFFERENCE",
+  "comparison_complete": true,
+  "checker_sha256": "ae008bb88b6a19fc55c64f1544d1547010ad821f95a11a6d6334cdc06e130335"
+}

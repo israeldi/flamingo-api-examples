@@ -19,6 +19,10 @@ The publisher of these APIs maintains this repository. Free plans are available;
 
 [ChartReceipt's quickstart and original fictional example](chartreceipt/) show how to compare supported native PowerPoint chart caches with their embedded XLSX stored values and receive HTML/JSON reports. ChartReceipt is a separate **$9 one-time Agensi skill**. It uses Python 3.10+ in your authorized file-capable agent workspace and needs no RapidAPI key, API subscription, Office installation or pip package. Your agent/provider's permissions, data handling and any execution charges still apply.
 
+## Inspect an ONIX and EPUB delivery example
+
+[EditionReceipt's original fictional example](editionreceipt/) pairs an exported ONIX product with its delivery EPUB and shows the exact HTML/JSON comparison result. The submitted Agensi skill is **awaiting review**, with a proposed **$15 one-time** price. The public example demonstrates a creator-local metadata check and explains its requirements, uncertainty and limits.
+
 ## Try one API in Postman
 
 Choose a collection in the [public Postman workspace](https://www.postman.com/idiego612-5459945/flamingo-apis-quickstarts/overview), or download one of the four [collection JSON files](postman/) and import it into your own workspace. Keep your subscribed app key as a local value, leave shared values blank, and send one chosen request. Access and PatternCopy need local selection of the linked synthetic file; CreativePack and ShelfRelay embed their demonstration input.
