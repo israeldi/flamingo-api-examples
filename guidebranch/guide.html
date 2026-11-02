@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-yE95O/3NwaPUnA/XWxoKqxt+GpI3j86wmqByXdWhYwY='; style-src 'unsafe-inline'; img-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="color-scheme" content="light">
+  <title>GuideBranch · Support guide</title>
+  <style>
+    :root{--paper:#f5f4ee;--white:#fffefa;--ink:#182f36;--muted:#5a6c6d;--line:#d9dfd8;--green:#235d4e;--green-light:#e7efe7;--coral:#b9573e;--coral-light:#fbede5;--amber:#895e20;--amber-light:#fbf0da;--focus:#146b96;--radius:22px;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-synthesis:none;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.5}
+    *{box-sizing:border-box}body{margin:0}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit}button:not(:disabled){cursor:pointer}button:disabled{cursor:default}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:4px}button:disabled{opacity:.4}h1,h2,h3,p{margin:0}button{color:inherit}svg{display:block;flex-shrink:0}button svg{pointer-events:none}[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .shell{max-width:1120px;margin:0 auto;padding:0 42px}.masthead{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:96px;border-bottom:1px solid var(--line)}.wordmark{display:flex;align-items:center;gap:12px;font-weight:720;letter-spacing:-.6px;font-size:21px}.brand-icon{color:var(--green);width:29px;height:30px}.offline-label{display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.02em;color:var(--muted)}.offline-dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+    .intro{padding:43px 0 32px;max-width:790px}.eyebrow{font-size:11px;font-weight:750;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:12px}.intro h1{font-family:ui-serif,Georgia,Cambria,"Times New Roman",serif;font-size:clamp(30px,4vw,43px);line-height:1.14;font-weight:500;letter-spacing:-1.25px;overflow-wrap:anywhere}.audience{color:var(--muted);font-size:14px;margin-top:15px;overflow-wrap:anywhere}.scope-line{color:var(--muted);font-size:13px;line-height:1.7;margin-top:8px;overflow-wrap:anywhere;max-width:680px}.scope-line strong{color:var(--ink);font-weight:650}.guide-info{margin-top:15px;font-size:13px;line-height:1.65;max-width:730px}.guide-info summary{display:inline-flex;gap:8px;align-items:center;color:var(--green);cursor:pointer;font-weight:650;list-style:none}.guide-info summary::-webkit-details-marker{display:none}.guide-info summary::before{content:"+";font-size:16px;line-height:1;font-weight:400}.guide-info[open] summary::before{content:"−"}.info-content{padding:15px 0 0 17px;border-left:2px solid var(--line);margin-top:10px;color:var(--muted)}.info-row{margin-top:8px}.info-row:first-child{margin-top:0}.info-row strong{font-weight:650;color:var(--ink)}.info-sources{margin:5px 0 0;padding-left:18px}
+    .workspace{display:grid;grid-template-columns:minmax(0,1fr) 284px;gap:28px;align-items:start;padding-bottom:32px}.current-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 9px 28px -24px #183e33}.card-topline{height:5px;background:var(--green)}.current-card[data-outcome="escalate"] .card-topline{background:var(--coral)}.current-card[data-outcome="stop"] .card-topline{background:var(--amber)}.card-content{padding:30px 32px 25px}.step-meta{display:flex;align-items:center;gap:9px;margin-bottom:19px;color:var(--green);font-size:11px;font-weight:750;letter-spacing:.105em;text-transform:uppercase}.step-dot{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--green-light);font-size:12px;letter-spacing:0}.current-card[data-outcome="escalate"] .step-meta{color:var(--coral)}.current-card[data-outcome="escalate"] .step-dot{background:var(--coral-light)}.current-card[data-outcome="stop"] .step-meta{color:var(--amber)}.current-card[data-outcome="stop"] .step-dot{background:var(--amber-light)}.node-title{font-size:clamp(23px,2.8vw,29px);line-height:1.24;font-weight:650;letter-spacing:-.7px;overflow-wrap:anywhere;scroll-margin-top:25px}.node-title:focus{outline:none}.node-title:focus-visible{outline:3px solid var(--focus);outline-offset:8px;border-radius:3px}.node-body{font-size:15px;line-height:1.75;margin-top:17px;white-space:pre-wrap;overflow-wrap:anywhere;color:#425759}.choice-hint{font-size:12px;color:var(--muted);margin:25px 0 10px}.choice-list{display:grid;gap:9px}.choice{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;text-align:left;border:1px solid var(--line);border-radius:11px;padding:15px 17px;background:transparent;font-size:14px;line-height:1.45;transition:background .14s,border-color .14s,transform .14s}.choice:hover{background:var(--green-light);border-color:#92b3a1;transform:translateX(2px)}.choice:active{transform:translateX(1px)}.choice .choice-label{overflow-wrap:anywhere;min-width:0}.choice-arrow{color:var(--green);width:17px;height:17px}.choice.unknown{background:#f7f7f2;border-color:#e0e3db;color:var(--muted);font-size:13px}.choice.unknown:hover{background:#eceee7;border-color:#c5cdc0}.source-note{margin-top:26px;padding-top:15px;border-top:1px solid #e7e9e2}.source-heading{font-size:10px;font-weight:750;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}.source-labels{list-style:none;padding:0;margin:0;color:var(--muted);font-size:11px;line-height:1.65;overflow-wrap:anywhere}.source-labels li+li{margin-top:3px}.guidance-caption{margin-top:22px;padding:12px 14px;background:var(--green-light);border-radius:9px;font-size:12px;color:var(--green);line-height:1.6}.current-card[data-outcome="escalate"] .guidance-caption{background:var(--coral-light);color:#8f432f}.current-card[data-outcome="stop"] .guidance-caption{background:var(--amber-light);color:#77511e}.card-controls{display:flex;align-items:center;justify-content:space-between;gap:15px;border-top:1px solid var(--line);padding:15px 24px;background:#fbfbf5}.text-button{display:inline-flex;align-items:center;gap:7px;padding:5px 8px;background:none;border:0;font-size:12px;font-weight:650;border-radius:5px}.text-button:hover:not(:disabled){background:var(--green-light)}.text-button svg{height:14px;width:14px}.restart{color:var(--muted)}
+    .trail-panel{padding:5px 0;min-width:0}.panel-title{font-size:13px;font-weight:750;letter-spacing:-.1px;display:flex;align-items:center;justify-content:space-between;gap:12px}.answer-count{font-size:10px;font-weight:550;letter-spacing:.02em;color:var(--muted);white-space:nowrap}.trail-intro{font-size:12px;line-height:1.7;color:var(--muted);margin-top:8px}.empty-trail{border-left:1px solid #c8d4c8;margin:22px 0 25px 9px;padding:2px 0 3px 19px;position:relative}.empty-trail::before{content:"";position:absolute;left:-4px;top:7px;width:7px;height:7px;border-radius:50%;background:var(--green)}.empty-trail strong{font-size:12px;font-weight:650}.empty-trail p{margin-top:5px;font-size:12px;line-height:1.7;color:var(--muted)}.trail-list{list-style:none;padding:0;margin:22px 0 0}.trail-item{position:relative;margin-left:10px;padding:0 0 20px 19px;border-left:1px solid #cbd7cd}.trail-number{position:absolute;left:-10px;top:0;width:19px;height:19px;display:flex;align-items:center;justify-content:center;font-size:9px;border:1px solid #c3d2c4;background:var(--paper);border-radius:50%;color:var(--green);font-weight:650}.trail-button{display:block;width:100%;border:0;background:none;padding:0;text-align:left;border-radius:3px}.trail-question{display:block;font-size:11px;line-height:1.55;color:var(--muted);overflow-wrap:anywhere}.trail-answer{display:block;font-size:12px;font-weight:650;margin-top:4px;line-height:1.55;overflow-wrap:anywhere}.trail-edit{display:inline-block;margin-top:6px;color:var(--green);font-size:10px;text-decoration:underline;text-underline-offset:3px}.trail-button:hover .trail-edit{text-decoration-thickness:2px}.trail-current{position:relative;margin:0 0 25px 10px;padding-left:19px;font-size:11px;line-height:1.6;color:var(--green);overflow-wrap:anywhere}.trail-current::before{content:"";position:absolute;top:4px;left:-4px;width:7px;height:7px;background:var(--green);border-radius:50%}.trail-current strong{font-weight:650}.save-panel{padding-top:20px;border-top:1px solid var(--line);margin-top:20px}.save-panel h3{font-size:12px;font-weight:750}.save-description{font-size:11px;color:var(--muted);line-height:1.7;margin:6px 0 12px}.download-actions{display:flex;gap:7px}.download-button{display:flex;align-items:center;justify-content:center;gap:6px;flex:1;min-width:0;border:1px solid #c9d4c7;background:transparent;border-radius:7px;padding:9px 7px;font-size:11px;font-weight:650;color:var(--green)}.download-button:hover{background:var(--green-light);border-color:#93ae98}.download-button svg{width:12px;height:12px}.print-button{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;background:none;border:0;border-radius:5px;padding:11px 4px 4px;font-size:11px;color:var(--muted)}.print-button:hover{color:var(--green);text-decoration:underline;text-underline-offset:3px}.print-button svg{width:12px;height:12px}.download-status{font-size:11px;line-height:1.5;color:var(--green);margin-top:10px;overflow-wrap:anywhere}.review-note{max-width:690px;padding:0 0 32px;font-size:11px;line-height:1.75;color:var(--muted)}.review-note strong{color:var(--ink);font-weight:650}.page-footer{display:flex;justify-content:space-between;align-items:start;gap:20px;border-top:1px solid var(--line);padding:18px 0 28px;font-size:10px;color:var(--muted);line-height:1.7;overflow-wrap:anywhere}.version-label{max-width:65%}.footer-local{text-align:right;max-width:35%}.print-sources{display:none}.error-box{margin:42px 0;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px;max-width:650px}.error-box h1{font-family:ui-serif,Georgia,serif;font-size:28px;font-weight:500}.error-box p{font-size:14px;margin-top:13px;color:var(--muted)}noscript{display:block;padding:30px;max-width:650px;margin:25px auto;background:var(--white);border:1px solid var(--line);border-radius:16px}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+    @media(min-width:850px){.trail-panel{position:sticky;top:28px}}
+    @media(max-width:850px){.shell{padding:0 27px}.workspace{grid-template-columns:minmax(0,1fr) 235px;gap:21px}.card-content{padding:25px 25px 22px}.intro{padding-top:34px}.masthead{min-height:82px}}
+    @media(max-width:680px){.shell{padding:0 20px}.masthead{min-height:75px;gap:12px}.wordmark{font-size:19px;gap:9px}.brand-icon{width:25px;height:27px}.offline-label{font-size:10px;gap:5px}.intro{padding:29px 0 24px}.intro h1{letter-spacing:-.9px;font-size:34px}.workspace{grid-template-columns:minmax(0,1fr);gap:29px;padding-bottom:25px}.card-content{padding:24px 23px 22px}.node-title{font-size:25px}.node-body{font-size:14px}.choice{padding:14px 15px;font-size:14px}.card-controls{padding:13px 17px}.trail-panel{padding:0 3px}.trail-intro{max-width:480px}.trail-list{margin-top:19px}.trail-item{padding-bottom:16px}.trail-question{font-size:12px}.trail-answer{font-size:13px}.trail-edit{font-size:11px}.trail-current{font-size:12px}.save-panel{margin-top:19px;padding-top:17px}.save-description{font-size:12px}.download-button{font-size:12px;padding:11px}.print-button{font-size:12px;padding-top:13px}.review-note{font-size:11px;padding-bottom:25px}.page-footer{padding-bottom:22px}.version-label{max-width:65%}}
+    @media(max-width:370px){.shell{padding:0 14px}.card-content{padding:22px 18px}.intro h1{font-size:29px}.offline-label{max-width:92px;line-height:1.5}.node-title{font-size:23px}.card-controls{padding:12px 11px}.page-footer{gap:12px}.download-actions{flex-wrap:wrap}.download-button{flex-basis:100%}}
+    @media print{ @page{margin:16mm} :root{background:#fff;color:#111;font-size:11pt}body{background:#fff}.shell{max-width:none;padding:0}.masthead{min-height:0;padding-bottom:12pt;border-color:#bbb}.wordmark{font-size:15pt}.offline-label{font-size:8pt}.intro{padding:18pt 0;max-width:none}.intro h1{font-size:25pt;letter-spacing:-.4pt}.audience{font-size:10pt}.guide-info,.no-print,.choice-list,.choice-hint,.card-controls,.trail-edit,.save-panel,.trail-intro,.empty-trail,.review-note{display:none!important}.workspace{display:block;padding:0}.current-card{box-shadow:none;border:1px solid #bbb;border-radius:0;overflow:visible}.card-topline{height:3pt}.card-content{padding:16pt}.node-title{font-size:18pt}.node-body{font-size:10pt;line-height:1.6}.step-meta{font-size:8pt;margin-bottom:10pt}.source-note{margin-top:15pt;padding-top:10pt}.source-labels{font-size:8pt}.guidance-caption{background:#fff!important;color:#333!important;border-left:2pt solid #888;border-radius:0;font-size:9pt;padding:4pt 10pt}.trail-panel{margin-top:20pt;padding:0;position:static}.panel-title{font-size:11pt}.answer-count{font-size:8pt}.trail-list{margin-top:14pt}.trail-item{padding-bottom:13pt;break-inside:avoid}.trail-button{cursor:default!important;color:#111}.trail-question{font-size:9pt;color:#444}.trail-answer{font-size:10pt}.trail-number{background:#fff;color:#333}.trail-current{font-size:9pt;margin-bottom:15pt}.print-sources{display:block;font-size:8pt;color:#444;margin-top:15pt;white-space:pre-wrap;overflow-wrap:anywhere}.page-footer{font-size:8pt;margin-top:18pt;padding-top:10pt}.footer-local{display:none}.version-label{max-width:none}.node-body,.trail-question,.trail-answer,.source-labels{overflow:visible}h1,h2,h3{break-after:avoid} }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="masthead">
+      <div class="wordmark"><svg class="brand-icon" viewBox="0 0 32 34" fill="none" aria-hidden="true"><path d="M7 5v15c0 5 3 8 8 8h10M7 17h8c6 0 10-4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="7" cy="5" r="3.1" fill="currentColor"/><circle cx="25" cy="6" r="3.1" fill="currentColor"/><circle cx="26" cy="28" r="3.1" fill="currentColor"/></svg><span>GuideBranch</span></div>
+      <div class="offline-label"><span class="offline-dot" aria-hidden="true"></span>Offline support guide</div>
+    </header>
+    <main id="app"></main>
+    <noscript>This support guide needs JavaScript to show one step at a time. JavaScript runs locally in this file. Ask the support owner for the original procedure if you cannot enable it.</noscript>
+  </div>
+  <script id="guide-data" type="application/json">{"id":"tablenest-csv-export","version":"1.0","title":"TableNest: find the next CSV-export support step","audience":"People using the fictional TableNest saved-report export","scope":"Authorized CSV download checks only; no report-data edits or automatic actions.","owner":"TableNest support team (fictional)","start":"download","schema_version":"guidebranch-reader/1","sources":[{"id":"tablenest-csv","label":"TableNest CSV export procedure","version":"1.0"}],"nodes":[{"id":"download","kind":"question","title":"Did a CSV file appear in your browser downloads?","body":"Use only the export you are authorized to inspect. Do not include report contents or credentials in a support summary.","source_labels":["TableNest CSV export procedure (lines 9-10)"],"choices":[{"id":"file","label":"A file appeared","next":"opens","unknown":false},{"id":"none","label":"No file appeared","next":"queued","unknown":false},{"id":"unknown","label":"Not sure","next":"ask-support","unknown":true}]},{"id":"opens","kind":"question","title":"Does the downloaded file open?","body":"Check in your ordinary spreadsheet or text application.","source_labels":["TableNest CSV export procedure (lines 11-12)"],"choices":[{"id":"opens","label":"Yes, it opens","next":"headings","unknown":false},{"id":"blocked","label":"No, it does not open","next":"import-help","unknown":false},{"id":"unknown","label":"Not sure","next":"ask-support","unknown":true}]},{"id":"headings","kind":"question","title":"Do the column headings match the saved report?","body":"Compare headings with the saved report display; do not infer that all rows are correct.","source_labels":["TableNest CSV export procedure (lines 13-15)"],"choices":[{"id":"match","label":"The headings match","next":"review-rows","unknown":false},{"id":"different","label":"The headings differ","next":"confirm-report","unknown":false},{"id":"unknown","label":"Not sure","next":"ask-support","unknown":true}]},{"id":"queued","kind":"question","title":"Is Export queued displayed for this same report?","body":"Look for the application banner before starting another export.","source_labels":["TableNest CSV export procedure (lines 16-19)"],"choices":[{"id":"queued","label":"Yes, Export queued is displayed","next":"wait-for-job","unknown":false},{"id":"absent","label":"No queued banner is displayed","next":"retry-once","unknown":false},{"id":"unknown","label":"Not sure","next":"ask-support","unknown":true}]},{"id":"import-help","kind":"outcome","title":"Ask for import instructions","body":"Keep the downloaded file unchanged and ask the support owner for import instructions. Share only the saved-report name, visible error text and steps already taken.","source_labels":["TableNest CSV export procedure (lines 12-12)","TableNest CSV export procedure (lines 20-20)"],"outcome":"escalate"},{"id":"review-rows","kind":"outcome","title":"Review the downloaded rows","body":"Continue with the normal report-review process. A file that opens and has matching headings is not proof that its data is correct.","source_labels":["TableNest CSV export procedure (lines 14-14)","TableNest CSV export procedure (lines 21-21)"],"outcome":"next_step"},{"id":"confirm-report","kind":"outcome","title":"Confirm the intended saved report","body":"Stop and ask the report owner which report and columns were intended. Do not silently rename or remove columns.","source_labels":["TableNest CSV export procedure (lines 15-15)"],"outcome":"stop"},{"id":"wait-for-job","kind":"outcome","title":"Wait for the existing export","body":"Leave the queued job unchanged and wait for its offered download. Do not start another export while Export queued remains displayed.","source_labels":["TableNest CSV export procedure (lines 17-17)"],"outcome":"next_step"},{"id":"retry-once","kind":"outcome","title":"Try Export CSV once more","body":"Select Export CSV once more. If no file appears, ask the support owner; do not continue retrying.","source_labels":["TableNest CSV export procedure (lines 18-18)"],"outcome":"next_step"},{"id":"ask-support","kind":"outcome","title":"Ask the support owner","body":"Stop rather than guessing. Share the saved-report name, visible notice or error, and steps already taken; omit file contents and credentials.","source_labels":["TableNest CSV export procedure (lines 19-20)"],"outcome":"escalate"}]}</script>
+  <script>(function (root) {
+  "use strict";
+
+  var REVIEW_NOTE = "Owner review is required before operational use. Structural checks do not certify these instructions. No actions run automatically.";
+  var OUTCOME_LABELS = { next_step: "Next step to review", escalate: "Contact the support owner", stop: "Stop and review" };
+
+  function indexNodes(data) {
+    if (!data || data.schema_version !== "guidebranch-reader/1" || !Array.isArray(data.nodes)) {
+      throw new Error("This is not a supported GuideBranch reader project.");
+    }
+    var nodes = Object.create(null);
+    data.nodes.forEach(function (node) {
+      if (!node || typeof node.id !== "string" || Object.prototype.hasOwnProperty.call(nodes, node.id)) {
+        throw new Error("The guide has an invalid or duplicate node.");
+      }
+      nodes[node.id] = node;
+    });
+    if (!Object.prototype.hasOwnProperty.call(nodes, data.start)) throw new Error("The starting step is missing.");
+    return nodes;
+  }
+
+  function trace(data, state) {
+    var nodes = indexNodes(data);
+    if (!state || !Array.isArray(state.path) || state.path.length > data.nodes.length) {
+      throw new Error("The answer history is invalid.");
+    }
+    var node = nodes[data.start];
+    var steps = [];
+    var seen = new Set();
+    state.path.forEach(function (answer) {
+      if (!answer || node.kind !== "question" || node.id !== answer.nodeId || seen.has(node.id)) {
+        throw new Error("The answer history does not follow this guide.");
+      }
+      seen.add(node.id);
+      var choices = Array.isArray(node.choices) ? node.choices : [];
+      var choice = choices.find(function (item) { return item.id === answer.choiceId; });
+      if (!choice || !Object.prototype.hasOwnProperty.call(nodes, choice.next)) {
+        throw new Error("An answer has no valid next step.");
+      }
+      steps.push({ node: node, choice: choice });
+      node = nodes[choice.next];
+    });
+    if (seen.has(node.id)) throw new Error("The answer history loops back to an earlier step.");
+    return { node: node, steps: steps };
+  }
+
+  function createState(data) {
+    indexNodes(data);
+    return { path: [] };
+  }
+
+  function currentNode(data, state) { return trace(data, state).node; }
+
+  function choose(data, state, choiceId) {
+    var current = trace(data, state).node;
+    if (current.kind !== "question") throw new Error("An outcome does not accept another answer.");
+    var choice = current.choices.find(function (item) { return item.id === choiceId; });
+    if (!choice) throw new Error("Choose one of the answers in this step.");
+    var next = { path: state.path.map(function (item) { return { nodeId: item.nodeId, choiceId: item.choiceId }; }) };
+    next.path.push({ nodeId: current.id, choiceId: choice.id });
+    trace(data, next);
+    return next;
+  }
+
+  function jump(data, state, answerIndex) {
+    trace(data, state);
+    if (!Number.isInteger(answerIndex) || answerIndex < 0 || answerIndex > state.path.length) {
+      throw new Error("That earlier step is not in this path.");
+    }
+    return { path: state.path.slice(0, answerIndex).map(function (item) { return { nodeId: item.nodeId, choiceId: item.choiceId }; }) };
+  }
+
+  function back(data, state) { return jump(data, state, Math.max(0, state.path.length - 1)); }
+  function restart(data) { return createState(data); }
+
+  function buildSummary(data, state) {
+    var walked = trace(data, state);
+    var current = walked.node;
+    var record = {
+      schema_version: "guidebranch-summary/1",
+      guide: {
+        id: data.id, version: data.version, title: data.title,
+        audience: data.audience, scope: data.scope, owner: data.owner,
+        sources: data.sources.map(function (source) { return { id: source.id, label: source.label, version: source.version }; })
+      },
+      status: current.kind === "outcome" ? current.outcome : "in_progress",
+      path: walked.steps.map(function (step, index) {
+        return {
+          step: index + 1, node_id: step.node.id, question: step.node.title,
+          choice_id: step.choice.id, answer: step.choice.label,
+          source_labels: step.node.source_labels.slice()
+        };
+      }),
+      current: {
+        node_id: current.id, kind: current.kind, title: current.title,
+        body: current.body || "", source_labels: current.source_labels.slice()
+      },
+      review_note: REVIEW_NOTE,
+      privacy_note: "Created locally from the chosen path. No summary has been sent."
+    };
+    if (current.kind === "outcome") record.current.outcome = current.outcome;
+    return record;
+  }
+
+  function markdownText(value) {
+    return String(value).replace(/\\/g, "\\\\").replace(/([`*_{}\[\]<>#+.!|~-])/g, "\\$1");
+  }
+
+  function summaryMarkdown(summary) {
+    var lines = ["# " + markdownText(summary.guide.title) + " — path summary", "",
+      "Guide: " + markdownText(summary.guide.id), "Version: " + markdownText(summary.guide.version),
+      "Audience: " + markdownText(summary.guide.audience), "Owner: " + markdownText(summary.guide.owner),
+      "Scope: " + markdownText(summary.guide.scope), "",
+      "## Your path", ""];
+    if (!summary.path.length) lines.push("No answers recorded yet.", "");
+    summary.path.forEach(function (step) {
+      lines.push(step.step + ". **" + markdownText(step.question) + "**",
+        "   Answer: " + markdownText(step.answer),
+        "   Sources: " + step.source_labels.map(markdownText).join("; "), "");
+    });
+    lines.push("## Current " + (summary.current.kind === "outcome" ? "guidance" : "question"), "",
+      "**" + markdownText(summary.current.title) + "**", "",
+      "Status: " + markdownText(summary.status === "in_progress" ? "In progress" : OUTCOME_LABELS[summary.status]), "");
+    if (summary.current.body) lines.push(markdownText(summary.current.body), "");
+    lines.push("Sources: " + summary.current.source_labels.map(markdownText).join("; "), "", "## Guide sources", "");
+    summary.guide.sources.forEach(function (source) {
+      lines.push("- " + markdownText(source.label) + " · version " + markdownText(source.version));
+    });
+    lines.push("", "## Review note", "", summary.review_note, "", summary.privacy_note, "");
+    return lines.join("\n");
+  }
+
+  var api = {
+    createState: createState, currentNode: currentNode, choose: choose,
+    back: back, restart: restart, jump: jump,
+    buildSummary: buildSummary, summaryMarkdown: summaryMarkdown
+  };
+  root.GuideBranch = api;
+  if (typeof module !== "undefined" && module.exports) module.exports = api;
+
+  if (!root.document) return;
+  var document = root.document;
+  var mount = document.getElementById("app");
+  var dataElement = document.getElementById("guide-data");
+  if (!mount || !dataElement) return;
+
+  function element(tag, className, value) {
+    var node = document.createElement(tag);
+    if (className) node.className = className;
+    if (value !== undefined) node.textContent = String(value);
+    return node;
+  }
+
+  function icon(kind, className) {
+    var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 20 20");
+    svg.setAttribute("fill", "none");
+    svg.setAttribute("aria-hidden", "true");
+    if (className) svg.setAttribute("class", className);
+    var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    var paths = {
+      arrow: "M4 10h12m-5-5 5 5-5 5",
+      back: "M16 10H4m5-5-5 5 5 5",
+      restart: "M4.5 6A6.5 6.5 0 1 1 3.8 13M4.5 2v4h4",
+      download: "M10 3v9m-4-4 4 4 4-4M4 13v4h12v-4",
+      print: "M5 7V3h10v4M5 13H3V7h14v6h-2M5 11h10v6H5z"
+    };
+    path.setAttribute("d", paths[kind]);
+    path.setAttribute("stroke", "currentColor");
+    path.setAttribute("stroke-width", "1.4");
+    path.setAttribute("stroke-linecap", "round");
+    path.setAttribute("stroke-linejoin", "round");
+    svg.appendChild(path);
+    return svg;
+  }
+
+  function labels(list, className) {
+    var ul = element("ul", className || "source-labels");
+    list.forEach(function (label) { ul.appendChild(element("li", "", label)); });
+    return ul;
+  }
+
+  function button(className, label, action, iconName) {
+    var control = element("button", className);
+    control.type = "button";
+    if (iconName) control.appendChild(icon(iconName));
+    control.appendChild(element("span", "", label));
+    control.addEventListener("click", action);
+    return control;
+  }
+
+  function showError() {
+    mount.replaceChildren();
+    var box = element("section", "error-box");
+    var heading = element("h1", "", "This guide could not be opened");
+    heading.tabIndex = -1;
+    box.appendChild(heading);
+    box.appendChild(element("p", "", "The guide data or path is incomplete. Ask the support owner for a newly reviewed copy. No actions have run and no answers have been sent."));
+    mount.appendChild(box);
+    heading.focus();
+  }
+
+  try {
+    var data = JSON.parse(dataElement.textContent);
+    var state = createState(data);
+    document.title = data.title + " · GuideBranch";
+
+    function navigate(nextState) {
+      state = nextState;
+      render(true);
+    }
+
+    function download(format, status) {
+      try {
+        var summary = buildSummary(data, state);
+        var content = format === "json" ? JSON.stringify(summary, null, 2) + "\n" : summaryMarkdown(summary);
+        var blob = new Blob([content], { type: (format === "json" ? "application/json" : "text/markdown") + ";charset=utf-8" });
+        var url = root.URL.createObjectURL(blob);
+        var anchor = document.createElement("a");
+        var fileVersion = String(data.version).replace(/[^a-zA-Z0-9_-]+/g, "-").replace(/^-|-$/g, "").slice(0, 60) || "version";
+        anchor.href = url;
+        anchor.download = data.id + "-" + fileVersion + "-summary." + (format === "json" ? "json" : "md");
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+        root.setTimeout(function () { root.URL.revokeObjectURL(url); }, 1000);
+        status.textContent = (format === "json" ? "JSON" : "Markdown") + " summary prepared for download. Nothing was sent.";
+      } catch (error) {
+        status.textContent = "This browser could not download the summary. Use Print this path to save a local copy.";
+      }
+    }
+
+    function render(focusHeading) {
+      var walked = trace(data, state);
+      var current = walked.node;
+      var fragment = document.createDocumentFragment();
+
+      var intro = element("section", "intro");
+      intro.setAttribute("aria-labelledby", "guide-title");
+      intro.appendChild(element("p", "eyebrow", "A clear path through the problem"));
+      var guideTitle = element("h1", "", data.title);
+      guideTitle.id = "guide-title";
+      intro.appendChild(guideTitle);
+      intro.appendChild(element("p", "audience", "For " + data.audience));
+      var scopeLine = element("p", "scope-line");
+      scopeLine.appendChild(element("strong", "", "Scope: "));
+      scopeLine.appendChild(document.createTextNode(data.scope));
+      intro.appendChild(scopeLine);
+      var info = element("details", "guide-info");
+      info.appendChild(element("summary", "", "About this guide"));
+      var infoContent = element("div", "info-content");
+      [["Support owner", data.owner], ["Guide version", data.version]].forEach(function (row) {
+        var line = element("p", "info-row");
+        line.appendChild(element("strong", "", row[0] + ": "));
+        line.appendChild(document.createTextNode(row[1]));
+        infoContent.appendChild(line);
+      });
+      var sourceRow = element("div", "info-row");
+      sourceRow.appendChild(element("strong", "", "Guide sources"));
+      sourceRow.appendChild(labels(data.sources.map(function (source) { return source.label + " · version " + source.version; }), "info-sources"));
+      infoContent.appendChild(sourceRow);
+      info.appendChild(infoContent);
+      intro.appendChild(info);
+      fragment.appendChild(intro);
+
+      var workspace = element("div", "workspace");
+      var card = element("section", "current-card");
+      card.setAttribute("aria-labelledby", "current-heading");
+      if (current.kind === "outcome") card.dataset.outcome = current.outcome;
+      card.appendChild(element("div", "card-topline"));
+      var cardContent = element("div", "card-content");
+      var meta = element("p", "step-meta");
+      var stepDot = element("span", "step-dot", current.kind === "question" ? String(state.path.length + 1).padStart(2, "0") : "↳");
+      stepDot.setAttribute("aria-hidden", "true");
+      meta.appendChild(stepDot);
+      meta.appendChild(element("span", "", current.kind === "question" ? "Question " + (state.path.length + 1) : OUTCOME_LABELS[current.outcome]));
+      cardContent.appendChild(meta);
+      var heading = element("h2", "node-title", current.title);
+      heading.id = "current-heading";
+      heading.tabIndex = -1;
+      cardContent.appendChild(heading);
+      if (current.body) cardContent.appendChild(element("p", "node-body", current.body));
+      if (current.kind === "question") {
+        cardContent.appendChild(element("p", "choice-hint", "Choose the answer that fits."));
+        var choiceList = element("div", "choice-list");
+        current.choices.forEach(function (choice) {
+          var control = element("button", "choice" + (choice.unknown ? " unknown" : ""));
+          control.type = "button";
+          control.appendChild(element("span", "choice-label", choice.label));
+          control.appendChild(icon("arrow", "choice-arrow"));
+          control.addEventListener("click", function () { navigate(choose(data, state, choice.id)); });
+          choiceList.appendChild(control);
+        });
+        cardContent.appendChild(choiceList);
+      } else {
+        cardContent.appendChild(element("p", "guidance-caption", current.outcome === "escalate" ? "You can save the path below and share it with the support owner yourself. Nothing is sent from this guide." : current.outcome === "stop" ? "Pause here and review the guidance with the support owner. Reaching this step does not mean the issue is resolved." : "Review this guidance before acting. Reaching this step does not mean the issue is resolved."));
+      }
+      var sourceNote = element("div", "source-note");
+      sourceNote.appendChild(element("p", "source-heading", "Source for this step"));
+      sourceNote.appendChild(labels(current.source_labels));
+      cardContent.appendChild(sourceNote);
+      card.appendChild(cardContent);
+      var controls = element("div", "card-controls no-print");
+      var backControl = button("text-button", "Back", function () { navigate(back(data, state)); }, "back");
+      backControl.disabled = state.path.length === 0;
+      controls.appendChild(backControl);
+      var restartControl = button("text-button restart", "Start again", function () { navigate(restart(data)); }, "restart");
+      restartControl.disabled = state.path.length === 0;
+      controls.appendChild(restartControl);
+      card.appendChild(controls);
+      workspace.appendChild(card);
+
+      var trailPanel = element("aside", "trail-panel");
+      trailPanel.setAttribute("aria-labelledby", "trail-heading");
+      var trailTitle = element("h2", "panel-title");
+      trailTitle.id = "trail-heading";
+      trailTitle.appendChild(element("span", "", "Your path"));
+      trailTitle.appendChild(element("span", "answer-count", state.path.length + (state.path.length === 1 ? " answer" : " answers")));
+      trailPanel.appendChild(trailTitle);
+      if (!state.path.length) {
+        var empty = element("div", "empty-trail");
+        empty.appendChild(element("strong", "", "Start with one answer."));
+        empty.appendChild(element("p", "", "Your choices will appear here. You can return to any earlier step."));
+        trailPanel.appendChild(empty);
+      } else {
+        trailPanel.appendChild(element("p", "trail-intro", "Revisit a step to change your answer. Later answers will be cleared."));
+        var trail = element("ol", "trail-list");
+        walked.steps.forEach(function (step, index) {
+          var item = element("li", "trail-item");
+          var number = element("span", "trail-number", index + 1);
+          number.setAttribute("aria-hidden", "true");
+          item.appendChild(number);
+          var changeControl = element("button", "trail-button");
+          changeControl.type = "button";
+          changeControl.setAttribute("aria-label", "Change answer to question " + (index + 1) + ": " + step.node.title + " Current answer: " + step.choice.label);
+          changeControl.appendChild(element("span", "trail-question", step.node.title));
+          changeControl.appendChild(element("span", "trail-answer", step.choice.label));
+          changeControl.appendChild(element("span", "trail-edit", "Change answer"));
+          changeControl.addEventListener("click", function () { navigate(jump(data, state, index)); });
+          item.appendChild(changeControl);
+          trail.appendChild(item);
+        });
+        trailPanel.appendChild(trail);
+        var currentLabel = element("p", "trail-current");
+        currentLabel.appendChild(element("strong", "", current.kind === "question" ? "Now: " : "Reached: "));
+        currentLabel.appendChild(document.createTextNode(current.title));
+        trailPanel.appendChild(currentLabel);
+      }
+      var savePanel = element("section", "save-panel no-print");
+      savePanel.appendChild(element("h3", "", "Keep a copy"));
+      savePanel.appendChild(element("p", "save-description", "Save your answers and current guidance. Nothing is sent from this guide."));
+      var status = element("p", "download-status");
+      status.setAttribute("role", "status");
+      status.setAttribute("aria-live", "polite");
+      var downloads = element("div", "download-actions");
+      downloads.appendChild(button("download-button", "Markdown", function () { download("markdown", status); }, "download"));
+      downloads.appendChild(button("download-button", "JSON", function () { download("json", status); }, "download"));
+      savePanel.appendChild(downloads);
+      savePanel.appendChild(button("print-button", "Print this path", function () { root.print(); }, "print"));
+      savePanel.appendChild(status);
+      trailPanel.appendChild(savePanel);
+      trailPanel.appendChild(element("p", "print-sources", REVIEW_NOTE + "\nScope: " + data.scope + "\nSupport owner: " + data.owner));
+      workspace.appendChild(trailPanel);
+      fragment.appendChild(workspace);
+
+      var note = element("p", "review-note");
+      note.appendChild(element("strong", "", "Source-linked guidance. "));
+      note.appendChild(document.createTextNode(REVIEW_NOTE));
+      fragment.appendChild(note);
+      var footer = element("footer", "page-footer");
+      footer.appendChild(element("p", "version-label", "Guide " + data.id + " · version " + data.version + "\nSupport owner: " + data.owner));
+      footer.appendChild(element("p", "footer-local", "Your answers stay in this page.\nNo automatic actions or sending."));
+      fragment.appendChild(footer);
+      mount.replaceChildren(fragment);
+      if (focusHeading) heading.focus();
+    }
+
+    render(false);
+  } catch (error) {
+    showError();
+  }
+})(typeof globalThis !== "undefined" ? globalThis : this);
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "product": "GuideBranch",
+  "source_version": "0.1.0",
+  "example": "TableNest CSV export",
+  "fictional": true,
+  "product_status_at_publication": "Submitted to Agensi; pending review. Not yet verified live.",
+  "qualification_scope": "The unchanged generated TableNest reader had all nine paths exercised through HTTP localhost, including Back and heading focus. Desktop and 390px browser renders were inspected. No direct file-URL test is claimed.",
+  "semantic_correctness_verified": false,
+  "files": {
+    "README.md": {
+      "bytes": 2727,
+      "sha256": "bbcbe03c5197338fc67593e236624e534219a8ab8dfaa8f0addfb51a98ab4652"
+    },
+    "SOP.md": {
+      "bytes": 2045,
+      "sha256": "16f83a8e7315f5af9902754865d49142abc096082153803291057b03ed8b70fe"
+    },
+    "desktop.jpg": {
+      "bytes": 91651,
+      "sha256": "5e9cb2671f5d3bb0b9c2b0e321e2f97a5a73b23a6f4dc86f2d1e935cb6f29639"
+    },
+    "guide.html": {
+      "bytes": 38595,
+      "sha256": "b11e16c12339d9f85812b9722f62afdc0eac4213a193cb1d5585e20698d7d944"
+    },
+    "mobile.jpg": {
+      "bytes": 74413,
+      "sha256": "994177b35772a5bbe5928fce7d12d13516b81c4af2db3b2a717695f2f5ab6b32"
+    }
+  },
+  "public_preflight": {
+    "no_absolute_workspace_path": true,
+    "no_source_path": true,
+    "no_api_key": true,
+    "no_external_script_or_stylesheet": true,
+    "network_blocked_by_csp": true,
+    "only_expected_public_files": true
+  }
+}
