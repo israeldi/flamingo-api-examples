@@ -1,0 +1,90 @@
+{
+  "tool": "ChartReceipt",
+  "version": "1.0.2",
+  "input": {
+    "name": "mismatch.pptx",
+    "bytes": 34350,
+    "sha256": "6a30d0de9981941f636e94e92be590b265cf533e03633c7a77f9ea28a4bcce2d"
+  },
+  "scope": "Stored classic chart values versus embedded XLSX stored values only. No recalculation, repairs, rendered/visual proof, statistical/business validation or external workbook fetching.",
+  "charts": [
+    {
+      "chart_part": "ppt/charts/chart1.xml",
+      "slides": [
+        1
+      ],
+      "vectors": [
+        {
+          "reference_number": 1,
+          "role": "tx",
+          "series_position": 1,
+          "formula": "Sheet1!$B$1",
+          "kind": "string",
+          "point_count": 1,
+          "matched_points": 1,
+          "mismatched_points": 0,
+          "unresolved_points": 0,
+          "formula_cache_points": 0,
+          "findings": []
+        },
+        {
+          "reference_number": 2,
+          "role": "cat",
+          "series_position": 1,
+          "formula": "Sheet1!$A$2:$A$4",
+          "kind": "string",
+          "point_count": 3,
+          "matched_points": 3,
+          "mismatched_points": 0,
+          "unresolved_points": 0,
+          "formula_cache_points": 0,
+          "findings": []
+        },
+        {
+          "reference_number": 3,
+          "role": "val",
+          "series_position": 1,
+          "formula": "Sheet1!$B$2:$B$4",
+          "kind": "numeric",
+          "point_count": 3,
+          "matched_points": 2,
+          "mismatched_points": 1,
+          "unresolved_points": 0,
+          "formula_cache_points": 0,
+          "findings": [
+            {
+              "point_index": 1,
+              "sheet": "Sheet1",
+              "cell": "B3",
+              "chart_cache": {
+                "kind": "number",
+                "value": "20"
+              },
+              "workbook_cache": {
+                "kind": "number",
+                "value": "999",
+                "formula_cached": false
+              },
+              "code": "stored_values_differ"
+            }
+          ]
+        }
+      ],
+      "findings": [],
+      "embedded_workbook": {
+        "part": "ppt/embeddings/Microsoft_Excel_Sheet1.xlsx",
+        "sha256": "ce06c56457d4f7c5562becc50ce30a9c792b8c2bc7b64cd1205e19a68ca72552"
+      }
+    }
+  ],
+  "findings": [],
+  "verdict": "MISMATCH",
+  "coverage_complete": true,
+  "summary": {
+    "unresolved_items": 0,
+    "references": 3,
+    "matched_points": 6,
+    "mismatched_points": 1,
+    "formula_cache_points": 0
+  }
+}

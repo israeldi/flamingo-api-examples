@@ -15,6 +15,10 @@ Read the [Flamingo API guides](https://flamingo-api-guides.flatemu1.chatgpt.site
 
 The publisher of these APIs maintains this repository. Free plans are available; check current marketplace quotas and terms. Requests have hard monthly caps, and separate platform bandwidth fees may apply. A validation failure or deliberate retry can consume allowance. The Python examples make one request, refuse redirects, and do not automatically retry. Connector previews, scheduled checks and deliberate retries also consume allowance.
 
+## Check PowerPoint chart data with a standalone skill
+
+[ChartReceipt's quickstart and original fictional example](chartreceipt/) show how to compare supported native PowerPoint chart caches with their embedded XLSX stored values and receive HTML/JSON reports. ChartReceipt is a separate **$9 one-time Agensi skill**. It uses Python 3.10+ in your authorized file-capable agent workspace and needs no RapidAPI key, API subscription, Office installation or pip package. Your agent/provider's permissions, data handling and any execution charges still apply.
+
 ## Try one API in Postman
 
 Choose a collection in the [public Postman workspace](https://www.postman.com/idiego612-5459945/flamingo-apis-quickstarts/overview), or download one of the four [collection JSON files](postman/) and import it into your own workspace. Keep your subscribed app key as a local value, leave shared values blank, and send one chosen request. Access and PatternCopy need local selection of the linked synthetic file; CreativePack and ShelfRelay embed their demonstration input.
@@ -115,3 +119,4 @@ All output paths must be new. These scripts refuse to overwrite an existing file
 The examples were checked offline against released contracts and synthetic responses. Access’s sample also passed local CSV and JSON extraction through the released engine. CreativePack and PatternCopy samples were retrieved from their public fixed-sample routes over verified HTTPS. This offline record does not claim authenticated end-to-end gateway testing of those three Python examples or evidence of customer adoption. CalcReceipt has a separate [actual standalone-client gateway demonstration and quota-stop record](calcreceipt/), using an original fictional workbook. ArchiveProof also has a [complete actual gateway receipt, original XML reports and free-plan quota-stop record](archiveproof/), using original fictional PDFs.
 
 Run `python3 SCRIPT.py --help` for each CLI. Marketplace requests and backend resource caps can differ; refer to the current API listing for the full contract and support route.
+

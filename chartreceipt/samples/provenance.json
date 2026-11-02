@@ -1,0 +1,21 @@
+{
+  "kind": "user-owned fictional creator-local example",
+  "tool": "ChartReceipt",
+  "source_version": "1.0.2",
+  "fixture_source_commit": "9cdc1197387cd5e1076c0dd0eef236a59b2b9089",
+  "original_fictional_example_bytes_preserved": true,
+  "not_a_buyer_or_payment_event": true,
+  "meaning": "Deliberate stored chart20 versus embedded workbook999 atSheet1!B3. No rendering, recalculation or business-truth proof.",
+  "assets": [
+    {
+      "file": "mismatch.pptx",
+      "bytes": 34350,
+      "sha256": "6a30d0de9981941f636e94e92be590b265cf533e03633c7a77f9ea28a4bcce2d"
+    },
+    {
+      "file": "mismatch.json",
+      "bytes": 2512,
+      "sha256": "fcff635f4eb6858f10e0355e41afd10ac72b1c6453bdb1afe2fb38843782bcd2"
+    }
+  ]
+}
