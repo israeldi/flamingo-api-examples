@@ -4,7 +4,7 @@ Preview supported ONIX book-feed updates before applying them to a WooCommerce c
 
 **[Download the installable review candidate — 0.1.3](downloads/shelfrelay-for-woocommerce-0.1.3.zip)**
 
-This package addresses the November 2 WordPress.org review. It has not yet been uploaded for a new review, and directory approval remains pending. The [original 0.1.2 ZIP](downloads/shelfrelay-for-woocommerce-0.1.2.zip) is retained unchanged.
+This package addresses the November 2 WordPress.org review. Version 0.1.3 was uploaded to the existing submission on November 24, 2026, and the author replied in the original review thread. Manual review and directory approval remain pending. The [original 0.1.2 ZIP](downloads/shelfrelay-for-woocommerce-0.1.2.zip) is retained unchanged.
 
 - [Plugin source and license](shelfrelay-for-woocommerce/)
 - [Version, checksums and qualification](release-0.1.3.json)
@@ -47,7 +47,7 @@ Version 0.1.3 replaces the direct file-upload move with WordPress upload handlin
 
 Historical qualification belongs to version 0.1.2: that source release passed 50 local WooCommerce web workflow checks, 16 private-staging checks, 31 connector contract checks and the official WordPress Plugin Check. Those results have not been rerun as a full suite for 0.1.3 and should not be read as new qualification of this candidate.
 
-This is direct GitHub distribution. **WordPress.org received 0.1.2 on October 31, 2026. Its November 2 review requested WordPress upload handling and clarification of the author identity.** These changes prepare the requested correction; an updated ZIP upload and the author's review-thread reply are still required. Manual approval and directory publication remain pending. Installing this connector does not change the hosted API runtime.
+This is direct GitHub distribution. **WordPress.org received 0.1.2 on October 31, 2026. Its November 2 review requested WordPress upload handling and clarification of the author identity.** The corrected 0.1.3 ZIP was uploaded to that existing submission on November 24, 2026, and the author clarification/review reply was sent in the original thread. Manual approval and directory publication remain pending. Installing this connector does not change the hosted API runtime.
 
 Israel Diego publishes the connector and processing service. This repository's introductory documentation was prepared with AI assistance.
 

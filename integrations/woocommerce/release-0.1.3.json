@@ -1,7 +1,7 @@
 {
   "product": "ShelfRelay for WooCommerce",
   "version": "0.1.3",
-  "status": "review candidate",
+  "status": "submitted for review",
   "license": "GPL-2.0-or-later",
   "source_base_commit": "fc0d595bcadec8130d209684ceed9a36e6a6bbfd",
   "zip": "downloads/shelfrelay-for-woocommerce-0.1.3.zip",
@@ -43,14 +43,21 @@
   },
   "distribution": {
     "wordpress_org_review_requested_changes": "2026-11-02",
-    "wordpress_org_candidate_uploaded": false,
+    "wordpress_org_candidate_uploaded": true,
     "wordpress_org_approved": false,
     "pending": [
-      "Upload the reviewed 0.1.3 ZIP to the existing submission",
-      "Author clarification and reviewer reply",
       "WordPress.org manual review"
     ],
     "previous_zip": "downloads/shelfrelay-for-woocommerce-0.1.2.zip",
-    "previous_zip_git_blob_unchanged": "b76759d07ef2f53d98e8b4048ccde728e93d7945"
+    "previous_zip_git_blob_unchanged": "b76759d07ef2f53d98e8b4048ccde728e93d7945",
+    "wordpress_org_uploaded_filename": "shelfrelay-for-woocommerce-0.1.3.zip",
+    "wordpress_org_uploaded_version": "0.1.3",
+    "wordpress_org_upload_date": "2026-11-24",
+    "wordpress_org_upload_observed_at_utc": "2026-11-24T21:51:00Z",
+    "wordpress_org_upload_confirmation": "New version of ShelfRelay for WooCommerce uploaded for review",
+    "wordpress_org_submission_slug": "shelfrelay-for-woocommerce",
+    "wordpress_org_review_reply_sent": true,
+    "wordpress_org_review_reply_sent_at_utc": "2026-11-24T21:51:00Z",
+    "wordpress_org_review_reply_context": "Reply sent in the original review thread, without attachments."
   }
 }
