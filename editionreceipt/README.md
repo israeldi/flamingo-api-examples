@@ -1,6 +1,6 @@
 # EditionReceipt public example
 
-**Awaiting Agensi review. Proposed price: USD $15, one-time. The skill is not currently available to purchase.** This example documents submitted version 1.0.0. [Creator profile](https://www.agensi.io/creators/israel-diego).
+**Available on Agensi for USD $15, one-time.** [Get EditionReceipt](https://www.agensi.io/skills/editionreceipt-compare-onix-with-the-delivery-epub) and check the listing for current pricing, purchase terms and supported scope. This example documents version 1.0.0. [Creator profile](https://www.agensi.io/creators/israel-diego).
 
 EditionReceipt compares supported metadata in a selected ONIX ebook product with the metadata inside the exact delivery EPUB. This small, fictional example includes both original inputs and the actual HTML and JSON reports from the final recorded creator-local run.
 
@@ -19,20 +19,20 @@ To view the report, download `report.html` and open the downloaded file in your 
 
 ## First request and agent workflow
 
-When the submitted skill becomes available, use an Agensi-connected, file-capable agent that is permitted to read the supplied files, create reports and run Python 3.10 or later. The checker uses Python’s standard library, needs no pip packages, and makes no network calls. Your agent/provider’s data handling and execution charges still apply.
+After purchasing the skill, use an Agensi-connected, file-capable agent that is permitted to read the supplied files, create reports and run Python 3.10 or later. The checker uses Python’s standard library, needs no pip packages, and makes no network calls. Your agent/provider’s data handling and execution charges still apply.
 
 Attach the ONIX feed and delivery EPUB, then give the explicit ebook ISBN. For these fictional files, a natural request is:
 
 > Use EditionReceipt to compare ebook ISBN 9780000000019 in this ONIX feed with this delivery EPUB before our distributor handoff. Leave both originals unchanged and give me the HTML and JSON reports, including any disagreement or uncertainty.
 
-The submitted agent workflow is:
+The agent workflow is:
 
 1. Read the skill instructions and scope reference delivered through Agensi’s agent connection. These accompany three self-contained Python scripts.
 2. Run the three unchanged scripts from separate temporary files: inspect the ONIX, inspect the EPUB, then compare the fresh inspection data for the explicitly selected ebook ISBN. An inspection snapshot alone is not a completed comparison.
 3. Return the static HTML report and JSON receipt. Preserve the original inputs and retain private inspection data in the authorized workspace; remove the temporary paid helper code afterward.
 4. Review the findings. If a correction is authorized, make it separately in the appropriate source system or ebook, then perform a fresh comparison.
 
-The recorded example is an actual creator-local run using three unchanged temporary scripts. It demonstrates the submitted checker’s output on fictional inputs; buyer delivery through Agensi remains unverified. Use the skill through Agensi when it becomes available to compare other files.
+The recorded example is an actual creator-local run using three unchanged temporary scripts. It demonstrates the checker’s output on fictional inputs; buyer delivery through Agensi remains unverified. Use the purchased skill through Agensi to compare other files.
 
 ## What this run found
 

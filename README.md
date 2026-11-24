@@ -21,7 +21,7 @@ The publisher of these APIs maintains this repository. Free plans are available;
 
 ## Inspect an ONIX and EPUB delivery example
 
-[EditionReceipt's original fictional example](editionreceipt/) pairs an exported ONIX product with its delivery EPUB and shows the exact HTML/JSON comparison result. The submitted Agensi skill is **awaiting review**, with a proposed **$15 one-time** price. The public example demonstrates a creator-local metadata check and explains its requirements, uncertainty and limits.
+[EditionReceipt's original fictional example](editionreceipt/) pairs an exported ONIX product with its delivery EPUB and shows the exact HTML/JSON comparison result. [EditionReceipt is available on Agensi for $15 one-time](https://www.agensi.io/skills/editionreceipt-compare-onix-with-the-delivery-epub); check the listing for current pricing, purchase terms and supported scope. The public example demonstrates a creator-local metadata check and explains its requirements, uncertainty and limits.
 
 ## Try one API in Postman
 
