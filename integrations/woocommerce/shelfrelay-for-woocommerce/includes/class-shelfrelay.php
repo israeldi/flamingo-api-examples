@@ -141,6 +141,77 @@ final class ShelfRelay {
         }
     }
 
+    /** Use WordPress upload checks without ever staging supplier XML in public uploads. */
+    private static function uploaded_feed(array $file): string {
+        if (($file['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK || !is_string($file['tmp_name'] ?? null)
+            || !is_string($file['name'] ?? null) || !is_uploaded_file($file['tmp_name'])) {
+            throw new RuntimeException('Choose a plain ONIX XML file within your WordPress upload limit.');
+        }
+        if (strtolower(pathinfo($file['name'], PATHINFO_EXTENSION)) !== 'xml') { throw new RuntimeException('Choose a plain ONIX file with an .xml extension.'); }
+        $size = filesize($file['tmp_name']);
+        if ($size === false || $size > ShelfRelay_Feed::MAX_FILE || $size < 1) { throw new RuntimeException('Choose a nonempty XML file up to 25 MiB.'); }
+        $mime = ShelfRelay_Feed::upload_mime($file['tmp_name']);
+        if (!function_exists('wp_handle_upload')) { require_once ABSPATH . 'wp-admin/includes/file.php'; }
+        $dir = self::private_dir(); $path = wp_tempnam('shelfrelay-upload.xml', trailingslashit($dir));
+        if (!$path) { throw new RuntimeException('WordPress could not allocate a private upload file.'); }
+        self::secure_file($path);
+        // Ignore the browser MIME, filename and declared size after validating the selected file.
+        $tmp = $file['tmp_name']; $file['name'] = 'shelfrelay-feed.xml'; $file['size'] = $size; $file['type'] = $mime;
+        $entered = false; $complete = false; $filters = array();
+        $restore = static function () use (&$filters): void {
+            foreach ($filters as [$hook, $callback, $priority, $accepted]) { remove_filter($hook, $callback, $priority); }
+        };
+        $upload_dir = static function ($uploads) use ($dir): array {
+            // No public URL or Media Library attachment is created for this private staging file.
+            return array('path' => $dir, 'url' => '', 'subdir' => '', 'basedir' => $dir, 'baseurl' => '', 'error' => false);
+        };
+        $upload_mimes = static function ($mimes) use ($mime): array { $mimes['xml'] = $mime; return $mimes; };
+        $prefilter = static function ($candidate) use ($tmp, &$entered): array {
+            if ($entered || ($candidate['tmp_name'] ?? '') !== $tmp) { $candidate['error'] = 'A private ShelfRelay upload is already in progress. Retry this separate upload afterward.'; }
+            else { $entered = true; }
+            return $candidate;
+        };
+        $sideload = static function ($candidate): array { $candidate['error'] = 'Retry this separate upload after the private ShelfRelay upload finishes.'; return $candidate; };
+        $filename = static function ($directory, $name, $extension) use ($dir, $path): string {
+            if ($directory !== $dir || is_link($path) || realpath($path) !== $path) { throw new RuntimeException('The upload destination must remain the reserved private staging file.'); }
+            return basename($path);
+        };
+        $before_move = static function ($move, $candidate, $destination, $type) use ($tmp, $path, $dir, $mime, $size, $restore) {
+            if ($move !== null || ($candidate['tmp_name'] ?? '') !== $tmp || !is_uploaded_file($tmp)
+                || $destination !== $path || is_link($path) || realpath($path) !== $path || dirname($path) !== $dir
+                || $type !== $mime || filesize($tmp) !== $size) {
+                throw new RuntimeException('WordPress could not retain the verified private upload destination and file.');
+            }
+            // Core has captured its destination. Restore normal behavior before later upload hooks run.
+            $restore();
+            return $move;
+        };
+        $filters = array(
+            array('upload_dir', $upload_dir, PHP_INT_MAX, 1),
+            array('upload_mimes', $upload_mimes, PHP_INT_MAX, 1),
+            array('wp_handle_upload_prefilter', $prefilter, PHP_INT_MAX, 1),
+            array('wp_handle_sideload_prefilter', $sideload, PHP_INT_MAX, 1),
+            array('pre_move_uploaded_file', $before_move, PHP_INT_MAX, 4),
+        );
+        try {
+            foreach ($filters as [$hook, $callback, $priority, $accepted]) { add_filter($hook, $callback, $priority, $accepted); }
+            // The outer action checked manage_woocommerce and its nonce; its form action is "shelfrelay".
+            // Keep the default core action so WordPress still requires a genuine PHP HTTP upload.
+            $uploaded = wp_handle_upload($file, array('test_form' => false, 'test_size' => true, 'test_type' => true,
+                'mimes' => array('xml' => $mime), 'unique_filename_callback' => $filename));
+            if (!is_array($uploaded) || !empty($uploaded['error'])) { throw new RuntimeException('WordPress rejected the XML upload: ' . (is_array($uploaded) ? ($uploaded['error'] ?? 'invalid upload result') : 'invalid upload result')); }
+            // Never pass a filter-supplied foreign path to secure_file(), which deletes on failure.
+            if (($uploaded['file'] ?? '') !== $path || ($uploaded['type'] ?? '') !== $mime) { throw new RuntimeException('WordPress returned an unexpected private upload file.'); }
+            clearstatcache(true, $path);
+            if (!is_file($path) || filesize($path) !== $size) { throw new RuntimeException('The private upload is missing or incomplete.'); }
+            self::secure_file($path); $complete = true;
+            return $path;
+        } finally {
+            $restore();
+            if (!$complete) { wp_delete_file($path); }
+        }
+    }
+
     public function settings(): array { return (array) get_option('shelfrelay_settings', array()); }
     private function policy(array $s): array {
         $p = array('market_country' => $s['market_country'], 'currency' => $s['currency'], 'price_type' => $s['price_type'], 'merchant_owned_fields' => $s['merchant_owned_fields'], 'as_of' => gmdate('Y-m-d'));
@@ -488,17 +559,11 @@ final class ShelfRelay {
                 $this->ready($s);
                 if ($intent === 'fetch') { $path = $this->fetch($s); }
                 else {
-                    // Keep PHP's temporary path exact; validate the upload origin and actual size below, never its supplied name/type.
+                    // Keep PHP's temporary path exact; uploaded_feed validates provenance and actual bytes.
                     // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitizing an OS path can alter it; is_uploaded_file verifies PHP's upload provenance.
                     $file = $_FILES['feed'] ?? array();
-                    if (!is_array($file) || ($file['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK || !is_string($file['tmp_name'] ?? null) || !is_uploaded_file($file['tmp_name'])) { throw new RuntimeException('Choose a plain ONIX XML file within your WordPress upload limit.'); }
-                    $size = filesize($file['tmp_name']);
-                    if ($size === false || $size > ShelfRelay_Feed::MAX_FILE || $size < 1) { throw new RuntimeException('Choose a nonempty XML file up to 25 MiB.'); }
-                    $path = self::private_dir() . '/upload-' . wp_generate_uuid4() . '.xml';
-                    // wp_handle_upload defaults to public uploads. Keep PHP's upload-origin check and move only into our verified 0700 directory, without creating a Media Library entry or public URL.
-                    // phpcs:ignore Generic.PHP.ForbiddenFunctions.Found -- Private supplier XML must be staged outside public uploads; the route already checks capability, nonce, PHP upload origin and actual file size.
-                    if (!move_uploaded_file($file['tmp_name'], $path)) { throw new RuntimeException('Could not stage the uploaded XML.'); }
-                    self::secure_file($path);
+                    if (!is_array($file)) { throw new RuntimeException('Choose one plain ONIX XML file.'); }
+                    $path = self::uploaded_feed($file);
                 }
                 $job_id = $this->new_job($s, $path, false);
                 $this->redirect('Feed queued for preview. The store has not changed.', $job_id);
@@ -695,3 +760,4 @@ final class ShelfRelay {
         foreach ($rows as $label => $value) { if (is_string($value) && $value !== '') { echo '<span class="shelfrelay-book-detail" style="display:block">' . esc_html($label) . ': <span>' . esc_html($value) . '</span></span>'; } }
     }
 }
+

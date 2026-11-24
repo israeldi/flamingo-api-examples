@@ -2,19 +2,21 @@
 
 Preview supported ONIX book-feed updates before applying them to a WooCommerce catalogue. The connector is free and licensed under GPLv2 or later. Processing requires a separate subscribed RapidAPI application key; a free Basic plan is available for an initial compatibility check.
 
-**[Download the installable connector ZIP — 0.1.2](https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/integrations/woocommerce/downloads/shelfrelay-for-woocommerce-0.1.2.zip)**
+**[Download the installable review candidate — 0.1.3](downloads/shelfrelay-for-woocommerce-0.1.3.zip)**
+
+This package addresses the November 2 WordPress.org review. It has not yet been uploaded for a new review, and directory approval remains pending. The [original 0.1.2 ZIP](downloads/shelfrelay-for-woocommerce-0.1.2.zip) is retained unchanged.
 
 - [Plugin source and license](shelfrelay-for-woocommerce/)
-- [Version, checksums and qualification](release-0.1.2.json)
+- [Version, checksums and qualification](release-0.1.3.json)
 - [Preview-first walkthrough](https://rapidapi.com/IsraelDiego/api/shelfrelay-onix/tutorials/import-onix-into-woocommerce%3A-a-preview-first-walkthrough)
 - [API plans and complete contract](https://rapidapi.com/IsraelDiego/api/shelfrelay-onix)
 - [Guide hub](https://flamingo-api-guides.flatemu1.chatgpt.site/onix-to-woocommerce/)
 - [55-second recorded example and workflow diagram](https://www.youtube.com/watch?v=FAHl9yr5u_o)
 
-The versioned ZIP is 41,316 bytes. Its SHA-256 is:
+The versioned ZIP is 42,841 bytes. Its SHA-256 is:
 
 ```text
-53facd8d6c206cb7ba0b58c27195cdfd9976b2160936e8b18bc030b53914ef06
+acab8fd59c403422054b8f8787ca4a84573ed320c7ddebf3bc79d57019dd029a
 ```
 
 ## Install and preview on staging
@@ -41,8 +43,11 @@ Supplier credentials stay on the WordPress host. Product XML, required previous 
 
 ## Release and verification status
 
-Version 0.1.2 fixes private staging of downloaded XML, including directory containment, symlink and permission checks. Its source release passed 50 local WooCommerce web workflow checks, 16 private-staging checks, 31 connector contract checks and the official WordPress Plugin Check. The workflow uses an actual local API and WordPress/WooCommerce with owned fixtures. These checks do not establish arbitrary-feed compatibility or customer adoption.
+Version 0.1.3 replaces the direct file-upload move with WordPress upload handling while preserving private staging outside both web roots. It also identifies Israel Diego as the author and idiego612 as the WordPress.org contributor. The product name and slug are unchanged. See the versioned release record for focused verification and its limits.
 
-This is direct GitHub distribution. **WordPress.org received 0.1.2 on October 31, 2026. Its status is Awaiting Review; manual approval and directory publication remain pending.** Its automated scan passed. The historical NAS download and API runtime remain at 0.1.1. The connector ZIP and matching source in this directory are 0.1.2; installing them does not change the hosted API runtime.
+Historical qualification belongs to version 0.1.2: that source release passed 50 local WooCommerce web workflow checks, 16 private-staging checks, 31 connector contract checks and the official WordPress Plugin Check. Those results have not been rerun as a full suite for 0.1.3 and should not be read as new qualification of this candidate.
 
-IsraelDiego publishes the connector and processing service. This repository's introductory documentation was prepared with AI assistance.
+This is direct GitHub distribution. **WordPress.org received 0.1.2 on October 31, 2026. Its November 2 review requested WordPress upload handling and clarification of the author identity.** These changes prepare the requested correction; an updated ZIP upload and the author's review-thread reply are still required. Manual approval and directory publication remain pending. Installing this connector does not change the hosted API runtime.
+
+Israel Diego publishes the connector and processing service. This repository's introductory documentation was prepared with AI assistance.
+
