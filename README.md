@@ -17,7 +17,7 @@ The publisher of these APIs maintains this repository. Free plans are available;
 
 ## Check PowerPoint chart data with a standalone skill
 
-[ChartReceipt's quickstart and original fictional example](chartreceipt/) show how to compare supported native PowerPoint chart caches with their embedded XLSX stored values and receive HTML/JSON reports. ChartReceipt is a separate **$9 one-time Agensi skill**. It uses Python 3.10+ in your authorized file-capable agent workspace and needs no RapidAPI key, API subscription, Office installation or pip package. Your agent/provider's permissions, data handling and any execution charges still apply.
+[ChartReceipt's quickstart and original fictional example](chartreceipt/) show how to compare supported native PowerPoint chart caches with their embedded XLSX stored values and receive HTML/JSON reports. ChartReceipt is a separate [**$9 one-time Agensi skill**](https://www.agensi.io/skills/chartreceipt-powerpoint-chart-workbook-consistency). It uses Python 3.10+ in your authorized file-capable agent workspace and needs no RapidAPI key, API subscription, Office installation or pip package. Your agent/provider's permissions, data handling and any execution charges still apply.
 
 ## Inspect an ONIX and EPUB delivery example
 
