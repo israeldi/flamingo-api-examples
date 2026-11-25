@@ -4,6 +4,8 @@ LocaleReceipt turns a source-language JSON update into a translation handoff. Co
 
 This directory contains original fictional inputs and actual generated reports. The paid Agensi skill supplies its instructions and helper through Agensi; reusable skill source is not included here.
 
+[Get LocaleReceipt on Agensi](https://www.agensi.io/skills/localereceipt-translation-update-handoff) to prepare a handoff for your own source and translation files. Check the listing for current price and supported inputs.
+
 ## Complete original demonstration
 
 Inputs: [previous source](proof-previous.json), [current source](proof-current.json), [French translation](proof-fr.json).

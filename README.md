@@ -2,6 +2,8 @@
 
 Five runnable Python examples and two free WooCommerce connectors for six focused APIs. The Python clients use the standard library, a local input file, and your own subscribed RapidAPI app key. The PatternCopy connector personalizes authorized PDF downloads; the ShelfRelay connector previews supported ONIX book-feed updates before changing store products.
 
+Use the [Agensi workflow guide](PAID-WORKFLOWS.md) to choose a skill and see worked examples for PowerPoint, ebook delivery, translation handoffs and support procedures.
+
 Read the [Flamingo API guides](https://flamingo-api-guides.flatemu1.chatgpt.site/) for the full workflow and compatibility notes. The [machine-readable API index](apis.json) links each listing, customer gateway and workflow resource.
 
 | Task | API | Example or integration |

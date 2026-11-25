@@ -2,9 +2,7 @@
 
 This free worked example shows the output of **GuideBranch — Support SOPs to Interactive Guides**. TableNest and its support procedure are fictional. No customer files or paid builder source are included. This sample was built with GuideBranch 0.1.2.
 
-GuideBranch is awaiting Agensi review. This example is available now; it is not a claim that the skill has been approved or is available to purchase.
-
-See [Israel Diego's Agensi profile](https://www.agensi.io/creators/israel-diego) for currently available skills.
+[Get GuideBranch on Agensi](https://www.agensi.io/skills/guidebranch-support-sops-to-interactive-guides) to build a guide from your own approved support procedure. Check the listing for current price, inputs and requirements.
 
 ![GuideBranch example on a desktop browser](desktop.jpg)
 
