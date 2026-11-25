@@ -4,6 +4,12 @@ Check authorized PDF bytes against an explicit PDF/A profile, or compare rule-le
 
 **API published:** [ArchiveProof on RapidAPI](https://rapidapi.com/IsraelDiego/api/archiveproof). The publication setting was verified after reload. The authenticated Synology origin passes strict TLS and denial checks. The published standalone client completed five HTTP 200 requests through the real RapidAPI gateway on the saved Basic five-request plan; the sixth request received an explicit platform monthly HTTP 429. Anonymous listing and published-pricing visibility remain unverified. The complete original-fixture evidence is linked below.
 
+## Try the fictional comparison in Postman (no Python setup)
+
+In your own Postman workspace, choose **Import → paste URL** and import this [ArchiveProof collection JSON](https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/postman/archiveproof.postman_collection.json). Its single comparison request embeds the original fictional before/after PDFs in a raw JSON body and selects PDF/A-2b. No local file picker is required. Review the [current ArchiveProof listing and plan](https://rapidapi.com/IsraelDiego/api/archiveproof) and configure your subscribed `rapidapi_key` as a local value only, leaving the shared value empty.
+
+Send once only after reviewing the request and plan allowance; importing does not call the API. The after sample intentionally fails one rule. The response checks are fixture-specific and offline-qualified only, not official Postman Runtime or live gateway qualification. Use the standalone client below to preserve and verify the complete receipt and decoded XML reports. See the [full Postman setup and limitations](../postman/README.md#additional-downloadable-quickstarts--calcreceipt-and-archiveproof). This collection has not yet been imported into the provider's public Postman workspace.
+
 ## Set up access once
 
 A subscription does not configure the agent's credentials. Use your own separately subscribed RapidAPI application key on the same host and OS user that runs the client.
