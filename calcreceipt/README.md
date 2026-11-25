@@ -4,6 +4,12 @@
 
 The creator supplies these standalone files for downloading, saving and running with the CalcReceipt API. This independent download is also available outside Agensi. The Agensi skill includes its own client for temporary execution by a capable connected agent; it does not install a local skill directory or include API access. Use this repository when you want independently supplied standalone files.
 
+## Try the fictional sample in Postman (no Python setup)
+
+If you prefer an API client to a local Python installation, open your own Postman workspace and choose **Import → paste URL**. Import this [CalcReceipt collection JSON](https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/postman/calcreceipt.postman_collection.json). Download [the original sample.xlsx](https://raw.githubusercontent.com/israeldi/flamingo-api-examples/main/calcreceipt/sample.xlsx) and select it under **Body → binary** on the single recalculation request. Review the [current CalcReceipt plan](https://rapidapi.com/IsraelDiego/api/calcreceipt/pricing) and configure your subscribed `rapidapi_key` as a local value only, leaving the shared value empty.
+
+Send once only after reviewing the request and plan allowance; importing does not call the API. The example deliberately includes a calculation error. Its fixture-specific response checks are offline-qualified only, not official Postman Runtime or live gateway qualification. Use the standalone client below for decoded hashes and ZIP integrity. See the [full Postman setup and limitations](../postman/README.md#additional-downloadable-quickstarts--calcreceipt-and-archiveproof). This collection has not yet been imported into the provider's public Postman workspace.
+
 ## Files and prerequisites
 
 - [client.py](client.py): Python standard-library client; one request, no redirects, no automatic retries, exclusive output creation. Accepts either the existing `RAPIDAPI_KEY` environment route or an explicit private `--key-file`.
