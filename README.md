@@ -25,7 +25,7 @@ The publisher of these APIs maintains this repository. Free plans are available;
 
 ## Try one API in Postman
 
-Choose a collection in the [public Postman workspace](https://www.postman.com/idiego612-5459945/flamingo-apis-quickstarts/overview), or download one of the four [collection JSON files](postman/) and import it into your own workspace. Keep your subscribed app key as a local value, leave shared values blank, and send one chosen request. Access and PatternCopy need local selection of the linked synthetic file; CreativePack and ShelfRelay embed their demonstration input.
+Choose one of the four imported collections in the [public Postman workspace](https://www.postman.com/idiego612-5459945/flamingo-apis-quickstarts/overview), or download a [collection JSON file](postman/) and import it into your own workspace. Two additional downloadable quickstarts cover [CalcReceipt](postman/calcreceipt.postman_collection.json) and [ArchiveProof](postman/archiveproof.postman_collection.json); these are not yet imported into the public workspace. Keep your subscribed app key as a local value, leave shared values blank, and send one chosen request. Access, PatternCopy and CalcReceipt need local selection of the linked synthetic file; CreativePack, ShelfRelay and ArchiveProof embed their demonstration input.
 
 All four collections were imported into Postman and the public workspace was verified while signed out. The response scripts also passed checks in the official Runtime against synthetic responses. See the [setup and verification notes](postman/README.md) before your first request.
 
