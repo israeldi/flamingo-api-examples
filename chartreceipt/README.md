@@ -2,7 +2,7 @@
 
 A PowerPoint deck can contain two stored versions of a number: the chart cache and the XLSX workbook embedded behind it. ChartReceipt compares supported references and returns exact evidence while preserving the original deck.
 
-[Get ChartReceipt on Agensi — $9 one-time](https://www.agensi.io/skills/chartreceipt-powerpoint-chart-workbook-consistency). Check the listing for current price, purchase terms and supported scope.
+[Get ChartReceipt on Agensi — $9 one-time](https://www.agensi.io/skills/chartreceipt-powerpoint-chart-data-checker). Check the listing for current price, purchase terms and supported scope.
 
 ## First check
 
