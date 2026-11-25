@@ -55,6 +55,7 @@ def save_new(path, data):
 
 def verify_output(output, output_format):
     """Check the response container and manifest, without extracting ZIP members."""
+    previous_field_limit = None
     try:
         csv_stats = {}
         if output_format == 'json':
@@ -63,6 +64,8 @@ def verify_output(output, output_format):
             if not isinstance(value['tables'], list):
                 raise ClientError('JSON response has no table list.')
         else:
+            # Match the bounded output budget; csv's default rejects large text fields.
+            previous_field_limit = csv.field_size_limit(MAX_OUTPUT)
             with zipfile.ZipFile(io.BytesIO(output)) as archive:
                 infos = archive.infolist()
                 names = [entry.filename for entry in infos]
@@ -115,6 +118,9 @@ def verify_output(output, output_format):
         raise
     except (KeyError, TypeError, ValueError, OSError, RuntimeError, EOFError, StopIteration, csv.Error, zipfile.BadZipFile, zipfile.LargeZipFile, NotImplementedError):
         raise ClientError('Response failed ZIP/JSON integrity or manifest checks.') from None
+    finally:
+        if previous_field_limit is not None:
+            csv.field_size_limit(previous_field_limit)
 
 
 def extract(source, output_format, key, connection_factory=None):
