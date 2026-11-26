@@ -1,0 +1,63 @@
+{
+  "product": "ShelfRelay for WooCommerce",
+  "version": "0.1.3",
+  "status": "submitted for review",
+  "license": "GPL-2.0-or-later",
+  "source_base_commit": "fc0d595bcadec8130d209684ceed9a36e6a6bbfd",
+  "zip": "downloads/shelfrelay-for-woocommerce-0.1.3.zip",
+  "zip_bytes": 42841,
+  "zip_sha256": "acab8fd59c403422054b8f8787ca4a84573ed320c7ddebf3bc79d57019dd029a",
+  "source_files_sha256": {
+    "LICENSE.txt": "4f2416509c30c4f0c4de101cc30c571e3be33fdb5c42cabc0d2915e8ed5ea51e",
+    "assets/admin.css": "96565eae7629c29febd5c181e8b5e2836662c2f6b6f57fc0074152999abfbf32",
+    "assets/admin.js": "d530ef574aa75decad7fdad5af964f50733d5f0b12f7f3dc0cbc71532ed4eb22",
+    "includes/class-shelfrelay-api.php": "a543f7890bf949d095f0e80d38b311ae98bf906f16aea461fa941362a03c027e",
+    "includes/class-shelfrelay-feed.php": "8ba4df0bc51a720bcb41e10e13b6f2797a219619ed7bd0d62a81acd74260d0cf",
+    "includes/class-shelfrelay-store.php": "a26b144db95648e3c98635dc9153f878828a5cef075c0cd1502d0c4fc50fcdbd",
+    "includes/class-shelfrelay.php": "5e6b455408d5f80f8bfe1c0cc3761d49a67375d7a622a08e7ebe95434e218952",
+    "readme.txt": "33885f3c93edfa903c1deada8add2742db4277ba6b2afdcf425bfd9582f51761",
+    "shelfrelay-for-woocommerce.php": "2098ce5a573ef17d8202a113f4d46e6a40a131a33b976cc09aa9b04c1ccfe1cf"
+  },
+  "changes": [
+    "Use wp_handle_upload with its default upload action, native provenance/type/size checks, and scoped private staging.",
+    "Validate bounded ONIX XML bytes before allowing the server-detected XML/plaintext MIME for this one operation.",
+    "Restore upload filters before later upload hooks and on all failure paths; clean only the reserved owned file.",
+    "Set author to Israel Diego and WordPress.org contributor to idiego612 without changing the product name or slug."
+  ],
+  "qualification": {
+    "php": "8.4.28",
+    "wordpress_core": "7.1.5",
+    "native_multipart_cases_passed": 25,
+    "native_multipart_cases_total": 25,
+    "scope": "Native multipart PHP and unmodified WordPress upload subsystem; environment/authentication stubbed; no live WooCommerce/database/API integration.",
+    "report": "verification/0.1.3/upload-results.json",
+    "syntax": "Both changed PHP classes passed native PHP lint.",
+    "security_review": "Independent static review of default upload action, private-path enforcement, authorization preservation, MIME scope, cleanup, and filter restoration.",
+    "package": "Nine expected plugin files; ZIP CRC and byte-for-byte source checks passed; both changed class hashes match the runtime-tested hashes.",
+    "not_rerun": [
+      "Full authenticated WordPress/WooCommerce admin and database workflows",
+      "Official WordPress Plugin Check",
+      "Live RapidAPI processing"
+    ],
+    "historical_results": "The 0.1.2 full workflow/Plugin Check qualification is preserved in release-0.1.2.json and is not asserted as a new 0.1.3 result."
+  },
+  "distribution": {
+    "wordpress_org_review_requested_changes": "2026-11-02",
+    "wordpress_org_candidate_uploaded": true,
+    "wordpress_org_approved": false,
+    "pending": [
+      "WordPress.org manual review"
+    ],
+    "previous_zip": "downloads/shelfrelay-for-woocommerce-0.1.2.zip",
+    "previous_zip_git_blob_unchanged": "b76759d07ef2f53d98e8b4048ccde728e93d7945",
+    "wordpress_org_uploaded_filename": "shelfrelay-for-woocommerce-0.1.3.zip",
+    "wordpress_org_uploaded_version": "0.1.3",
+    "wordpress_org_upload_date": "2026-11-24",
+    "wordpress_org_upload_observed_at_utc": "2026-11-24T21:51:00Z",
+    "wordpress_org_upload_confirmation": "New version of ShelfRelay for WooCommerce uploaded for review",
+    "wordpress_org_submission_slug": "shelfrelay-for-woocommerce",
+    "wordpress_org_review_reply_sent": true,
+    "wordpress_org_review_reply_sent_at_utc": "2026-11-24T21:51:00Z",
+    "wordpress_org_review_reply_context": "Reply sent in the original review thread, without attachments."
+  }
+}

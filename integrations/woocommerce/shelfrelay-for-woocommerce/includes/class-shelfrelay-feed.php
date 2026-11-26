@@ -7,6 +7,32 @@ final class ShelfRelay_Feed {
     const MAX_RECORD = 262144;
     const MAX_PRODUCTS = 5000;
 
+    /** Qualify XML bytes before narrowly enabling this upload's server-detected MIME in WordPress. */
+    public static function upload_mime(string $path): string {
+        if (!class_exists('XMLReader')) { throw new RuntimeException('The PHP XMLReader extension is required.'); }
+        $previous = libxml_use_internal_errors(true); libxml_clear_errors(); $reader = new XMLReader(); $root_seen = false;
+        try {
+            if (!$reader->open($path, null, LIBXML_NONET | LIBXML_COMPACT)) { throw new RuntimeException('Cannot open the uploaded XML.'); }
+            $reader->setParserProperty(XMLReader::LOADDTD, false);
+            $reader->setParserProperty(XMLReader::SUBST_ENTITIES, false);
+            while ($reader->read()) {
+                if ($reader->nodeType === XMLReader::DOC_TYPE || $reader->nodeType === XMLReader::ENTITY_REF) { throw new RuntimeException('DTD and entity declarations/references are not supported. Export plain ONIX XML.'); }
+                if (!$root_seen && $reader->nodeType === XMLReader::ELEMENT) {
+                    if (!in_array($reader->localName, array('ONIXMessage', 'ONIXmessage'), true)
+                        || !in_array($reader->getAttribute('release'), array('3.0', '3.1'), true)) {
+                        throw new RuntimeException('The file must contain an ONIXMessage root with release 3.0 or 3.1.');
+                    }
+                    $root_seen = true;
+                }
+            }
+            if (!$root_seen || libxml_get_errors()) { throw new RuntimeException('The uploaded feed is not well-formed XML.'); }
+        } finally { $reader->close(); libxml_clear_errors(); libxml_use_internal_errors($previous); }
+        $mime = class_exists('finfo') ? (new finfo(FILEINFO_MIME_TYPE))->file($path) : 'text/xml';
+        // Declarationless valid XML can be reported as text/plain. Syntax was checked above; the browser type is unused.
+        if (!in_array($mime, array('text/xml', 'application/xml', 'text/plain'), true)) { throw new RuntimeException('The uploaded file must be plain ONIX XML.'); }
+        return $mime;
+    }
+
     public static function url(string $url): string {
         $parts = wp_parse_url($url);
         if (!$parts || ($parts['scheme'] ?? '') !== 'https' || empty($parts['host']) || isset($parts['user']) || isset($parts['pass']) || isset($parts['fragment'])) {
@@ -113,3 +139,4 @@ final class ShelfRelay_Feed {
         }
     }
 }
+

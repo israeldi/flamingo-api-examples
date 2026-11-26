@@ -52,3 +52,4 @@ final class ShelfRelay_API {
         return $data;
     }
 }
+

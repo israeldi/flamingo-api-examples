@@ -1,9 +1,10 @@
 === ShelfRelay for WooCommerce ===
+Contributors: idiego612
 Tags: woocommerce, onix, books, catalog, import
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 0.1.2
+Stable tag: 0.1.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,6 +107,11 @@ No. Products, cover attachments, source history and saved settings are retained.
 
 == Changelog ==
 
+= 0.1.3 =
+* Use WordPress upload validation for ONIX XML while keeping supplier files in verified owner-only staging outside both web roots.
+* Restore temporary upload filters on success and failure, reject redirected or nested staging, and clean up only the reserved private file.
+* Identify Israel Diego as the connector author and idiego612 as its WordPress.org contributor. The product name and slug are unchanged.
+
 = 0.1.2 =
 * Keep downloaded XML inside the verified private staging directory, with owner-only permissions and explicit path, symlink and server-root checks.
 * Use WordPress filesystem and escaping helpers where appropriate while preserving private upload handling and exact credential validation.
@@ -116,3 +122,4 @@ No. Products, cover attachments, source history and saved settings are retained.
 
 = 0.1.0 =
 * Initial supported ONIX 3.x preview, source-state merge, scheduled update and receipt workflow.
+

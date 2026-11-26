@@ -156,3 +156,4 @@ final class ShelfRelay_Store {
         } finally { if (is_file($path)) { wp_delete_file($path); } }
     }
 }
+
