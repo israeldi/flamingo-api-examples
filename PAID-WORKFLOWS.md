@@ -12,6 +12,12 @@ Start with the job you want to automate. The examples in this repository use fic
 | Prepare instructions for kit assembly and packing | [KitGather](https://www.agensi.io/skills/kitgather-kit-assembly-packing-handoff) | See the listing for supported inputs. |
 | Prepare a native PowerShell counterpart to a Bash installer | [InstallTwin](https://www.agensi.io/skills/installtwin-bash-installers-to-native-powershell) | See the listing for supported inputs. |
 
+## Prepare a Windows release and its support guide
+
+Use [InstallTwin](https://www.agensi.io/skills/installtwin-bash-installers-to-native-powershell) with your Bash installer and Windows release facts to prepare a PowerShell counterpart and tests for review. After validating the install procedure, use [GuideBranch](https://www.agensi.io/skills/guidebranch-support-sops-to-interactive-guides) with the approved support steps. The [fictional GuideBranch example](guidebranch/) shows the interactive result.
+
+[Get InstallTwin and GuideBranch together on Agensi](https://www.agensi.io/bundles/cross-platform-release-handoff). See the bundle page for the current price and purchase terms.
+
 ## Run your first job
 
 1. Read the listing and check that it supports your input. Preview the included report when an example is available.
