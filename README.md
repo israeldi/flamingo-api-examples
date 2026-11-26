@@ -12,8 +12,8 @@ Read the [Flamingo API guides](https://flamingo-api-guides.flatemu1.chatgpt.site
 | Optimize PNG/JPEG assets inside an HTML5 advertising ZIP | [CreativePack](https://rapidapi.com/IsraelDiego/api/creativepack) | [Python example](creativepack_optimize.py) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/html5-ad-zip-optimization/) · [Check a ZIP locally](https://github.com/israeldi/creativepack-optimize-action#check-your-zip-locally-first) · [Compare plans](https://rapidapi.com/IsraelDiego/api/creativepack/pricing) |
 | Add a visible buyer stamp while retaining supported PDF size layers | [PatternCopy PDF](https://rapidapi.com/IsraelDiego/api/patterncopy-pdf) | [Python example](patterncopy_stamp.py) · [WooCommerce connector](integrations/patterncopy-woocommerce/) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/layered-pdf-personalization/) |
 | Preview and apply supported ONIX physical-book updates in WooCommerce | [ShelfRelay ONIX](https://rapidapi.com/IsraelDiego/api/shelfrelay-onix) | [Connector, source and installation](integrations/woocommerce/) · [Full guide](https://flamingo-api-guides.flatemu1.chatgpt.site/onix-to-woocommerce/) |
-| Recalculate supported XLSX formula caches and inspect preservation findings | [CalcReceipt](https://rapidapi.com/IsraelDiego/api/calcreceipt) | [Standalone client, sample and contract](calcreceipt/) |
-| Check an explicit PDF/A profile and compare before/after failing rules | [ArchiveProof](https://rapidapi.com/IsraelDiego/api/archiveproof) | [Client, original samples, receipts and XML reports](archiveproof/) |
+| Recalculate supported XLSX formula caches and inspect preservation findings | [CalcReceipt](https://rapidapi.com/IsraelDiego/api/calcreceipt) | [See sample workbook and result](calcreceipt/demo/report.json) · [Client and setup](calcreceipt/) · [Compare plans](https://rapidapi.com/IsraelDiego/api/calcreceipt/pricing) |
+| Check an explicit PDF/A profile and compare before/after failing rules | [ArchiveProof](https://rapidapi.com/IsraelDiego/api/archiveproof) | [See sample comparison receipt](archiveproof/demo/receipt.json) · [Client and setup](archiveproof/) · [Compare plans](https://rapidapi.com/IsraelDiego/api/archiveproof/pricing) |
 
 The publisher of these APIs maintains this repository. Free plans are available; check current marketplace quotas and terms. Requests have hard monthly caps, and separate platform bandwidth fees may apply. A validation failure or deliberate retry can consume allowance. The Python examples make one request, refuse redirects, and do not automatically retry. Connector previews, scheduled checks and deliberate retries also consume allowance.
 
@@ -24,6 +24,13 @@ The publisher of these APIs maintains this repository. Free plans are available;
 ## Inspect an ONIX and EPUB delivery example
 
 [EditionReceipt's original fictional example](editionreceipt/) pairs an exported ONIX product with its delivery EPUB and shows the exact HTML/JSON comparison result. [EditionReceipt is available on Agensi for $15 one-time](https://www.agensi.io/skills/editionreceipt-compare-onix-with-the-delivery-epub); check the listing for current pricing, purchase terms and supported scope. The public example demonstrates a creator-local metadata check and explains its requirements, uncertainty and limits.
+
+## Inspect the PDF/A and XLSX results before trying an API
+
+- **ArchiveProof** compares two [original sample PDFs](archiveproof/) against PDF/A-2b. The [comparison receipt](archiveproof/demo/receipt.json) identifies the failed rule introduced in the second file. [Original validation XML](archiveproof/demo/after-verapdf.xml) shows the supporting finding.
+- **CalcReceipt** refreshes stored formula values in an [original sample workbook](calcreceipt/sample.xlsx). Open the [recalculated workbook](calcreceipt/demo/calculated.xlsx) and its [calculation report](calcreceipt/demo/report.json) to see ten refreshed formula caches and the deliberate division-by-zero finding.
+
+You can download those examples without an API key. Choose an API plan and use your own RapidAPI app key when you're ready to submit a file.
 
 ## Try one API in Postman
 
